@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RunRun - Marathon Results Explorer</title>
+    <style>
+      :root { --bg:#0f172a; --fg:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --good:#22c55e; --warn:#f59e0b; --bad:#ef4444; --card:#111827; --border:#374151; }
+      html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+      header { padding:16px; border-bottom:1px solid var(--border); position:sticky; top:0; background:linear-gradient(180deg, rgba(15,23,42,0.98), rgba(15,23,42,0.90)); backdrop-filter:saturate(140%) blur(6px); z-index:10; }
+      h1 { margin:0 0 8px 0; font-size:18px; font-weight:600; color:var(--fg); }
+      .controls { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:flex-end; }
+      .field { display:flex; flex-direction:column; gap:4px; }
+      label { font-size:12px; color:var(--muted); }
+      input[type="text"], input[type="number"], select { background:var(--card); border:1px solid var(--border); color:var(--fg); padding:8px 10px; border-radius:8px; min-width:160px; }
+      .sources { display:flex; gap:12px; align-items:center; flex-wrap:wrap; color:var(--muted); }
+      .btn { background:var(--accent); color:#001018; border:none; padding:10px 14px; border-radius:8px; font-weight:600; cursor:pointer; }
+      .btn.secondary { background:transparent; color:var(--fg); border:1px solid var(--border); }
+      .btn.warn { background:var(--warn); color:#1c1400; }
+      .status { margin-left:auto; color:var(--muted); font-size:12px; max-width:40ch; }
+      .container { padding:16px; }
+      .tabs { display:flex; gap:8px; border-bottom:1px solid var(--border); margin-bottom:12px; }
+      .tab { padding:8px 12px; cursor:pointer; border-bottom:2px solid transparent; color:var(--muted); }
+      .tab.active { color:var(--fg); border-color:var(--accent); }
+      .tabpanel { display:none; }
+      .tabpanel.active { display:block; }
+      .grid { width:100%; border-collapse:collapse; overflow:auto; }
+      .grid th, .grid td { border-bottom:1px solid var(--border); padding:8px 10px; text-align:left; font-size:13px; }
+      .grid th { position:sticky; top:0; background:var(--card); z-index:1; }
+      .row-actions { display:flex; gap:6px; }
+      .panels { display:grid; grid-template-columns: 2fr 1fr; gap:16px; align-items:start; }
+      .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px; }
+      .card h3 { margin:0 0 8px; font-size:14px; color:var(--fg); }
+      .small { font-size:12px; color:var(--muted); }
+      .json-editor { width:100%; height:280px; background:#0a0f1f; color:#d1e9ff; border:1px solid var(--border); border-radius:8px; padding:8px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+      .kv { display:grid; grid-template-columns: 160px 1fr; gap:8px 12px; }
+      .muted { color:var(--muted); }
+      .charts { display:grid; grid-template-columns: 1fr; gap:16px; }
+      svg { width:100%; height:280px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00)); border:1px solid var(--border); border-radius:10px; }
+      .footer { margin-top:16px; font-size:12px; color:var(--muted); display:flex; gap:12px; align-items:center; }
+      .badge { display:inline-block; padding:2px 6px; border-radius:6px; border:1px solid var(--border); background:#0b1327; color:#bfe7ff; font-size:11px; }
+      details summary { cursor:pointer; }
+      .nowrap { white-space:nowrap; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>RunRun — Marathon Results Explorer</h1>
+      <div class="controls">
+        <div class="field">
+          <label>Full name</label>
+          <input id="fullName" type="text" placeholder="e.g., Elisa Park" />
+        </div>
+        <div class="field">
+          <label>Birth year</label>
+          <input id="birthYear" type="number" min="1900" max="2100" placeholder="1980" />
+        </div>
+        <div class="field">
+          <label>Gender (optional)</label>
+          <select id="gender">
+            <option value="">—</option>
+            <option value="F">Female</option>
+            <option value="M">Male</option>
+            <option value="X">Other</option>
+          </select>
+        </div>
+        
+        <div class="field" style="min-width:320px">
+          <label>Athlinks API Key</label>
+          <input id="athlinksApiKey" type="text" placeholder="Paste API key here" />
+        </div>
+        <div class="field" style="min-width:320px">
+          <label>Athlinks Base URL</label>
+          <input id="athlinksBase" type="text" placeholder="https://api.athlinks.com/v1" />
+        </div>
+        
+        <button id="btnSearch" class="btn">Search</button>
+        <button id="btnStop" class="btn secondary">Stop</button>
+        <button id="btnClear" class="btn warn">Clear</button>
+        <div id="status" class="status"></div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="tabs">
+        <div class="tab active" data-tab="data">Data</div>
+        <div class="tab" data-tab="view">View</div>
+        <div class="tab" data-tab="about">About</div>
+      </div>
+
+      <div id="tab-data" class="tabpanel active">
+        <div class="panels">
+          <div class="card">
+            <h3>Results</h3>
+            <div class="small">Editable table. Click a row to edit details on the right.</div>
+            <div style="overflow:auto; max-height:420px; margin-top:8px;">
+              <table class="grid" id="resultsTable">
+                <thead>
+                  <tr>
+                    <th class="nowrap">Date</th>
+                    <th>Event</th>
+                    <th>Location</th>
+                    <th class="nowrap">Distance</th>
+                    <th class="nowrap">Net time</th>
+                    <th class="nowrap">Pace /km</th>
+                    <th class="nowrap">Place (O/G/AG)</th>
+                    <th>Flags</th>
+                    <th>Source</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="resultsTbody"></tbody>
+              </table>
+            </div>
+            <div class="footer">
+              <button id="btnExport" class="btn secondary">Export JSON</button>
+              <label class="btn secondary" style="cursor:pointer;">
+                Import JSON
+                <input id="importFile" type="file" accept="application/json" style="display:none" />
+              </label>
+              <span class="muted">Snapshot:</span>
+              <button id="btnSaveSnapshot" class="btn secondary">Save</button>
+              <button id="btnLoadSnapshot" class="btn secondary">Load</button>
+              <span id="saveInfo" class="muted"></span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Details</h3>
+            <div class="small">Edit selected result JSON. Validate before saving.</div>
+            <textarea id="detailEditor" class="json-editor" placeholder="Select a result row to view/edit JSON"></textarea>
+            <div style="display:flex; gap:8px; margin-top:8px;">
+              <button id="btnApplyEdit" class="btn secondary">Apply Edit</button>
+              <button id="btnRevertEdit" class="btn secondary">Revert</button>
+            </div>
+            <details style="margin-top:8px;">
+              <summary>Provenance & raw payloads</summary>
+              <pre id="provenance" class="json-editor" style="height:180px;"></pre>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-view" class="tabpanel">
+        <div class="charts">
+          <div class="card">
+            <h3>Finish time trend</h3>
+            <svg id="chartTrend"></svg>
+          </div>
+          <div class="card">
+            <h3>Pace vs distance</h3>
+            <svg id="chartPaceDist"></svg>
+          </div>
+          <div class="card">
+            <h3>Negative split bars</h3>
+            <svg id="chartNegative"></svg>
+          </div>
+          <div class="card">
+            <h3>Conditions</h3>
+            <div class="kv">
+              <div class="muted">Hot ≥ °F</div>
+              <input id="thrHot" type="number" value="68" />
+              <div class="muted">Windy ≥ mph</div>
+              <input id="thrWind" type="number" value="10" />
+              <div class="muted">Humid ≥ %</div>
+              <input id="thrHumid" type="number" value="70" />
+            </div>
+            <div style="margin-top:8px; display:flex; gap:8px;">
+              <button id="btnApplyThresholds" class="btn secondary">Apply Thresholds</button>
+              <span class="small">Affects hot/windy/humid flags; rainy derives from precip.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-about" class="tabpanel">
+        <div class="card">
+          <h3>About</h3>
+          <div class="kv">
+            <div class="muted">Version</div>
+            <div id="appVersion"></div>
+            <div class="muted">Schema</div>
+            <div id="schemaVersion"></div>
+            <div class="muted">Notes</div>
+            <div>All data stays in your browser unless you export it. Use source toggles with awareness of source ToS. Weather and some sources are mocked in MVP.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Debug helper (enable by setting localStorage.DEBUG to a comma-separated list of keys)
+      const DEBUG_KEYS = (localStorage.getItem('DEBUG') || '').split(',').map(s => s.trim()).filter(Boolean);
+      function debug(key, ...args) { if (!key || DEBUG_KEYS.includes(key) || DEBUG_KEYS.includes('*')) { console.log('[DBG]', key, ...args); } }
+
+      // App constants
+      const APP = { version: '0.1.0', schemaVersion: '0.1.0' };
+      const UI = { activeTab: 'data', selectedIndex: -1 };
+      const STORAGE_PREFIX = 'runrun__';
+
+      // State
+      const state = {
+        person: { full_name: '', birth_year: null, gender: '' },
+        sources: { athlinks: true },
+        config: { athlinks: { api_key: '', base_url: 'https://api.athlinks.com/v1', max_athletes: 3 } },
+        fetching: false,
+        raw_by_source: {},
+        dataset: { person: {}, results: [] },
+        history: [],
+        thresholds: { hot_f: 68, wind_mph: 10, humid_pct: 70 },
+      };
+
+      // Utilities
+      function clone(v) { return JSON.parse(JSON.stringify(v)); }
+      function fmtDate(dStr) { try { const d = new Date(dStr); return d.toISOString().slice(0,10); } catch { return dStr; } }
+      function parseTimeToSeconds(t) { if (t == null) return null; const parts = String(t).split(':').map(Number); if (parts.some(isNaN)) return null; let s = 0; for (let i=0;i<parts.length;i++) s = s*60 + parts[i]; return s; }
+      function secondsToTimeStr(s) { if (s == null || !isFinite(s)) return ''; const h = Math.floor(s/3600); const m = Math.floor((s%3600)/60); const sec = Math.round(s%60); return [h, String(m).padStart(2,'0'), String(sec).padStart(2,'0')].join(':'); }
+      function kmPaceFromSecondsPerKm(secPerKm) { if (!secPerKm) return ''; return secondsToTimeStr(secPerKm); }
+      function distanceBucket(km) { if (km == null) return 'unknown'; const d = Math.round(km*10)/10; if (Math.abs(d-42.2) < 1) return 'marathon'; if (Math.abs(d-21.1) < 0.6) return 'half'; if (Math.abs(d-10) < 0.5) return '10k'; if (Math.abs(d-5) < 0.3) return '5k'; return d>=30?'>=30k': d>=15?'>=15k': '<15k'; }
+      function normalizeEventName(name) { return String(name||'').trim().toLowerCase().replace(/\s+/g,' '); }
+      function eventKey(e) { return [fmtDate(e.date), normalizeEventName(e.event_name), distanceBucket(e.distance_km||42.2), e.bib||''].join('|'); }
+      function computePace(result) { if (!result.net_time_s || !result.distance_km) return null; const pace = result.net_time_s / result.distance_km; return pace; }
+      function hasNegativeSplit(result) { if (!result.splits || result.splits.length === 0) return null; const half = result.splits.find(s => /half|21|13\.1/i.test(s.name)); const finish = result.splits[result.splits.length - 1]; if (!half || !finish || !half.elapsed_s || !finish.elapsed_s) return null; const firstHalf = half.elapsed_s; const secondHalf = finish.elapsed_s - half.elapsed_s; return secondHalf < firstHalf; }
+      function normalizeName(n) { return String(n||'').trim().toLowerCase().replace(/\s+/g,' '); }
+      function calcAgeAtDate(birthYear, dateStr) { if (!birthYear || !dateStr) return null; const d = new Date(dateStr); return d.getUTCFullYear() - Number(birthYear); }
+      function ageGroupFromAge(age) { if (age == null || !isFinite(age)) return null; const start = Math.floor(age/5)*5; const end = start+4; return `${start}-${end}`; }
+
+      // Normalized schema: result
+      // {
+      //   source, source_ids, event_name, date, location: {city,state,country}, distance_km,
+      //   bib, division, status, net_time_s, gun_time_s, overall_place, gender_place, age_group, age_group_place,
+      //   splits: [{name, km, elapsed_s, rank_overall}],
+      //   weather: { temperature_c, wind_kph, humidity_pct, precip_mm },
+      //   derived_flags: { hot:false, windy:false, humid:false, rainy:false, negative_splits:false },
+      //   provenance: { url, fetched_at, raw }
+      // }
+
+      // Fetch helper with optional proxy
+      async function proxiedFetch(url, extraHeaders) {
+        const candidates = [url];
+        const errors = [];
+        for (const u of candidates) {
+          try {
+            const resp = await fetch(u, { headers: { 'accept':'application/json,text/plain;q=0.9,*/*;q=0.8', ...(extraHeaders||{}) } });
+            if (!resp.ok) { errors.push(`${u} -> HTTP ${resp.status}`); continue; }
+            const text = await resp.text();
+            try { return JSON.parse(text); } catch {
+              // Some proxies return correct JSON with text/plain; above covers it. If HTML, fail.
+              if (text && text.trim().startsWith('{') || text.trim().startsWith('[')) return JSON.parse(text);
+              errors.push(`${u} -> Non-JSON response`);
+            }
+          } catch (e) {
+            errors.push(`${u} -> ${e.message}`);
+          }
+        }
+        throw new Error('All endpoints failed. ' + errors.join(' | '));
+      }
+
+      function splitName(full) {
+        const parts = String(full||'').trim().split(/\s+/);
+        const last = parts.pop() || '';
+        const first = parts.join(' ');
+        return { first, last };
+      }
+
+      async function tryJsonFrom(urls) {
+        const errors = [];
+        for (const url of urls) {
+          try { const json = await proxiedFetch(url); return { url, json }; } catch (e) { errors.push(`${url}: ${e.message}`); }
+        }
+        throw new Error('All endpoints failed. ' + errors.join(' | '));
+      }
+      // Athlinks adapter
+      const GENDER_MAP = new Map([["f","F"],["female","F"],["w","F"],["m","M"],["male","M"],["man","M"]]);
+      function normalizeGender(v){ if(v==null) return null; const s=String(v).trim().toLowerCase(); return GENDER_MAP.get(s)||null; }
+      function nameMatches(fullName, firstName, lastName){ if(!fullName) return false; const norm=s=>String(s||"").toLowerCase().replace(/[^a-z\s\-']/g,"").replace(/\s+/g," ").trim(); const fn=norm(fullName); const f=norm(firstName); const l=norm(lastName); const hasF = fn.includes(` ${f} `)||fn.startsWith(`${f} `)||fn.endsWith(` ${f}`)||fn===f; const hasL = fn.includes(` ${l} `)||fn.startsWith(`${l} `)||fn.endsWith(` ${l}`)||fn===l; return hasF && hasL; }
+
+      function chooseTimeSeconds(obj){
+        const candidates = ['netTime','net_time','finishNet','finish_time','time','chipTime','duration','officialTime','official_time'];
+        for(const k of candidates){ const v = obj?.[k]; if(v == null) continue; if(typeof v==='number') return v; if(typeof v==='string'){ if(/\d:\d{2}(:\d{2})?$/.test(v)) return parseTimeToSeconds(v); const n = Number(v); if(Number.isFinite(n)) return n; } }
+        return null;
+      }
+      function chooseGunTimeSeconds(obj){
+        const candidates = ['gunTime','gun_time','finishGun','start_to_finish','elapsed'];
+        for(const k of candidates){ const v = obj?.[k]; if(v == null) continue; if(typeof v==='number') return v; if(typeof v==='string'){ if(/\d:\d{2}(:\d{2})?$/.test(v)) return parseTimeToSeconds(v); const n = Number(v); if(Number.isFinite(n)) return n; } }
+        return null;
+      }
+      function chooseDistanceKm(obj){
+        const km = obj?.distanceKm || obj?.distance_km; if(typeof km==='number') return km;
+        const miles = obj?.distanceMiles || obj?.distance_miles; if(typeof miles==='number') return miles * 1.60934;
+        const name = (obj?.raceName||obj?.eventName||'').toLowerCase(); if(/marathon/.test(name)) return 42.195; if(/half/.test(name)) return 21.097; if(/10k/.test(name)) return 10; if(/5k/.test(name)) return 5; return null;
+      }
+
+      async function fetchAthlinks(person){
+        const base = (state.config.athlinks.base_url||'').replace(/\/$/,'');
+        const key = state.config.athlinks.api_key||'';
+        if(!base || !key) { setStatus('Athlinks base URL or API key missing.'); return []; }
+        const headers = { 'authorization': `Bearer ${key}` };
+        const { first, last } = splitName(person.full_name);
+        const params = new URLSearchParams({ query: `${first} ${last}`, limit: String(state.config.athlinks.max_athletes||3) });
+        if(person.gender) params.set('gender', person.gender);
+        if(person.birth_year) params.set('birthYear', String(person.birth_year));
+        const searchUrl = `${base}/athletes/search?${params.toString()}`;
+        let searchJson; try { searchJson = await proxiedFetch(searchUrl, headers); } catch(e){ setStatus('Athlinks search failed.'); debug('athlinks', 'search error', e.message); return []; }
+        const items = searchJson?.items || searchJson?.athletes || searchJson?.results || [];
+        const candidates = items.map(a => ({ id: a?.id || a?.athleteId, name: a?.name || `${a?.firstName||''} ${a?.lastName||''}`.trim(), gender: a?.gender||'', birthYear: a?.birthYear||a?.yob||null })).filter(a=>a&&a.id);
+        const filtered = candidates.filter(a => nameMatches(` ${a.name} `, first, last) && (!person.gender || !a.gender || person.gender===a.gender) && (!person.birth_year || !a.birthYear || Math.abs(person.birth_year - a.birthYear) <= 2));
+        const chosen = filtered.slice(0, state.config.athlinks.max_athletes||3);
+        const all = [];
+        for(const a of chosen){
+          const resUrl = `${base}/athletes/${encodeURIComponent(a.id)}/results?limit=200&sport=running`;
+          let resJson; try { resJson = await proxiedFetch(resUrl, headers); } catch(e){ debug('athlinks','results error', a.id, e.message); continue; }
+          const results = resJson?.items || resJson?.results || [];
+          for(const r of results){
+            const distanceKm = chooseDistanceKm(r) || 42.195;
+            const net = chooseTimeSeconds(r);
+            const gun = chooseGunTimeSeconds(r);
+            all.push({
+              source: 'athlinks', source_ids: { athlete_id: a.id, result_id: r?.id||null },
+              event_name: r?.raceName || r?.eventName || 'Athlinks Race',
+              date: r?.date || r?.raceDate || '',
+              location: { city: r?.city||'', state: r?.state||'', country: r?.country||'' },
+              distance_km: distanceKm,
+              bib: r?.bib||null,
+              division: r?.division||r?.ageGroup||null,
+              status: (r?.status||'FIN').toUpperCase(),
+              net_time_s: net,
+              gun_time_s: gun,
+              overall_place: r?.overallPlace||r?.overall||null,
+              gender_place: r?.genderPlace||null,
+              age_group: r?.ageGroup||null,
+              age_group_place: r?.ageGroupPlace||null,
+              splits: Array.isArray(r?.splits)? r.splits.map(s=>({ name: s?.name||'', km: s?.km||null, elapsed_s: chooseTimeSeconds({time:s?.time}) })) : [],
+              weather: null,
+              athlete: { full_name: a.name, gender: a.gender||'', birth_year: a.birthYear||null },
+              derived_flags: {},
+              provenance: { url: resUrl, fetched_at: new Date().toISOString(), raw: r }
+            });
+          }
+        }
+        return all;
+      }
+
+      // Merge and de-duplicate
+      function mergeResults(results) {
+        const byKey = new Map();
+        const conflicts = [];
+        for (const r of results) {
+          const key = eventKey(r);
+          if (!byKey.has(key)) {
+            byKey.set(key, { ...clone(r), provenance: { ...r.provenance, merged_sources: [r.source] } });
+          } else {
+            const existing = byKey.get(key);
+            // Prefer record with more splits or closer net time agreement
+            const pick = (a, b) => {
+              const aSplits = (a.splits||[]).length; const bSplits = (b.splits||[]).length;
+              if (aSplits !== bSplits) return aSplits > bSplits ? a : b;
+              const aNet = a.net_time_s||Infinity; const bNet = b.net_time_s||Infinity;
+              return aNet <= bNet ? a : b;
+            };
+            const chosen = pick(existing, r);
+            const other = chosen === existing ? r : existing;
+            const merged = { ...clone(chosen) };
+            merged.provenance = {
+              url: chosen.provenance?.url || existing.provenance?.url || r.provenance?.url,
+              fetched_at: new Date().toISOString(),
+              raw: { chosen: chosen.provenance?.raw, other: other.provenance?.raw },
+              merged_sources: Array.from(new Set([...(existing.provenance?.merged_sources||[]), r.source]))
+            };
+            // If simple numeric fields differ slightly, keep the chosen, record conflict
+            if (Math.abs((existing.net_time_s||0) - (r.net_time_s||0)) > 1) {
+              conflicts.push({ key, field: 'net_time_s', values: [existing.net_time_s, r.net_time_s] });
+            }
+            byKey.set(key, merged);
+          }
+        }
+        return { results: Array.from(byKey.values()), conflicts };
+      }
+
+      // Derived metrics and flags
+      function cToF(c){ return (c * 9/5) + 32; }
+      function kphToMph(k){ return k * 0.621371; }
+      function enrichDerived(results) {
+        const out = [];
+        for (const r of results) {
+          const pace = computePace(r);
+          const neg = hasNegativeSplit(r);
+          const thr = state.thresholds || { hot_f: 68, wind_mph: 10, humid_pct: 70 };
+          const flags = { hot: false, windy: false, humid: false, rainy: false, negative_splits: neg === true };
+          if (r.weather) {
+            // Accept either C/F and kph/mph fields; compute comparisons in Fahrenheit and mph
+            const tempF = (typeof r.weather.temperature_f === 'number') ? r.weather.temperature_f : (typeof r.weather.temperature_c === 'number' ? cToF(r.weather.temperature_c) : null);
+            const windMph = (typeof r.weather.wind_mph === 'number') ? r.weather.wind_mph : (typeof r.weather.wind_kph === 'number' ? kphToMph(r.weather.wind_kph) : null);
+            if (typeof tempF === 'number' && tempF >= thr.hot_f) flags.hot = true;
+            if (typeof windMph === 'number' && windMph >= thr.wind_mph) flags.windy = true;
+            if (typeof r.weather.humidity_pct === 'number' && r.weather.humidity_pct >= thr.humid_pct) flags.humid = true;
+            if (typeof r.weather.precip_mm === 'number' && r.weather.precip_mm > 0) flags.rainy = true;
+          }
+          out.push({ ...r, derived: { pace_s_per_km: pace }, derived_flags: flags });
+        }
+        return out;
+      }
+
+      // Rendering: table
+      function renderTable() {
+        const tbody = document.getElementById('resultsTbody');
+        tbody.innerHTML = '';
+        state.dataset.results.forEach((r, idx) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="nowrap">${fmtDate(r.date)}</td>
+            <td>${r.event_name || ''}</td>
+            <td>${[r.location?.city, r.location?.state, r.location?.country].filter(Boolean).join(', ')}</td>
+            <td class="nowrap">${(r.distance_km||'').toFixed ? (r.distance_km).toFixed(1)+' km' : ''}</td>
+            <td class="nowrap">${secondsToTimeStr(r.net_time_s)}</td>
+            <td class="nowrap">${kmPaceFromSecondsPerKm(r.derived?.pace_s_per_km)}</td>
+            <td class="nowrap">${[r.overall_place, r.gender_place, r.age_group_place].filter(x=>x!=null).join('/')}</td>
+            <td>${Object.entries(r.derived_flags||{}).filter(([k,v])=>v).map(([k])=>`<span class="badge">${k}</span>`).join(' ')}</td>
+            <td><span class="badge">${(r.provenance?.merged_sources||[r.source]).join('+')}</span></td>
+            <td class="row-actions">
+              <button class="btn secondary" data-action="edit" data-index="${idx}">Edit</button>
+            </td>`;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function selectRow(index) {
+        UI.selectedIndex = index;
+        const r = state.dataset.results[index];
+        const editor = document.getElementById('detailEditor');
+        const prov = document.getElementById('provenance');
+        if (!r) { editor.value = ''; prov.textContent=''; return; }
+        editor.value = JSON.stringify(r, null, 2);
+        prov.textContent = JSON.stringify(r.provenance || {}, null, 2);
+      }
+
+      // Charts
+      function clearSvg(svg) { while (svg.firstChild) svg.removeChild(svg.firstChild); }
+      function drawAxes(svg, x0, y0, x1, y1) {
+        const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+        const ax = document.createElementNS('http://www.w3.org/2000/svg','line');
+        ax.setAttribute('x1', x0); ax.setAttribute('y1', y1); ax.setAttribute('x2', x1); ax.setAttribute('y2', y1); ax.setAttribute('stroke', '#42526b');
+        const ay = document.createElementNS('http://www.w3.org/2000/svg','line');
+        ay.setAttribute('x1', x0); ay.setAttribute('y1', y0); ay.setAttribute('x2', x0); ay.setAttribute('y2', y1); ay.setAttribute('stroke', '#42526b');
+        g.appendChild(ax); g.appendChild(ay); svg.appendChild(g);
+      }
+      function drawTrendChart() {
+        const svg = document.getElementById('chartTrend'); clearSvg(svg);
+        const margin = { t:10, r:20, b:30, l:40 };
+        const width = svg.clientWidth || 600; const height = svg.clientHeight || 280;
+        const x0 = margin.l, y0 = margin.t, x1 = width - margin.r, y1 = height - margin.b;
+        drawAxes(svg, x0, y0, x1, y1);
+        const data = state.dataset.results.slice().sort((a,b)=>new Date(a.date)-new Date(b.date));
+        if (data.length === 0) return;
+        const minDate = +new Date(data[0].date); const maxDate = +new Date(data[data.length-1].date);
+        const times = data.map(d => d.net_time_s).filter(Boolean);
+        const minT = Math.min(...times), maxT = Math.max(...times);
+        const xScale = d => x0 + (x1-x0) * ((+new Date(d.date) - minDate) / (maxDate - minDate || 1));
+        const yScale = d => y1 - (y1-y0) * ((d.net_time_s - minT) / (maxT - minT || 1));
+        // line
+        let dAttr = '';
+        data.forEach((d,i)=>{ const x=xScale(d), y=yScale(d); dAttr += (i? ' L':'M')+x+','+y; });
+        const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+        path.setAttribute('d', dAttr); path.setAttribute('fill','none'); path.setAttribute('stroke', '#38bdf8'); path.setAttribute('stroke-width','2');
+        svg.appendChild(path);
+        // points with condition icons
+        data.forEach(d => {
+          const x=xScale(d), y=yScale(d);
+          const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+          circle.setAttribute('cx', x); circle.setAttribute('cy', y); circle.setAttribute('r', 4); circle.setAttribute('fill', '#93c5fd');
+          circle.setAttribute('data-title', `${d.event_name} ${fmtDate(d.date)}\n${secondsToTimeStr(d.net_time_s)}`);
+          svg.appendChild(circle);
+          const flags = Object.entries(d.derived_flags||{}).filter(([k,v])=>v).map(([k])=>k.slice(0,1).toUpperCase()).slice(0,3);
+          if (flags.length) {
+            const text = document.createElementNS('http://www.w3.org/2000/svg','text');
+            text.setAttribute('x', x+6); text.setAttribute('y', y-6); text.setAttribute('fill', '#fbbf24'); text.setAttribute('font-size','10'); text.textContent = flags.join('');
+            svg.appendChild(text);
+          }
+        });
+      }
+
+      function drawPaceDistanceScatter() {
+        const svg = document.getElementById('chartPaceDist'); clearSvg(svg);
+        const margin = { t:10, r:20, b:30, l:40 };
+        const width = svg.clientWidth || 600; const height = svg.clientHeight || 280;
+        const x0 = margin.l, y0 = margin.t, x1 = width - margin.r, y1 = height - margin.b;
+        drawAxes(svg, x0, y0, x1, y1);
+        const data = state.dataset.results.slice();
+        if (data.length === 0) return;
+        const minD = Math.min(...data.map(d=>d.distance_km||0));
+        const maxD = Math.max(...data.map(d=>d.distance_km||0));
+        const paces = data.map(d => d.derived?.pace_s_per_km).filter(Boolean);
+        const minP = Math.min(...paces), maxP = Math.max(...paces);
+        const xScale = d => x0 + (x1-x0) * ((d.distance_km - minD) / (maxD - minD || 1));
+        const yScale = d => y1 - (y1-y0) * ((d.derived.pace_s_per_km - minP) / (maxP - minP || 1));
+        data.forEach(d => {
+          if (!d.derived || !d.derived.pace_s_per_km) return;
+          const x = xScale(d), y = yScale(d);
+          const color = d.distance_km > 40 ? '#38bdf8' : d.distance_km > 20 ? '#22c55e' : '#f472b6';
+          const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+          circle.setAttribute('cx', x); circle.setAttribute('cy', y); circle.setAttribute('r', 4); circle.setAttribute('fill', color);
+          svg.appendChild(circle);
+        });
+      }
+
+      function drawNegativeSplitBars() {
+        const svg = document.getElementById('chartNegative'); clearSvg(svg);
+        const margin = { t:10, r:20, b:30, l:40 };
+        const width = svg.clientWidth || 600; const height = svg.clientHeight || 280;
+        const x0 = margin.l, y0 = margin.t, x1 = width - margin.r, y1 = height - margin.b;
+        drawAxes(svg, x0, y0, x1, y1);
+        const data = state.dataset.results.filter(r => r.splits && r.splits.length>1).slice().sort((a,b)=>new Date(a.date)-new Date(b.date));
+        if (data.length === 0) return;
+        const barsWidth = x1-x0;
+        const barW = Math.max(6, Math.min(24, Math.floor(barsWidth / (data.length*1.5))));
+        const deltas = data.map(d => {
+          const half = d.splits.find(s=>/half|21|13\.1/i.test(s.name)); const fin = d.splits[d.splits.length-1];
+          if (!half || !fin) return 0; return (fin.elapsed_s - half.elapsed_s) - half.elapsed_s; // second - first
+        });
+        const minD = Math.min(...deltas), maxD = Math.max(...deltas);
+        const yScale = delta => y1 - (y1-y0) * ((delta - minD) / (maxD - minD || 1));
+        data.forEach((d,i)=>{
+          const x = x0 + i*(barW+4);
+          const delta = deltas[i];
+          const y = yScale(delta); const h = y1 - y;
+          const rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+          rect.setAttribute('x', x); rect.setAttribute('y', y); rect.setAttribute('width', barW); rect.setAttribute('height', h);
+          rect.setAttribute('fill', delta < 0 ? '#22c55e' : '#ef4444');
+          svg.appendChild(rect);
+        });
+      }
+
+      function renderAll() {
+        renderTable();
+        drawTrendChart();
+        drawPaceDistanceScatter();
+        drawNegativeSplitBars();
+        document.getElementById('appVersion').textContent = APP.version;
+        document.getElementById('schemaVersion').textContent = APP.schemaVersion;
+      }
+
+      // IO: export/import/snapshots
+      function exportJSON() {
+        const blob = new Blob([JSON.stringify(state.dataset, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob); const a = document.createElement('a');
+        const key = snapshotKey();
+        a.href = url; a.download = `${key}.json`; a.click();
+        URL.revokeObjectURL(url);
+      }
+      function importJSONFile(file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          try { const data = JSON.parse(reader.result); if (!data || !Array.isArray(data.results)) throw new Error('Invalid schema'); state.dataset = data; UI.selectedIndex = -1; renderAll(); saveInfo('Imported.'); } catch (e) { alert('Import error: '+e.message); }
+        };
+        reader.readAsText(file);
+      }
+      function snapshotKey() { const p = state.person; return `${(p.full_name||'anon').replace(/\s+/g,'_')}_${p.birth_year||'yyyy'}`; }
+      function saveSnapshot() { const key = STORAGE_PREFIX + snapshotKey(); localStorage.setItem(key, JSON.stringify(state.dataset)); saveInfo('Saved to local storage.'); }
+      function loadSnapshot() { const key = STORAGE_PREFIX + snapshotKey(); const v = localStorage.getItem(key); if (!v) { saveInfo('No snapshot found.'); return; } try { state.dataset = JSON.parse(v); renderAll(); saveInfo('Loaded from local storage.'); } catch { saveInfo('Load error.'); } }
+      function saveInfo(msg) { document.getElementById('saveInfo').textContent = msg + ' ' + new Date().toLocaleTimeString(); setTimeout(()=>{ document.getElementById('saveInfo').textContent=''; }, 4000); }
+
+      // Fetch flow
+      async function runSearch() {
+        if (state.fetching) return; state.fetching = true; setStatus('Searching...');
+        try {
+          const person = clone(state.person);
+          const tasks = [];
+          state.raw_by_source = {};
+          if (state.sources.athlinks) tasks.push(fetchAthlinks(person).then(r=>{ state.raw_by_source.athlinks = r; return r; }));
+          const resultsNested = await Promise.all(tasks);
+          const resultsFlat = resultsNested.flat();
+          const merged = mergeResults(resultsFlat);
+          const enriched = enrichDerived(merged.results);
+          state.dataset = { person: clone(state.person), results: enriched };
+          setStatus(`Loaded ${enriched.length} results for ${state.person.full_name||'unknown'}. Conflicts: ${merged.conflicts.length}`);
+          UI.selectedIndex = -1;
+          renderAll();
+          saveSnapshot();
+        } catch (e) {
+          console.error(e); alert('Error during search: '+e.message);
+          setStatus('Error.');
+        } finally {
+          state.fetching = false;
+        }
+      }
+
+      function stopSearch() { setStatus('Stopped.'); /* In real APIs, use AbortController */ }
+      function clearAll() { state.person = { full_name:'', birth_year:null, gender:'', location_hint:'' }; state.dataset = { person:{}, results:[] }; state.raw_by_source={}; UI.selectedIndex=-1; bindInputsFromState(); renderAll(); setStatus('Cleared.'); }
+      function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+      // UI wiring
+      function bindInputsFromState() {
+        document.getElementById('fullName').value = state.person.full_name || '';
+        document.getElementById('birthYear').value = state.person.birth_year || '';
+        document.getElementById('gender').value = state.person.gender || '';
+        document.getElementById('athlinksApiKey').value = state.config.athlinks.api_key || '';
+        document.getElementById('athlinksBase').value = state.config.athlinks.base_url || '';
+      }
+
+      function readInputsToState() {
+        state.person.full_name = document.getElementById('fullName').value.trim();
+        state.person.birth_year = Number(document.getElementById('birthYear').value) || null;
+        state.person.gender = document.getElementById('gender').value;
+        state.config.athlinks.api_key = document.getElementById('athlinksApiKey').value.trim();
+        state.config.athlinks.base_url = document.getElementById('athlinksBase').value.trim() || 'https://api.athlinks.com/v1';
+      }
+
+      function initTabs() {
+        document.querySelectorAll('.tab').forEach(el => {
+          el.addEventListener('click', () => {
+            const tab = el.getAttribute('data-tab');
+            UI.activeTab = tab;
+            document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t===el));
+            document.querySelectorAll('.tabpanel').forEach(panel => panel.classList.toggle('active', panel.id === 'tab-'+tab));
+            renderAll();
+          });
+        });
+      }
+
+      function initEvents() {
+        document.getElementById('btnSearch').addEventListener('click', () => { readInputsToState(); runSearch(); });
+        document.getElementById('btnStop').addEventListener('click', stopSearch);
+        document.getElementById('btnClear').addEventListener('click', clearAll);
+        document.getElementById('btnExport').addEventListener('click', exportJSON);
+        document.getElementById('importFile').addEventListener('change', (e)=>{ const f = e.target.files[0]; if (f) importJSONFile(f); e.target.value = ''; });
+        document.getElementById('btnSaveSnapshot').addEventListener('click', saveSnapshot);
+        document.getElementById('btnLoadSnapshot').addEventListener('click', loadSnapshot);
+        document.getElementById('resultsTbody').addEventListener('click', (e) => {
+          const btn = e.target.closest('button[data-action="edit"]');
+          if (btn) { const i = Number(btn.getAttribute('data-index')); selectRow(i); }
+        });
+        document.getElementById('btnApplyEdit').addEventListener('click', () => {
+          if (UI.selectedIndex < 0) return; const txt = document.getElementById('detailEditor').value; try {
+            const obj = JSON.parse(txt); state.dataset.results[UI.selectedIndex] = obj; renderAll(); selectRow(UI.selectedIndex); saveSnapshot();
+          } catch (e) { alert('Invalid JSON: '+e.message); }
+        });
+        document.getElementById('btnRevertEdit').addEventListener('click', () => { selectRow(UI.selectedIndex); });
+        document.getElementById('btnApplyThresholds').addEventListener('click', () => {
+          const hot = Number(document.getElementById('thrHot').value) || 68;
+          const wind = Number(document.getElementById('thrWind').value) || 10;
+          const humid = Number(document.getElementById('thrHumid').value) || 70;
+          state.thresholds = { hot_f: hot, wind_mph: wind, humid_pct: humid };
+          state.dataset.results = enrichDerived(state.dataset.results.map(r => ({ ...r, derived_flags: {} })));
+          renderAll();
+          saveSnapshot();
+          setStatus('Applied thresholds.');
+        });
+        window.addEventListener('resize', () => { if (UI.activeTab==='view') { drawTrendChart(); drawPaceDistanceScatter(); drawNegativeSplitBars(); } });
+      }
+
+      function boot() {
+        bindInputsFromState(); initTabs(); initEvents(); renderAll(); setStatus('Ready.');
+        // Expose for tests
+        window.RunRun = { state, mergeResults, enrichDerived, parseTimeToSeconds, secondsToTimeStr, distanceBucket, computePace, hasNegativeSplit, fetchAthlinks };
+      }
+      document.addEventListener('DOMContentLoaded', boot);
+    </script>
+  </body>
+</html>
+
+
