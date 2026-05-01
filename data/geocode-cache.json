@@ -1,0 +1,309 @@
+{
+  "Angel Island|CA|USA": {
+    "country_code": "US",
+    "latitude": 37.8609,
+    "longitude": -122.4324,
+    "name": "Angel Island",
+    "timezone": "America/Los_Angeles"
+  },
+  "Buena Vista|CO|USA": {
+    "admin1": "Colorado",
+    "country_code": "US",
+    "latitude": 38.84222,
+    "longitude": -106.13113,
+    "name": "Buena Vista",
+    "timezone": "America/Denver"
+  },
+  "Carmel|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 36.55524,
+    "longitude": -121.92329,
+    "name": "Carmel",
+    "timezone": "America/Los_Angeles"
+  },
+  "Castro Valley|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.6941,
+    "longitude": -122.08635,
+    "name": "Castro Valley",
+    "timezone": "America/Los_Angeles"
+  },
+  "Chicago|IL|USA": {
+    "admin1": "Illinois",
+    "country_code": "US",
+    "latitude": 41.85003,
+    "longitude": -87.65005,
+    "name": "Chicago",
+    "timezone": "America/Chicago"
+  },
+  "Clayton Ca|CA|USA": {
+    "country_code": "US",
+    "latitude": 37.941,
+    "longitude": -121.9358,
+    "name": "Clayton",
+    "timezone": "America/Los_Angeles"
+  },
+  "Clayton|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.94103,
+    "longitude": -121.93579,
+    "name": "Clayton",
+    "timezone": "America/Los_Angeles"
+  },
+  "Cool|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 38.88722,
+    "longitude": -121.01472,
+    "name": "Cool",
+    "timezone": "America/Los_Angeles"
+  },
+  "Copenhagen, Denmark|COP|DEN": {
+    "country_code": "DK",
+    "latitude": 55.6759,
+    "longitude": 12.5655,
+    "name": "Copenhagen",
+    "timezone": "Europe/Copenhagen"
+  },
+  "Davis|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 38.54491,
+    "longitude": -121.74052,
+    "name": "Davis",
+    "timezone": "America/Los_Angeles"
+  },
+  "Felton|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.05134,
+    "longitude": -122.0733,
+    "name": "Felton",
+    "timezone": "America/Los_Angeles"
+  },
+  "Folsom|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 38.67796,
+    "longitude": -121.17606,
+    "name": "Folsom",
+    "timezone": "America/Los_Angeles"
+  },
+  "Half Moon Bay|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.46355,
+    "longitude": -122.42859,
+    "name": "Half Moon Bay",
+    "timezone": "America/Los_Angeles"
+  },
+  "Jenner|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 38.44964,
+    "longitude": -123.11556,
+    "name": "Jenner",
+    "timezone": "America/Los_Angeles"
+  },
+  "Leadville|CO|USA": {
+    "admin1": "Colorado",
+    "country_code": "US",
+    "latitude": 39.25082,
+    "longitude": -106.29252,
+    "name": "Leadville",
+    "timezone": "America/Denver"
+  },
+  "Livermore|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.68187,
+    "longitude": -121.76801,
+    "name": "Livermore",
+    "timezone": "America/Los_Angeles"
+  },
+  "Los Altos Hills|CA|USA": {
+    "country_code": "US",
+    "latitude": 37.3791,
+    "longitude": -122.1375,
+    "name": "Los Altos Hills",
+    "timezone": "America/Los_Angeles"
+  },
+  "Monterey|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 36.60024,
+    "longitude": -121.89468,
+    "name": "Monterey",
+    "timezone": "America/Los_Angeles"
+  },
+  "Oakland|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.80437,
+    "longitude": -122.2708,
+    "name": "Oakland",
+    "timezone": "America/Los_Angeles"
+  },
+  "Pacifica|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.61383,
+    "longitude": -122.48692,
+    "name": "Pacifica",
+    "timezone": "America/Los_Angeles"
+  },
+  "Palo Alto|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.44188,
+    "longitude": -122.14302,
+    "name": "Palo Alto",
+    "timezone": "America/Los_Angeles"
+  },
+  "Riverside|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 33.95335,
+    "longitude": -117.39616,
+    "name": "Riverside",
+    "timezone": "America/Los_Angeles"
+  },
+  "Rodeo Beach|CA|USA": {
+    "country_code": "US",
+    "latitude": 37.8324,
+    "longitude": -122.5353,
+    "name": "Rodeo Beach",
+    "timezone": "America/Los_Angeles"
+  },
+  "San Diego|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 32.71571,
+    "longitude": -117.16472,
+    "name": "San Diego",
+    "timezone": "America/Los_Angeles"
+  },
+  "San Francisco|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.77493,
+    "longitude": -122.41942,
+    "name": "San Francisco",
+    "timezone": "America/Los_Angeles"
+  },
+  "San Jose|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.33939,
+    "longitude": -121.89496,
+    "name": "San Jose",
+    "timezone": "America/Los_Angeles"
+  },
+  "San Leandro|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.72493,
+    "longitude": -122.15608,
+    "name": "San Leandro",
+    "timezone": "America/Los_Angeles"
+  },
+  "San Pablo|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.96215,
+    "longitude": -122.34553,
+    "name": "San Pablo",
+    "timezone": "America/Los_Angeles"
+  },
+  "San Ramon|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.77993,
+    "longitude": -121.97802,
+    "name": "San Ramon",
+    "timezone": "America/Los_Angeles"
+  },
+  "Santa Cruz|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 36.97412,
+    "longitude": -122.0308,
+    "name": "Santa Cruz",
+    "timezone": "America/Los_Angeles"
+  },
+  "Santa Rosa|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 38.44047,
+    "longitude": -122.71443,
+    "name": "Santa Rosa",
+    "timezone": "America/Los_Angeles"
+  },
+  "Saratoga|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.26383,
+    "longitude": -122.02301,
+    "name": "Saratoga",
+    "timezone": "America/Los_Angeles"
+  },
+  "Sausalito|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.85909,
+    "longitude": -122.48525,
+    "name": "Sausalito",
+    "timezone": "America/Los_Angeles"
+  },
+  "Tiburon|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.87354,
+    "longitude": -122.45664,
+    "name": "Belvedere Tiburon",
+    "timezone": "America/Los_Angeles"
+  },
+  "Tukwila|WA|USA": {
+    "admin1": "Washington",
+    "country_code": "US",
+    "latitude": 47.47399,
+    "longitude": -122.26096,
+    "name": "Tukwila",
+    "timezone": "America/Los_Angeles"
+  },
+  "Vancouver|BC|CAN": {
+    "admin1": "British Columbia",
+    "country_code": "CA",
+    "latitude": 49.24966,
+    "longitude": -123.11934,
+    "name": "Vancouver",
+    "timezone": "America/Vancouver"
+  },
+  "Walnut Creek|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.90631,
+    "longitude": -122.06496,
+    "name": "Walnut Creek",
+    "timezone": "America/Los_Angeles"
+  },
+  "Woodside|CA|USA": {
+    "admin1": "California",
+    "country_code": "US",
+    "latitude": 37.42994,
+    "longitude": -122.25386,
+    "name": "Woodside",
+    "timezone": "America/Los_Angeles"
+  },
+  "chicago|IL|USA": {
+    "admin1": "Illinois",
+    "country_code": "US",
+    "latitude": 41.85003,
+    "longitude": -87.65005,
+    "name": "Chicago",
+    "timezone": "America/Chicago"
+  }
+}

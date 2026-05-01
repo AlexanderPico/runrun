@@ -467,20 +467,6 @@
         justify-content: center;
         font-size: 52px;
       }
-      .cat-peek .peek-sparkle {
-        position: absolute;
-        left: 44px;
-        top: 12px;
-        font-size: 18px;
-        opacity: 0;
-        transform: scale(0.5) translateY(6px);
-        transition: opacity 180ms ease, transform 260ms ease;
-        text-shadow: 0 0 10px rgba(255,255,255,0.95);
-      }
-      .cat-peek.sparkle .peek-sparkle {
-        opacity: 0.95;
-        transform: scale(1) translateY(-3px);
-      }
       .cat-peek-left {
         transform: translateX(-62px);
       }
@@ -654,7 +640,7 @@
 
     <div class="cat-zone" aria-hidden="true">
       <div id="catNote" class="cat-note">edge cat on standby</div>
-      <div id="catPeek" class="cat-peek cat-peek-left"><div class="peek-emoji">🐈‍⬛</div><div class="peek-sparkle">✦</div></div>
+      <div id="catPeek" class="cat-peek cat-peek-left"><div class="peek-emoji">🐈‍⬛</div></div>
     </div>
 
     <script>
@@ -893,7 +879,7 @@
             </article>
           `).join('');
 
-          const yearBars = [...season.years];
+          const yearBars = [...season.years].sort((a, b) => Number(b.year) - Number(a.year));
           const maxMiles = Math.max(...yearBars.map((row) => row.miles), 1);
           const mileageChart = `
             <div class="chart-list">
@@ -914,6 +900,8 @@
           const bestTrailYear = [...season.years].sort((a, b) => b.trail - a.trail || b.miles - a.miles)[0] || null;
           const biggestOutingYear = [...season.years].sort((a, b) => (b.avgMilesPerRace || 0) - (a.avgMilesPerRace || 0) || b.miles - a.miles)[0] || null;
           const quietestYear = [...season.years].sort((a, b) => a.races - b.races || a.miles - b.miles)[0] || null;
+          const bestRoadYear = [...season.years].sort((a, b) => b.road - a.road || b.miles - a.miles)[0] || null;
+          const peakMileageYear = [...season.years].sort((a, b) => b.miles - a.miles || b.races - a.races)[0] || null;
           const consistencyCard = `
             <div class="chart-list">
               <div class="chart-row">
@@ -940,13 +928,21 @@
                 <div class="chart-meta"><div><strong>Quietest active year</strong><span class="subtle">Fewest races with at least one result</span></div><div>${quietestYear ? `${quietestYear.year} · ${quietestYear.races} race${quietestYear.races === 1 ? '' : 's'}` : '—'}</div></div>
                 <div class="track"><div class="fill" style="width:${quietestYear ? Math.max(10, (quietestYear.races / Math.max(...season.years.map((row) => row.races), 1)) * 100) : 10}%"></div></div>
               </div>
+              <div class="chart-row">
+                <div class="chart-meta"><div><strong>Peak mileage year</strong><span class="subtle">Largest annual distance total</span></div><div>${peakMileageYear ? `${peakMileageYear.year} · ${formatNumber(peakMileageYear.miles, 1)} mi` : '—'}</div></div>
+                <div class="track"><div class="fill alt" style="width:${peakMileageYear ? Math.max(10, (peakMileageYear.miles / Math.max(...season.years.map((row) => row.miles), 1)) * 100) : 10}%"></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-meta"><div><strong>Most road-heavy year</strong><span class="subtle">Highest road race count</span></div><div>${bestRoadYear ? `${bestRoadYear.year} · ${bestRoadYear.road} road` : '—'}</div></div>
+                <div class="track"><div class="fill ink" style="width:${bestRoadYear ? Math.max(10, (bestRoadYear.road / Math.max(...season.years.map((row) => row.races), 1)) * 100) : 10}%"></div></div>
+              </div>
             </div>
           `;
 
           document.getElementById('seasonGrid').innerHTML = `
             <article class="viz-card">
               <div class="viz-title"><div><div class="mini-label">Mileage trend</div><h3>Annual mileage history</h3></div></div>
-              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">All ${yearBars.length} active seasons in chronological order, with race count and trail/road mix.</div>
+              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">All ${yearBars.length} active seasons with latest years first, plus race count and trail/road mix.</div>
               ${mileageChart}
             </article>
             <article class="viz-card">
@@ -1183,7 +1179,6 @@
           let noteShown = false;
           let scrollTimer = 0;
           let hideTimer = 0;
-          let sparkleTimer = 0;
           const seenSections = new WeakSet();
 
           if (!peek || !note || !shell || !sectionAnchors.length || reduceMotion) return;
@@ -1206,8 +1201,7 @@
 
           function resetPeek() {
             window.clearTimeout(hideTimer);
-            window.clearTimeout(sparkleTimer);
-            peek.classList.remove('visible', 'hiding', 'sparkle');
+            peek.classList.remove('visible', 'hiding');
           }
 
           function pickSection() {
@@ -1241,7 +1235,7 @@
             const travel = Math.max(84, Math.min(anchorRect.height - 84, 240));
             const yBase = Math.max(anchorRect.top + 42, 92);
             const y = Math.min(window.innerHeight - 116, yBase + Math.random() * travel);
-            peek.classList.remove('cat-peek-left', 'cat-peek-right', 'visible', 'hiding', 'sparkle');
+            peek.classList.remove('cat-peek-left', 'cat-peek-right', 'visible', 'hiding');
             peek.classList.add(leftSide ? 'cat-peek-left' : 'cat-peek-right');
             peek.style.top = `${Math.round(y)}px`;
             peek.style.left = `${Math.round(leftSide ? anchorRect.left - 18 : anchorRect.right - 54)}px`;
@@ -1249,18 +1243,6 @@
               peek.classList.add('visible');
               hideTimer = window.setTimeout(() => peek.classList.add('hiding'), 900);
             });
-          }
-
-          function sparkleAndHide() {
-            if (!peek.classList.contains('visible') || peek.classList.contains('sparkle')) return;
-            window.clearTimeout(hideTimer);
-            peek.classList.add('sparkle');
-            sparkleTimer = window.setTimeout(() => {
-              peek.classList.add('hiding');
-              sparkleTimer = window.setTimeout(() => {
-                peek.classList.remove('visible', 'hiding', 'sparkle');
-              }, 260);
-            }, 120);
           }
 
           function revealAfterScrollStop() {
@@ -1280,7 +1262,7 @@
             scrollTimer = window.setTimeout(revealAfterScrollStop, 260);
           }, { passive: true });
 
-          peek.addEventListener('mouseenter', sparkleAndHide);
+          peek.addEventListener('mouseenter', resetPeek);
           window.addEventListener('resize', resetPeek, { passive: true });
         }
 
