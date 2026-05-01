@@ -1,0 +1,11 @@
+{
+  "name": "runrun",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Static local-first race diary for Elisa Park's Athlinks history",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check:python": "python3 -m py_compile scripts/build_diary_data.py"
+  }
+}
