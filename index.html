@@ -895,13 +895,6 @@
         function createScatter(points) {
           const clean = (points || []).filter((point) => point.temperature_f != null && point.pace_seconds_per_mile != null).slice(0, 160);
           if (!clean.length) return '<p class="mini-copy">No scatter points available.</p>';
-          const highlighted = new Set(
-            [...clean]
-              .filter((point) => Number.isFinite(Number(point.elevation_gain_ft)))
-              .sort((a, b) => Number(b.elevation_gain_ft || 0) - Number(a.elevation_gain_ft || 0))
-              .slice(0, 3)
-              .map((point) => `${point.race_name}__${point.race_date}__${point.temperature_f}__${point.pace_seconds_per_mile}`)
-          );
           const minTemp = Math.min(...clean.map((point) => point.temperature_f));
           const maxTemp = Math.max(...clean.map((point) => point.temperature_f));
           const minPace = Math.min(...clean.map((point) => point.pace_seconds_per_mile));
@@ -914,8 +907,7 @@
           const circles = clean.map((point) => {
             const rainy = (point.rain_in || 0) > 0.02;
             const isNight = point.day_period === 'night';
-            const highlightKey = `${point.race_name}__${point.race_date}__${point.temperature_f}__${point.pace_seconds_per_mile}`;
-            const isElevationHighlight = highlighted.has(highlightKey);
+            const isElevationHighlight = Number(point.elevation_gain_ft || 0) > 4000;
             const fill = isElevationHighlight ? '#a64643' : isNight ? '#765b9d' : rainy ? '#1f1a17' : '#b69b7a';
             const raceLabel = point.day_period_label ? ` · ${point.day_period_label}` : '';
             const elevationLabel = point.elevation_gain_ft != null ? ` · ${formatElevationGain(point.elevation_gain_ft)}` : '';
