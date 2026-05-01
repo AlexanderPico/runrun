@@ -11,6 +11,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -201,6 +203,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -311,6 +315,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -421,6 +427,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -591,6 +599,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -761,6 +771,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -931,6 +943,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -1061,6 +1075,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -1191,6 +1207,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -1341,6 +1359,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -1491,6 +1511,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -1641,6 +1663,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -1831,6 +1855,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -1981,6 +2007,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -2171,6 +2199,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -2301,6 +2331,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -2431,6 +2463,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -2601,6 +2635,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -2751,6 +2787,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -2901,6 +2939,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -3031,6 +3071,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -3221,6 +3263,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -3371,6 +3415,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -3521,6 +3567,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -3671,6 +3719,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -3821,6 +3871,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 2,
     "hourly_sample": [
       {
@@ -3911,6 +3963,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 2,
     "hourly_sample": [
       {
@@ -4001,6 +4055,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -4171,6 +4227,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -4361,6 +4419,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -4511,6 +4571,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -4641,6 +4703,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -4771,6 +4835,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -4961,6 +5027,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -5091,6 +5159,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -5201,6 +5271,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -5331,6 +5403,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -5441,6 +5515,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 2,
     "hourly_sample": [
       {
@@ -5531,6 +5607,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -5641,6 +5719,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 2,
     "hourly_sample": [
       {
@@ -5731,6 +5811,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -5861,6 +5943,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -5971,6 +6055,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -6081,6 +6167,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -6211,6 +6299,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -6401,6 +6491,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -6591,6 +6683,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "night",
+    "day_period_label": "Night race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -6701,6 +6795,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -6831,6 +6927,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -6941,6 +7039,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -7051,6 +7151,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -7221,6 +7323,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -7411,6 +7515,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -7521,6 +7627,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -7651,6 +7759,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -7761,6 +7871,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -7858,6 +7970,58 @@
     "wind_mph_max": 7.4,
     "window_end_local": "2014-06-21T09:00",
     "window_start_local": "2014-06-21T08:00"
+  },
+  "37.7749|-122.4194|2016-09-08T17:00:00|1": {
+    "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.77493&longitude=-122.41942&start_date=2016-09-08&end_date=2016-09-08&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles",
+    "apparent_temperature_f_avg": 62.5,
+    "cloud_cover_pct_avg": 12.0,
+    "condition_flags": {
+      "cold": false,
+      "hot": false,
+      "humid": false,
+      "rainy": false,
+      "snowy": false,
+      "windy": false
+    },
+    "day_period": "day",
+    "day_period_label": "Day race",
+    "hour_count": 2,
+    "hourly_sample": [
+      {
+        "apparent_temperature_f": 63.9,
+        "cloud_cover_pct": 12,
+        "humidity_pct": 59,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 66.9,
+        "time": "2016-09-08T17:00",
+        "wind_mph": 8.5
+      },
+      {
+        "apparent_temperature_f": 61.2,
+        "cloud_cover_pct": 12,
+        "humidity_pct": 66,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 64.1,
+        "time": "2016-09-08T18:00",
+        "wind_mph": 8.5
+      }
+    ],
+    "humidity_pct_avg": 62.5,
+    "precipitation_in_total": 0.0,
+    "race_window_hours": 1,
+    "rain_in_total": 0.0,
+    "snowfall_in_total": 0.0,
+    "source": "open-meteo",
+    "temperature_f_avg": 65.5,
+    "temperature_f_max": 66.9,
+    "temperature_f_start": 66.9,
+    "timezone": "America/Los_Angeles",
+    "wind_mph_avg": 8.5,
+    "wind_mph_max": 8.5,
+    "window_end_local": "2016-09-08T18:00",
+    "window_start_local": "2016-09-08T17:00"
   },
   "37.7749|-122.4194|2016-09-08T18:45:00|1": {
     "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.77493&longitude=-122.41942&start_date=2016-09-08&end_date=2016-09-08&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles",
@@ -8013,6 +8177,8 @@
       "snowy": false,
       "windy": true
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -8123,6 +8289,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -8253,6 +8421,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -8383,6 +8553,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -8533,6 +8705,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -8643,6 +8817,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -8813,6 +8989,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -9003,6 +9181,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -9153,6 +9333,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -9303,6 +9485,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -9413,6 +9597,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 2,
     "hourly_sample": [
       {
@@ -9503,6 +9689,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -9633,6 +9821,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -9823,6 +10013,8 @@
       "snowy": false,
       "windy": true
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -9953,6 +10145,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -10103,6 +10297,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -10233,6 +10429,8 @@
       "snowy": false,
       "windy": true
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -10363,6 +10561,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 2,
     "hourly_sample": [
       {
@@ -10453,6 +10653,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 5,
     "hourly_sample": [
       {
@@ -10603,6 +10805,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -10773,6 +10977,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -10883,6 +11089,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -11013,6 +11221,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -11315,6 +11525,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -11475,6 +11687,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "night",
+    "day_period_label": "Night race",
     "hour_count": 2,
     "hourly_sample": [
       {
@@ -11565,6 +11779,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -11675,6 +11891,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -11805,6 +12023,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -11995,6 +12215,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -12185,6 +12407,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -12375,6 +12599,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -12565,6 +12791,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 3,
     "hourly_sample": [
       {
@@ -12675,6 +12903,8 @@
       "snowy": false,
       "windy": true
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -12865,6 +13095,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -13055,6 +13287,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -13487,6 +13721,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -13657,6 +13893,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -13827,6 +14065,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -13997,6 +14237,8 @@
       "snowy": false,
       "windy": true
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -14187,6 +14429,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -14377,6 +14621,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -14567,6 +14813,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {
@@ -14757,6 +15005,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 6,
     "hourly_sample": [
       {
@@ -14927,6 +15177,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -15057,6 +15309,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 4,
     "hourly_sample": [
       {
@@ -15187,6 +15441,8 @@
       "snowy": false,
       "windy": false
     },
+    "day_period": "day",
+    "day_period_label": "Day race",
     "hour_count": 7,
     "hourly_sample": [
       {

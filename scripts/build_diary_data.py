@@ -46,7 +46,7 @@ WEATHER_START_OVERRIDES = {
     ('Bank of America Chicago Marathon 2010', '2010-10-10'): '2010-10-10T07:30:00',
     ('Davis Turkey Trot', '2022-11-19'): '2022-11-19T08:00:00',
     ('Davis Moonlight Run', '2025-07-12'): '2025-07-12T20:00:00',
-    ('J.P. Morgan Chase Corporate Challenge', '2016-09-08'): '2016-09-08T18:45:00',
+    ('J.P. Morgan Chase Corporate Challenge', '2016-09-08'): '2016-09-08T17:00:00',
 }
 
 
@@ -389,7 +389,13 @@ def fetch_weather(geo: dict[str, Any] | None, race_dt: datetime | None, finish_t
     hours = max(1, min(6, int(math.ceil((finish_time_ms or 7200000) / 3600000))))
     key = weather_key(geo['latitude'], geo['longitude'], race_dt, hours)
     if key in WEATHER_CACHE:
-        return WEATHER_CACHE[key]
+        cached = dict(WEATHER_CACHE[key])
+        if 'day_period' not in cached or 'day_period_label' not in cached:
+            day_period, day_period_label = day_period_for_start(race_dt)
+            cached['day_period'] = day_period
+            cached['day_period_label'] = day_period_label
+            WEATHER_CACHE[key] = cached
+        return cached
     params = {
         'latitude': geo['latitude'],
         'longitude': geo['longitude'],

@@ -55,15 +55,21 @@ test('weather sampling uses race-time windows and Davis Moonlight override', asy
 test('weather metadata includes day/night labels', async () => {
   const diary = await loadDiaryData();
   const moonlight = diary.results.find((entry) => entry.race_name === 'Davis Moonlight Run' && entry.race_date_local === '2025-07-12');
-  const davisStampede = diary.results.find((entry) => entry.race_name === 'Davis Stampede' && entry.race_date_local === '2026-02-22');
+  const chicagoMarathon = diary.results.find((entry) => entry.race_name === 'Bank of America Chicago Marathon 2010' && entry.race_date_local === '2010-10-10');
+  const davisTurkeyTrot = diary.results.find((entry) => entry.race_name === 'Davis Turkey Trot' && entry.race_date_local === '2022-11-19');
   const goldenGateHalf = diary.results.find((entry) => entry.race_name === 'Golden Gate Half' && entry.race_date_local === '2025-11-02');
+  const jpMorgan = diary.results.find((entry) => entry.race_name === 'J.P. Morgan Chase Corporate Challenge' && entry.race_date_local === '2016-09-08');
 
   assert.equal(moonlight?.weather?.day_period, 'night');
   assert.equal(moonlight?.weather?.day_period_label, 'Night race');
-  assert.equal(davisStampede?.weather?.day_period, 'day');
-  assert.equal(davisStampede?.weather?.day_period_label, 'Day race');
+  assert.equal(chicagoMarathon?.weather?.day_period, 'day');
+  assert.equal(chicagoMarathon?.weather?.day_period_label, 'Day race');
+  assert.equal(davisTurkeyTrot?.weather?.day_period, 'day');
+  assert.equal(davisTurkeyTrot?.weather?.day_period_label, 'Day race');
   assert.equal(goldenGateHalf?.weather?.day_period, 'day');
   assert.equal(goldenGateHalf?.weather?.day_period_label, 'Day race');
+  assert.equal(jpMorgan?.weather?.day_period, 'day');
+  assert.equal(jpMorgan?.weather?.day_period_label, 'Day race');
 });
 
 test('index page wires local data sources and smoke-test API', async () => {
@@ -88,8 +94,8 @@ test('scatter plot and grit map labels stay semantically clear', async () => {
   assert.match(html, /<text x="\$\{point\.x\.toFixed\(1\)\}" y="\$\{\(baseline \+ 14\)\.toFixed\(1\)\}" text-anchor="middle" fill="#7a6f64" font-size="11">\$\{index \+ 1\}<\/text>/);
   assert.match(html, /A proxy based on distance, trail bias, finish duration, weather strain, and slower-than-baseline pace\. Trail efforts are black dots; road efforts are brown\./);
   assert.match(html, /const isNight = point\.day_period === 'night';/);
-  assert.match(html, /const fill = isNight \? '#a88fcb' : rainy \? '#1f1a17' : '#b69b7a';/);
-  assert.match(html, /<span><i style="background:#a88fcb"><\/i> Night race<\/span>/);
+  assert.match(html, /const fill = isNight \? '#967bbd' : rainy \? '#1f1a17' : '#b69b7a';/);
+  assert.match(html, /<span><i style="background:#967bbd"><\/i> Night race<\/span>/);
 });
 
 test('bucket charts render in canonical order with signed bars for relative pace deltas', async () => {
@@ -120,6 +126,8 @@ test('README documents local validation commands', async () => {
   const readme = await readRepoFile('README.md');
 
   assert.match(readme, /npm test/);
-  assert.match(readme, /python3 -m py_compile scripts\/build_diary_data\.py/);
+  assert.match(readme, /python3 -m venv \.venv/);
+  assert.match(readme, /python -m pip install -r requirements\.txt/);
+  assert.match(readme, /python -m py_compile scripts\/build_diary_data\.py/);
   assert.match(readme, /GitHub Actions/i);
 });

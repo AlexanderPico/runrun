@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-05-01T19:13:08.867786Z",
+    "generated_at": "2026-05-01T19:15:07.593932Z",
     "repo": "/Users/aimee/.openclaw/git/AlexanderPico/runrun",
     "source_site": "Athlinks",
     "athlete_page": "https://www.athlinks.com/athletes/92157185",
@@ -1283,8 +1283,8 @@
         },
         {
           "label": "55\u201364\u00b0F",
-          "race_count": 37,
-          "avg_pace_seconds_per_mile": 756.9,
+          "race_count": 36,
+          "avg_pace_seconds_per_mile": 761.5,
           "avg_pace_vs_pattern_baseline_pct": -2.4
         },
         {
@@ -1295,8 +1295,8 @@
         },
         {
           "label": "65\u201374\u00b0F",
-          "race_count": 15,
-          "avg_pace_seconds_per_mile": 907.2,
+          "race_count": 16,
+          "avg_pace_seconds_per_mile": 887.4,
           "avg_pace_vs_pattern_baseline_pct": 7.2
         }
       ],
@@ -1355,29 +1355,29 @@
         },
         {
           "label": "50\u201364%",
-          "race_count": 16,
-          "avg_pace_seconds_per_mile": 809.0,
+          "race_count": 17,
+          "avg_pace_seconds_per_mile": 796.2,
           "avg_pace_vs_pattern_baseline_pct": 2.0
         },
         {
           "label": "65\u201374%",
-          "race_count": 23,
-          "avg_pace_seconds_per_mile": 794.5,
+          "race_count": 22,
+          "avg_pace_seconds_per_mile": 803.7,
           "avg_pace_vs_pattern_baseline_pct": 2.1
         }
       ],
       "correlations": {
-        "temperature_vs_pace_seconds_per_mile": 0.327,
-        "wind_vs_pace_seconds_per_mile": -0.01,
-        "humidity_vs_pace_seconds_per_mile": -0.145
+        "temperature_vs_pace_seconds_per_mile": 0.322,
+        "wind_vs_pace_seconds_per_mile": -0.011,
+        "humidity_vs_pace_seconds_per_mile": -0.139
       },
       "scatter_points": [
         {
           "race_name": "Davis Stampede",
           "race_date": "2026-02-22",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 46.1,
           "rain_in": 0.0,
           "wind_mph": 3.6,
@@ -1389,8 +1389,8 @@
           "race_name": "Davis Turkey Trot",
           "race_date": "2025-11-22",
           "course_pattern": "10K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 43.1,
           "rain_in": 0.0,
           "wind_mph": 4.0,
@@ -1402,8 +1402,8 @@
           "race_name": "Golden Gate Half",
           "race_date": "2025-11-02",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 55.2,
           "rain_in": 0.0,
           "wind_mph": 2.4,
@@ -1415,8 +1415,8 @@
           "race_name": "Bank of America Chicago Marathon",
           "race_date": "2025-10-12",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 51.5,
           "rain_in": 0.0,
           "wind_mph": 4.7,
@@ -1428,8 +1428,8 @@
           "race_name": "Santa Rosa Marathon",
           "race_date": "2025-08-23",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 58.8,
           "rain_in": 0.0,
           "wind_mph": 3.1,
@@ -1441,8 +1441,8 @@
           "race_name": "Davis Moonlight Run",
           "race_date": "2025-07-12",
           "course_pattern": "10K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "night",
+          "day_period_label": "Night race",
           "temperature_f": 80.2,
           "rain_in": 0.0,
           "wind_mph": 9.5,
@@ -1454,8 +1454,8 @@
           "race_name": "Oakland Running Festival",
           "race_date": "2025-03-21",
           "course_pattern": "10K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 46.0,
           "rain_in": 0.0,
           "wind_mph": 1.8,
@@ -1467,8 +1467,8 @@
           "race_name": "Davis Stampede",
           "race_date": "2025-02-23",
           "course_pattern": "10K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 53.1,
           "rain_in": 0.0,
           "wind_mph": 4.5,
@@ -1480,8 +1480,8 @@
           "race_name": "Golden Gate Half Marathon",
           "race_date": "2024-11-03",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 55.4,
           "rain_in": 0.0,
           "wind_mph": 9.0,
@@ -1493,8 +1493,8 @@
           "race_name": "Bank of America Chicago Marathon",
           "race_date": "2024-10-13",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 58.7,
           "rain_in": 0.004,
           "wind_mph": 8.6,
@@ -1506,8 +1506,8 @@
           "race_name": "SPASM Crystal Springs Trail Run",
           "race_date": "2024-09-01",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 64.0,
           "rain_in": 0.0,
           "wind_mph": 3.5,
@@ -1519,8 +1519,8 @@
           "race_name": "Almaden Hills Trail Run - Summer",
           "race_date": "2024-08-17",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 74.5,
           "rain_in": 0.0,
           "wind_mph": 3.2,
@@ -1532,8 +1532,8 @@
           "race_name": "Summer Breeze",
           "race_date": "2024-08-03",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 62.9,
           "rain_in": 0.0,
           "wind_mph": 3.7,
@@ -1545,8 +1545,8 @@
           "race_name": "San Lorenzo River Trail Run",
           "race_date": "2024-07-13",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 60.6,
           "rain_in": 0.0,
           "wind_mph": 4.0,
@@ -1558,8 +1558,8 @@
           "race_name": "Zoom Turkey Trot",
           "race_date": "2023-11-23",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 55.0,
           "rain_in": 0.0,
           "wind_mph": 3.0,
@@ -1571,8 +1571,8 @@
           "race_name": "Bank of America Chicago Marathon",
           "race_date": "2023-10-08",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 50.0,
           "rain_in": 0.0,
           "wind_mph": 9.3,
@@ -1584,8 +1584,8 @@
           "race_name": "Santa Cruz",
           "race_date": "2023-08-26",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 66.7,
           "rain_in": 0.0,
           "wind_mph": 4.6,
@@ -1597,8 +1597,8 @@
           "race_name": "Copenhagen Marathon",
           "race_date": "2023-05-14",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 53.9,
           "rain_in": 0.0,
           "wind_mph": 7.6,
@@ -1610,8 +1610,8 @@
           "race_name": "Livermore Valley Half Marathon",
           "race_date": "2023-03-05",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 42.9,
           "rain_in": 0.039,
           "wind_mph": 9.6,
@@ -1623,8 +1623,8 @@
           "race_name": "Kaiser Permanente San Francisco Half Marathon & 5K",
           "race_date": "2023-02-05",
           "course_pattern": "10K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 50.1,
           "rain_in": 0.016,
           "wind_mph": 17.4,
@@ -1636,8 +1636,8 @@
           "race_name": "Byxbee Parkrun #100",
           "race_date": "2022-11-24",
           "course_pattern": "5K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 49.0,
           "rain_in": 0.0,
           "wind_mph": 3.1,
@@ -1662,8 +1662,8 @@
           "race_name": "Byxbee Parkrun #98",
           "race_date": "2022-11-12",
           "course_pattern": "5K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 49.4,
           "rain_in": 0.0,
           "wind_mph": 1.8,
@@ -1675,8 +1675,8 @@
           "race_name": "Santa Cruz Trail Run",
           "race_date": "2022-08-27",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 57.5,
           "rain_in": 0.004,
           "wind_mph": 3.6,
@@ -1688,8 +1688,8 @@
           "race_name": "Redwood (Summer) Trail Run",
           "race_date": "2022-08-06",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 65.2,
           "rain_in": 0.0,
           "wind_mph": 8.0,
@@ -1701,8 +1701,8 @@
           "race_name": "Livermore Valley Half Marathon",
           "race_date": "2022-03-06",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 45.3,
           "rain_in": 0.0,
           "wind_mph": 3.4,
@@ -1714,8 +1714,8 @@
           "race_name": "Mount Diablo Trail Run - \"When Hell Freezes Over\"",
           "race_date": "2022-01-29",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 46.4,
           "rain_in": 0.0,
           "wind_mph": 3.6,
@@ -1727,8 +1727,8 @@
           "race_name": "Crystal Springs Trail Run",
           "race_date": "2022-01-16",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 51.8,
           "rain_in": 0.0,
           "wind_mph": 1.7,
@@ -1740,8 +1740,8 @@
           "race_name": "Rodeo Beach Trail Run",
           "race_date": "2021-12-11",
           "course_pattern": "20K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 46.7,
           "rain_in": 0.0,
           "wind_mph": 2.4,
@@ -1753,8 +1753,8 @@
           "race_name": "Stevens Creek Striders",
           "race_date": "2018-09-22",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 69.3,
           "rain_in": 0.0,
           "wind_mph": 2.4,
@@ -1766,8 +1766,8 @@
           "race_name": "Cinderella Trail Run",
           "race_date": "2018-08-11",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 67.4,
           "rain_in": 0.0,
           "wind_mph": 8.4,
@@ -1779,8 +1779,8 @@
           "race_name": "Stevens Creek Striders Trail Races",
           "race_date": "2017-09-23",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 66.2,
           "rain_in": 0.0,
           "wind_mph": 4.3,
@@ -1792,8 +1792,8 @@
           "race_name": "Crystal Springs (Summer)",
           "race_date": "2017-08-05",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 68.3,
           "rain_in": 0.02,
           "wind_mph": 5.7,
@@ -1805,8 +1805,8 @@
           "race_name": "Rodeo Beach",
           "race_date": "2016-12-10",
           "course_pattern": "20K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 57.0,
           "rain_in": 0.342,
           "wind_mph": 13.7,
@@ -1818,8 +1818,8 @@
           "race_name": "Saratoga Trail Run",
           "race_date": "2016-11-19",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 54.8,
           "rain_in": 0.032,
           "wind_mph": 10.1,
@@ -1831,8 +1831,8 @@
           "race_name": "Bank of America Chicago Marathon",
           "race_date": "2016-10-09",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 56.2,
           "rain_in": 0.0,
           "wind_mph": 6.6,
@@ -1844,8 +1844,8 @@
           "race_name": "Half Moon Bay International Marathon",
           "race_date": "2016-09-18",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 68.0,
           "rain_in": 0.0,
           "wind_mph": 1.7,
@@ -1857,12 +1857,12 @@
           "race_name": "J.P. Morgan Chase Corporate Challenge",
           "race_date": "2016-09-08",
           "course_pattern": "3.2Mi Run",
-          "day_period": "night",
-          "day_period_label": "Night race",
-          "temperature_f": 62.6,
+          "day_period": "day",
+          "day_period_label": "Day race",
+          "temperature_f": 65.5,
           "rain_in": 0.0,
-          "wind_mph": 8.2,
-          "humidity_pct": 70.0,
+          "wind_mph": 8.5,
+          "humidity_pct": 62.5,
           "pace_seconds_per_mile": 591.25,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -1870,8 +1870,8 @@
           "race_name": "Mount Diablo trail run",
           "race_date": "2016-08-28",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 65.4,
           "rain_in": 0.0,
           "wind_mph": 5.9,
@@ -1883,8 +1883,8 @@
           "race_name": "Crystal Springs",
           "race_date": "2016-08-07",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 62.2,
           "rain_in": 0.0,
           "wind_mph": 6.1,
@@ -1896,8 +1896,8 @@
           "race_name": "Salt Point Trail Run",
           "race_date": "2016-07-23",
           "course_pattern": "15K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 81.7,
           "rain_in": 0.0,
           "wind_mph": 6.4,
@@ -1909,8 +1909,8 @@
           "race_name": "Chicago Marathon ",
           "race_date": "2015-10-11",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 61.3,
           "rain_in": 0.0,
           "wind_mph": 12.6,
@@ -1922,8 +1922,8 @@
           "race_name": "Way Too Cool",
           "race_date": "2015-03-07",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 54.2,
           "rain_in": 0.0,
           "wind_mph": 4.7,
@@ -1935,8 +1935,8 @@
           "race_name": "Zoom Turkey Trot",
           "race_date": "2014-11-27",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 61.6,
           "rain_in": 0.0,
           "wind_mph": 1.8,
@@ -1948,8 +1948,8 @@
           "race_name": "Chicago Marathon",
           "race_date": "2014-10-12",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 49.5,
           "rain_in": 0.0,
           "wind_mph": 8.9,
@@ -1961,8 +1961,8 @@
           "race_name": "American River 50-Mile Endurance Run",
           "race_date": "2014-04-05",
           "course_pattern": "50Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 50.3,
           "rain_in": 0.0,
           "wind_mph": 4.8,
@@ -1974,8 +1974,8 @@
           "race_name": "Way Too Cool 50k",
           "race_date": "2014-03-08",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 56.7,
           "rain_in": 0.0,
           "wind_mph": 3.7,
@@ -1987,8 +1987,8 @@
           "race_name": "Woodside Ramble - Winter",
           "race_date": "2013-12-14",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 50.6,
           "rain_in": 0.0,
           "wind_mph": 4.0,
@@ -2000,8 +2000,8 @@
           "race_name": "Bank of America Chicago Marathon",
           "race_date": "2013-10-13",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 56.2,
           "rain_in": 0.0,
           "wind_mph": 7.6,
@@ -2013,8 +2013,8 @@
           "race_name": "Half Moon Bay International Marathon",
           "race_date": "2013-09-29",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 61.3,
           "rain_in": 0.0,
           "wind_mph": 2.5,
@@ -2026,8 +2026,8 @@
           "race_name": "Coastal 50 Km",
           "race_date": "2013-09-21",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 62.2,
           "rain_in": 0.268,
           "wind_mph": 10.0,
@@ -2039,8 +2039,8 @@
           "race_name": "Skyline 50k",
           "race_date": "2013-08-11",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 62.9,
           "rain_in": 0.0,
           "wind_mph": 6.0,
@@ -2052,8 +2052,8 @@
           "race_name": "Big Basin 50 Km & Marathon",
           "race_date": "2013-06-09",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 68.6,
           "rain_in": 0.0,
           "wind_mph": 5.4,
@@ -2065,8 +2065,8 @@
           "race_name": "Quicksilver 25K/50K/50M",
           "race_date": "2013-05-11",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 69.3,
           "rain_in": 0.0,
           "wind_mph": 2.1,
@@ -2078,8 +2078,8 @@
           "race_name": "Big Sur International Marathon",
           "race_date": "2013-04-28",
           "course_pattern": "21Mi Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 51.8,
           "rain_in": 0.0,
           "wind_mph": 4.5,
@@ -2091,8 +2091,8 @@
           "race_name": "Canyon Meadow 2013",
           "race_date": "2013-03-24",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 57.4,
           "rain_in": 0.0,
           "wind_mph": 3.8,
@@ -2104,8 +2104,8 @@
           "race_name": "Redwood Trail Run (Spring)",
           "race_date": "2013-03-24",
           "course_pattern": "50K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 57.4,
           "rain_in": 0.0,
           "wind_mph": 3.8,
@@ -2117,8 +2117,8 @@
           "race_name": "Kaiser Permanente San Francisco Half Marathon & 5K",
           "race_date": "2013-02-03",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 46.6,
           "rain_in": 0.0,
           "wind_mph": 3.5,
@@ -2130,8 +2130,8 @@
           "race_name": "North Face Endurance Challenge - Championships",
           "race_date": "2012-12-01",
           "course_pattern": "Trail Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 58.0,
           "rain_in": 0.076,
           "wind_mph": 10.8,
@@ -2143,8 +2143,8 @@
           "race_name": "Brazen Rocky Ridge Half Marathon Champioinship/10K/5K 2012",
           "race_date": "2012-10-20",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 62.0,
           "rain_in": 0.0,
           "wind_mph": 6.3,
@@ -2156,8 +2156,8 @@
           "race_name": "Gore-Tex Transrockies Run Stage 6",
           "race_date": "2012-08-14",
           "course_pattern": "120Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 62.1,
           "rain_in": 0.0,
           "wind_mph": 4.3,
@@ -2169,8 +2169,8 @@
           "race_name": "Leadville Trail 10K 2012",
           "race_date": "2012-08-12",
           "course_pattern": "10K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 68.1,
           "rain_in": 0.0,
           "wind_mph": 6.4,
@@ -2182,8 +2182,8 @@
           "race_name": "The Wipro San Francisco Marathon",
           "race_date": "2012-07-29",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 55.4,
           "rain_in": 0.0,
           "wind_mph": 7.0,
@@ -2195,8 +2195,8 @@
           "race_name": "Golden Gate Trail Run 2012",
           "race_date": "2012-07-14",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 57.2,
           "rain_in": 0.0,
           "wind_mph": 5.2,
@@ -2208,8 +2208,8 @@
           "race_name": "San Lorenzo River Trail Run 2012",
           "race_date": "2012-06-23",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 57.6,
           "rain_in": 0.0,
           "wind_mph": 9.6,
@@ -2221,8 +2221,8 @@
           "race_name": "Big Sur International Marathon 2012",
           "race_date": "2012-04-29",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 53.4,
           "rain_in": 0.0,
           "wind_mph": 2.6,
@@ -2234,8 +2234,8 @@
           "race_name": "Presidio 10Mi and 10K 2012",
           "race_date": "2012-04-15",
           "course_pattern": "10Mi Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 51.2,
           "rain_in": 0.0,
           "wind_mph": 4.1,
@@ -2247,8 +2247,8 @@
           "race_name": "Walt Stack 10K",
           "race_date": "2012-04-01",
           "course_pattern": "10K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 46.5,
           "rain_in": 0.0,
           "wind_mph": 10.3,
@@ -2260,8 +2260,8 @@
           "race_name": "Ayala Cove Trail Run 2012",
           "race_date": "2012-03-31",
           "course_pattern": "10Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 53.1,
           "rain_in": 0.264,
           "wind_mph": 17.2,
@@ -2273,8 +2273,8 @@
           "race_name": "Montara Mountain Trail Run 2012",
           "race_date": "2012-03-03",
           "course_pattern": "13.1Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 48.0,
           "rain_in": 0.0,
           "wind_mph": 3.2,
@@ -2286,8 +2286,8 @@
           "race_name": "Kaiser Permanente San Francisco Half Marathon & 5K 2012",
           "race_date": "2012-02-05",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 45.4,
           "rain_in": 0.0,
           "wind_mph": 4.8,
@@ -2299,8 +2299,8 @@
           "race_name": "North Face Endurance Challenge 2011",
           "race_date": "2011-12-04",
           "course_pattern": "Trail Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 50.3,
           "rain_in": 0.0,
           "wind_mph": 2.3,
@@ -2312,8 +2312,8 @@
           "race_name": "Chicago Marathon 2011",
           "race_date": "2011-10-09",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 65.1,
           "rain_in": 0.0,
           "wind_mph": 3.6,
@@ -2325,8 +2325,8 @@
           "race_name": "Coastal Trail Runs:  Crystal Springs Trail Run  2011",
           "race_date": "2011-08-13",
           "course_pattern": "11Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 61.3,
           "rain_in": 0.0,
           "wind_mph": 3.6,
@@ -2338,8 +2338,8 @@
           "race_name": "The San Francisco Marathon 2011",
           "race_date": "2011-07-31",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 56.9,
           "rain_in": 0.0,
           "wind_mph": 6.9,
@@ -2351,8 +2351,8 @@
           "race_name": "Rock 'n' Roll San Diego",
           "race_date": "2011-06-05",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 63.5,
           "rain_in": 0.0,
           "wind_mph": 4.3,
@@ -2364,8 +2364,8 @@
           "race_name": "Big Sur International Marathon",
           "race_date": "2011-05-01",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 55.5,
           "rain_in": 0.0,
           "wind_mph": 1.6,
@@ -2377,8 +2377,8 @@
           "race_name": "Ayala Cove Trail Run 2011",
           "race_date": "2011-04-23",
           "course_pattern": "10Mi Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 52.5,
           "rain_in": 0.0,
           "wind_mph": 5.0,
@@ -2390,8 +2390,8 @@
           "race_name": "Oakland Running Festival 2011",
           "race_date": "2011-03-27",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 49.4,
           "rain_in": 0.0,
           "wind_mph": 7.5,
@@ -2403,8 +2403,8 @@
           "race_name": "Kaiser Permanente San Francisco Half Marathon 2011",
           "race_date": "2011-02-06",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 55.0,
           "rain_in": 0.0,
           "wind_mph": 6.1,
@@ -2416,8 +2416,8 @@
           "race_name": "Big Sur Half Marathon 2010",
           "race_date": "2010-11-14",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 53.8,
           "rain_in": 0.0,
           "wind_mph": 3.3,
@@ -2442,8 +2442,8 @@
           "race_name": "Glide Floss Bridge To Bridge Run 2010",
           "race_date": "2010-10-03",
           "course_pattern": "12K Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 57.0,
           "rain_in": 0.0,
           "wind_mph": 6.9,
@@ -2455,8 +2455,8 @@
           "race_name": "The San Francisco Marathon 2010",
           "race_date": "2010-07-25",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 51.4,
           "rain_in": 0.0,
           "wind_mph": 7.2,
@@ -2468,8 +2468,8 @@
           "race_name": "Sequoia Trail Run 2010",
           "race_date": "2010-02-27",
           "course_pattern": "10K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 49.6,
           "rain_in": 0.125,
           "wind_mph": 5.3,
@@ -2481,8 +2481,8 @@
           "race_name": "Kaiser Permanente San Francisco Half Marathon And 5k",
           "race_date": "2010-02-07",
           "course_pattern": "5K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 46.3,
           "rain_in": 0.0,
           "wind_mph": 4.2,
@@ -2494,8 +2494,8 @@
           "race_name": "Rodeo Beach Trail Run 2009",
           "race_date": "2009-12-19",
           "course_pattern": "8K Trail Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 47.0,
           "rain_in": 0.0,
           "wind_mph": 4.7,
@@ -2507,8 +2507,8 @@
           "race_name": "Walnut Creek Turkey Trot 2009",
           "race_date": "2009-11-26",
           "course_pattern": "5K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 45.1,
           "rain_in": 0.0,
           "wind_mph": 4.8,
@@ -2520,8 +2520,8 @@
           "race_name": "Chicago Marathon ",
           "race_date": "2009-10-11",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 38.5,
           "rain_in": 0.0,
           "wind_mph": 6.6,
@@ -2533,8 +2533,8 @@
           "race_name": "Glide Floss Bridge To Bridge Run",
           "race_date": "2009-10-04",
           "course_pattern": "12K Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 50.3,
           "rain_in": 0.0,
           "wind_mph": 4.8,
@@ -2546,8 +2546,8 @@
           "race_name": "Rock 'N' Roll Seattle - Marathon & 1/2 Marathon",
           "race_date": "2009-06-27",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 59.0,
           "rain_in": 0.0,
           "wind_mph": 0.9,
@@ -2559,8 +2559,8 @@
           "race_name": "Kaiser Permanente San Francisco Half Marathon & 5K 2009",
           "race_date": "2009-02-01",
           "course_pattern": "5K",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 40.1,
           "rain_in": 0.0,
           "wind_mph": 4.0,
@@ -2572,8 +2572,8 @@
           "race_name": "Lasalle Bank Of America Chicago Marathon 2008",
           "race_date": "2008-10-12",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 70.5,
           "rain_in": 0.0,
           "wind_mph": 6.5,
@@ -2585,8 +2585,8 @@
           "race_name": "Bmo Vancouver Marathon 2008",
           "race_date": "2008-05-04",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 47.4,
           "rain_in": 0.0,
           "wind_mph": 1.3,
@@ -2598,8 +2598,8 @@
           "race_name": "Bridge To Bridge Run 12K  2007",
           "race_date": "2007-09-30",
           "course_pattern": "12K Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 55.3,
           "rain_in": 0.0,
           "wind_mph": 2.2,
@@ -2611,8 +2611,8 @@
           "race_name": "San Francisco Marathon 2007",
           "race_date": "2007-07-29",
           "course_pattern": "1/2 Mara",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 55.1,
           "rain_in": 0.0,
           "wind_mph": 7.6,
@@ -2624,8 +2624,8 @@
           "race_name": "ING Bay to Breakers",
           "race_date": "2007-05-20",
           "course_pattern": "12K Run",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 53.5,
           "rain_in": 0.0,
           "wind_mph": 8.1,
@@ -2637,8 +2637,8 @@
           "race_name": "Lasalle Bank Chicago Marathon 2006",
           "race_date": "2006-10-22",
           "course_pattern": "Marathon",
-          "day_period": null,
-          "day_period_label": null,
+          "day_period": "day",
+          "day_period_label": "Day race",
           "temperature_f": 39.6,
           "rain_in": 0.008,
           "wind_mph": 16.9,
@@ -2772,7 +2772,9 @@
             "wind_mph_avg": 6.4,
             "wind_mph_max": 7.9,
             "window_end_local": "2016-07-23T13:00",
-            "window_start_local": "2016-07-23T10:00"
+            "window_start_local": "2016-07-23T10:00",
+            "day_period": "day",
+            "day_period_label": "Day race"
           },
           "source_urls": {
             "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -3095,7 +3097,9 @@
             "wind_mph_avg": 6.6,
             "wind_mph_max": 7.6,
             "window_end_local": "2009-10-11T12:30",
-            "window_start_local": "2009-10-11T07:30"
+            "window_start_local": "2009-10-11T07:30",
+            "day_period": "day",
+            "day_period_label": "Day race"
           },
           "source_urls": {
             "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -3398,7 +3402,9 @@
             "wind_mph_avg": 13.7,
             "wind_mph_max": 14.1,
             "window_end_local": "2016-12-10T11:45",
-            "window_start_local": "2016-12-10T08:45"
+            "window_start_local": "2016-12-10T08:45",
+            "day_period": "day",
+            "day_period_label": "Day race"
           },
           "source_urls": {
             "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -3691,7 +3697,9 @@
             "wind_mph_avg": 17.4,
             "wind_mph_max": 18.6,
             "window_end_local": "2023-02-05T10:00",
-            "window_start_local": "2023-02-05T08:00"
+            "window_start_local": "2023-02-05T08:00",
+            "day_period": "day",
+            "day_period_label": "Day race"
           },
           "source_urls": {
             "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -3998,7 +4006,9 @@
         "wind_mph_avg": 3.6,
         "wind_mph_max": 5.5,
         "window_end_local": "2026-02-22T11:00",
-        "window_start_local": "2026-02-22T08:00"
+        "window_start_local": "2026-02-22T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -4291,7 +4301,9 @@
         "wind_mph_avg": 4.0,
         "wind_mph_max": 4.2,
         "window_end_local": "2025-11-22T10:00",
-        "window_start_local": "2025-11-22T08:00"
+        "window_start_local": "2025-11-22T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -4594,7 +4606,9 @@
         "wind_mph_avg": 2.4,
         "wind_mph_max": 4.4,
         "window_end_local": "2025-11-02T07:00",
-        "window_start_local": "2025-11-02T04:00"
+        "window_start_local": "2025-11-02T04:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -4917,7 +4931,9 @@
         "wind_mph_avg": 4.7,
         "wind_mph_max": 5.7,
         "window_end_local": "2025-10-12T09:00",
-        "window_start_local": "2025-10-12T04:00"
+        "window_start_local": "2025-10-12T04:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -5220,7 +5236,9 @@
         "wind_mph_avg": 3.1,
         "wind_mph_max": 3.8,
         "window_end_local": "2025-08-23T09:55",
-        "window_start_local": "2025-08-23T06:55"
+        "window_start_local": "2025-08-23T06:55",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -5503,7 +5521,9 @@
         "wind_mph_avg": 9.5,
         "wind_mph_max": 9.8,
         "window_end_local": "2025-07-12T21:00",
-        "window_start_local": "2025-07-12T20:00"
+        "window_start_local": "2025-07-12T20:00",
+        "day_period": "night",
+        "day_period_label": "Night race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -5796,7 +5816,9 @@
         "wind_mph_avg": 1.8,
         "wind_mph_max": 2.7,
         "window_end_local": "2025-03-21T09:00",
-        "window_start_local": "2025-03-21T07:00"
+        "window_start_local": "2025-03-21T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -6089,7 +6111,9 @@
         "wind_mph_avg": 4.5,
         "wind_mph_max": 4.8,
         "window_end_local": "2025-02-23T10:00",
-        "window_start_local": "2025-02-23T08:00"
+        "window_start_local": "2025-02-23T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -6392,7 +6416,9 @@
         "wind_mph_avg": 9.0,
         "wind_mph_max": 10.4,
         "window_end_local": "2024-11-03T10:00",
-        "window_start_local": "2024-11-03T07:00"
+        "window_start_local": "2024-11-03T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -6725,7 +6751,9 @@
         "wind_mph_avg": 8.6,
         "wind_mph_max": 9.7,
         "window_end_local": "2024-10-13T10:00",
-        "window_start_local": "2024-10-13T04:00"
+        "window_start_local": "2024-10-13T04:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -7038,7 +7066,9 @@
         "wind_mph_avg": 3.5,
         "wind_mph_max": 4.4,
         "window_end_local": "2024-09-01T11:00",
-        "window_start_local": "2024-09-01T07:00"
+        "window_start_local": "2024-09-01T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -7361,7 +7391,9 @@
         "wind_mph_avg": 3.2,
         "wind_mph_max": 7.3,
         "window_end_local": "2024-08-17T13:00",
-        "window_start_local": "2024-08-17T08:00"
+        "window_start_local": "2024-08-17T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -7664,7 +7696,9 @@
         "wind_mph_avg": 3.7,
         "wind_mph_max": 6.2,
         "window_end_local": "2024-08-03T10:00",
-        "window_start_local": "2024-08-03T07:00"
+        "window_start_local": "2024-08-03T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -7977,7 +8011,9 @@
         "wind_mph_avg": 4.0,
         "wind_mph_max": 8.5,
         "window_end_local": "2024-07-13T10:00",
-        "window_start_local": "2024-07-13T06:00"
+        "window_start_local": "2024-07-13T06:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -8280,7 +8316,9 @@
         "wind_mph_avg": 3.0,
         "wind_mph_max": 5.2,
         "window_end_local": "2023-11-23T11:00",
-        "window_start_local": "2023-11-23T08:00"
+        "window_start_local": "2023-11-23T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -8613,7 +8651,9 @@
         "wind_mph_avg": 9.3,
         "wind_mph_max": 10.7,
         "window_end_local": "2023-10-08T13:00",
-        "window_start_local": "2023-10-08T07:00"
+        "window_start_local": "2023-10-08T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -8926,7 +8966,9 @@
         "wind_mph_avg": 4.6,
         "wind_mph_max": 6.8,
         "window_end_local": "2023-08-26T12:00",
-        "window_start_local": "2023-08-26T08:00"
+        "window_start_local": "2023-08-26T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -9258,7 +9300,9 @@
         "wind_mph_avg": 7.6,
         "wind_mph_max": 10.5,
         "window_end_local": "2023-05-14T10:00",
-        "window_start_local": "2023-05-14T04:00"
+        "window_start_local": "2023-05-14T04:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -9561,7 +9605,9 @@
         "wind_mph_avg": 9.6,
         "wind_mph_max": 10.5,
         "window_end_local": "2023-03-05T11:00",
-        "window_start_local": "2023-03-05T08:00"
+        "window_start_local": "2023-03-05T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -9854,7 +9900,9 @@
         "wind_mph_avg": 17.4,
         "wind_mph_max": 18.6,
         "window_end_local": "2023-02-05T10:00",
-        "window_start_local": "2023-02-05T08:00"
+        "window_start_local": "2023-02-05T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -10137,7 +10185,9 @@
         "wind_mph_avg": 3.1,
         "wind_mph_max": 4.1,
         "window_end_local": "2022-11-24T09:00",
-        "window_start_local": "2022-11-24T08:00"
+        "window_start_local": "2022-11-24T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -10373,66 +10423,66 @@
         "timezone": "America/Los_Angeles"
       },
       "weather": {
-        "source": "open-meteo",
-        "timezone": "America/Los_Angeles",
-        "race_window_hours": 2,
-        "window_start_local": "2022-11-19T08:00",
-        "window_end_local": "2022-11-19T10:00",
-        "hour_count": 3,
-        "day_period": "day",
-        "day_period_label": "Day race",
-        "temperature_f_start": 43.2,
-        "temperature_f_avg": 45.8,
-        "temperature_f_max": 48.9,
+        "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=38.54491&longitude=-121.74052&start_date=2022-11-19&end_date=2022-11-19&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles",
         "apparent_temperature_f_avg": 35.9,
-        "humidity_pct_avg": 34.3,
-        "precipitation_in_total": 0.0,
-        "rain_in_total": 0.0,
-        "snowfall_in_total": 0.0,
-        "wind_mph_avg": 10.7,
-        "wind_mph_max": 11.1,
         "cloud_cover_pct_avg": 0.0,
         "condition_flags": {
+          "cold": false,
+          "hot": false,
+          "humid": false,
           "rainy": false,
           "snowy": false,
-          "hot": false,
-          "cold": false,
-          "windy": false,
-          "humid": false
+          "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
+        "hour_count": 3,
         "hourly_sample": [
           {
-            "time": "2022-11-19T08:00",
-            "temperature_f": 43.2,
             "apparent_temperature_f": 33.1,
+            "cloud_cover_pct": 0,
             "humidity_pct": 37,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 11.1,
-            "cloud_cover_pct": 0
+            "rain_in": 0.0,
+            "temperature_f": 43.2,
+            "time": "2022-11-19T08:00",
+            "wind_mph": 11.1
           },
           {
-            "time": "2022-11-19T09:00",
-            "temperature_f": 45.2,
             "apparent_temperature_f": 35.3,
+            "cloud_cover_pct": 0,
             "humidity_pct": 35,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 10.9,
-            "cloud_cover_pct": 0
+            "rain_in": 0.0,
+            "temperature_f": 45.2,
+            "time": "2022-11-19T09:00",
+            "wind_mph": 10.9
           },
           {
-            "time": "2022-11-19T10:00",
-            "temperature_f": 48.9,
             "apparent_temperature_f": 39.3,
+            "cloud_cover_pct": 0,
             "humidity_pct": 31,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 10.1,
-            "cloud_cover_pct": 0
+            "rain_in": 0.0,
+            "temperature_f": 48.9,
+            "time": "2022-11-19T10:00",
+            "wind_mph": 10.1
           }
         ],
-        "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=38.54491&longitude=-121.74052&start_date=2022-11-19&end_date=2022-11-19&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles"
+        "humidity_pct_avg": 34.3,
+        "precipitation_in_total": 0.0,
+        "race_window_hours": 2,
+        "rain_in_total": 0.0,
+        "snowfall_in_total": 0.0,
+        "source": "open-meteo",
+        "temperature_f_avg": 45.8,
+        "temperature_f_max": 48.9,
+        "temperature_f_start": 43.2,
+        "timezone": "America/Los_Angeles",
+        "wind_mph_avg": 10.7,
+        "wind_mph_max": 11.1,
+        "window_end_local": "2022-11-19T10:00",
+        "window_start_local": "2022-11-19T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -10715,7 +10765,9 @@
         "wind_mph_avg": 1.8,
         "wind_mph_max": 2.0,
         "window_end_local": "2022-11-12T09:00",
-        "window_start_local": "2022-11-12T08:00"
+        "window_start_local": "2022-11-12T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -11028,7 +11080,9 @@
         "wind_mph_avg": 3.6,
         "wind_mph_max": 4.1,
         "window_end_local": "2022-08-27T11:00",
-        "window_start_local": "2022-08-27T07:00"
+        "window_start_local": "2022-08-27T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -11341,7 +11395,9 @@
         "wind_mph_avg": 8.0,
         "wind_mph_max": 8.4,
         "window_end_local": "2022-08-06T11:00",
-        "window_start_local": "2022-08-06T07:00"
+        "window_start_local": "2022-08-06T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -11644,7 +11700,9 @@
         "wind_mph_avg": 3.4,
         "wind_mph_max": 4.4,
         "window_end_local": "2022-03-06T11:00",
-        "window_start_local": "2022-03-06T08:00"
+        "window_start_local": "2022-03-06T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -11967,7 +12025,9 @@
         "wind_mph_avg": 3.6,
         "wind_mph_max": 4.7,
         "window_end_local": "2022-01-29T13:00",
-        "window_start_local": "2022-01-29T08:00"
+        "window_start_local": "2022-01-29T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -12280,7 +12340,9 @@
         "wind_mph_avg": 1.7,
         "wind_mph_max": 3.5,
         "window_end_local": "2022-01-16T12:00",
-        "window_start_local": "2022-01-16T08:00"
+        "window_start_local": "2022-01-16T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -12593,7 +12655,9 @@
         "wind_mph_avg": 2.4,
         "wind_mph_max": 3.6,
         "window_end_local": "2021-12-11T12:00",
-        "window_start_local": "2021-12-11T08:00"
+        "window_start_local": "2021-12-11T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -12905,7 +12969,9 @@
         "wind_mph_avg": 2.4,
         "wind_mph_max": 4.0,
         "window_end_local": "2018-09-22T12:00",
-        "window_start_local": "2018-09-22T08:00"
+        "window_start_local": "2018-09-22T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -13218,7 +13284,9 @@
         "wind_mph_avg": 8.4,
         "wind_mph_max": 8.9,
         "window_end_local": "2018-08-11T12:00",
-        "window_start_local": "2018-08-11T08:00"
+        "window_start_local": "2018-08-11T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -13511,7 +13579,9 @@
         "wind_mph_avg": 7.0,
         "wind_mph_max": 7.5,
         "window_end_local": "2018-07-07T02:00",
-        "window_start_local": "2018-07-07T00:00"
+        "window_start_local": "2018-07-07T00:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -13823,7 +13893,9 @@
         "wind_mph_avg": 4.3,
         "wind_mph_max": 7.2,
         "window_end_local": "2017-09-23T12:00",
-        "window_start_local": "2017-09-23T08:00"
+        "window_start_local": "2017-09-23T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -14136,7 +14208,9 @@
         "wind_mph_avg": 5.7,
         "wind_mph_max": 9.2,
         "window_end_local": "2017-08-05T12:00",
-        "window_start_local": "2017-08-05T08:00"
+        "window_start_local": "2017-08-05T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -14439,7 +14513,9 @@
         "wind_mph_avg": 13.7,
         "wind_mph_max": 14.1,
         "window_end_local": "2016-12-10T11:45",
-        "window_start_local": "2016-12-10T08:45"
+        "window_start_local": "2016-12-10T08:45",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -14752,7 +14828,9 @@
         "wind_mph_avg": 10.1,
         "wind_mph_max": 12.0,
         "window_end_local": "2016-11-19T12:00",
-        "window_start_local": "2016-11-19T08:00"
+        "window_start_local": "2016-11-19T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -15085,7 +15163,9 @@
         "wind_mph_avg": 6.6,
         "wind_mph_max": 8.6,
         "window_end_local": "2016-10-09T13:20",
-        "window_start_local": "2016-10-09T07:20"
+        "window_start_local": "2016-10-09T07:20",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -15418,7 +15498,9 @@
         "wind_mph_avg": 1.7,
         "wind_mph_max": 4.0,
         "window_end_local": "2016-09-18T13:00",
-        "window_start_local": "2016-09-18T07:00"
+        "window_start_local": "2016-09-18T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -15654,56 +15736,56 @@
         "timezone": "America/Los_Angeles"
       },
       "weather": {
-        "source": "open-meteo",
-        "timezone": "America/Los_Angeles",
-        "race_window_hours": 1,
-        "window_start_local": "2016-09-08T18:45",
-        "window_end_local": "2016-09-08T19:45",
-        "hour_count": 2,
-        "day_period": "night",
-        "day_period_label": "Night race",
-        "temperature_f_start": 64.1,
-        "temperature_f_avg": 62.6,
-        "temperature_f_max": 64.1,
-        "apparent_temperature_f_avg": 60.0,
-        "humidity_pct_avg": 70.0,
-        "precipitation_in_total": 0.0,
-        "rain_in_total": 0.0,
-        "snowfall_in_total": 0.0,
-        "wind_mph_avg": 8.2,
-        "wind_mph_max": 8.5,
-        "cloud_cover_pct_avg": 12.5,
+        "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.77493&longitude=-122.41942&start_date=2016-09-08&end_date=2016-09-08&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles",
+        "apparent_temperature_f_avg": 62.5,
+        "cloud_cover_pct_avg": 12.0,
         "condition_flags": {
+          "cold": false,
+          "hot": false,
+          "humid": false,
           "rainy": false,
           "snowy": false,
-          "hot": false,
-          "cold": false,
-          "windy": false,
-          "humid": false
+          "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
+        "hour_count": 2,
         "hourly_sample": [
           {
-            "time": "2016-09-08T18:00",
-            "temperature_f": 64.1,
-            "apparent_temperature_f": 61.2,
-            "humidity_pct": 66,
-            "rain_in": 0.0,
+            "apparent_temperature_f": 63.9,
+            "cloud_cover_pct": 12,
+            "humidity_pct": 59,
             "precipitation_in": 0.0,
-            "wind_mph": 8.5,
-            "cloud_cover_pct": 12
+            "rain_in": 0.0,
+            "temperature_f": 66.9,
+            "time": "2016-09-08T17:00",
+            "wind_mph": 8.5
           },
           {
-            "time": "2016-09-08T19:00",
-            "temperature_f": 61.2,
-            "apparent_temperature_f": 58.8,
-            "humidity_pct": 74,
-            "rain_in": 0.0,
+            "apparent_temperature_f": 61.2,
+            "cloud_cover_pct": 12,
+            "humidity_pct": 66,
             "precipitation_in": 0.0,
-            "wind_mph": 7.9,
-            "cloud_cover_pct": 13
+            "rain_in": 0.0,
+            "temperature_f": 64.1,
+            "time": "2016-09-08T18:00",
+            "wind_mph": 8.5
           }
         ],
-        "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.77493&longitude=-122.41942&start_date=2016-09-08&end_date=2016-09-08&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles"
+        "humidity_pct_avg": 62.5,
+        "precipitation_in_total": 0.0,
+        "race_window_hours": 1,
+        "rain_in_total": 0.0,
+        "snowfall_in_total": 0.0,
+        "source": "open-meteo",
+        "temperature_f_avg": 65.5,
+        "temperature_f_max": 66.9,
+        "temperature_f_start": 66.9,
+        "timezone": "America/Los_Angeles",
+        "wind_mph_avg": 8.5,
+        "wind_mph_max": 8.5,
+        "window_end_local": "2016-09-08T18:00",
+        "window_start_local": "2016-09-08T17:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -16015,7 +16097,9 @@
         "wind_mph_avg": 5.9,
         "wind_mph_max": 6.9,
         "window_end_local": "2016-08-28T12:00",
-        "window_start_local": "2016-08-28T08:00"
+        "window_start_local": "2016-08-28T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -16328,7 +16412,9 @@
         "wind_mph_avg": 6.1,
         "wind_mph_max": 6.5,
         "window_end_local": "2016-08-07T12:30",
-        "window_start_local": "2016-08-07T08:30"
+        "window_start_local": "2016-08-07T08:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -16631,7 +16717,9 @@
         "wind_mph_avg": 6.4,
         "wind_mph_max": 7.9,
         "window_end_local": "2016-07-23T13:00",
-        "window_start_local": "2016-07-23T10:00"
+        "window_start_local": "2016-07-23T10:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -16964,7 +17052,9 @@
         "wind_mph_avg": 12.6,
         "wind_mph_max": 13.6,
         "window_end_local": "2015-10-11T13:00",
-        "window_start_local": "2015-10-11T07:00"
+        "window_start_local": "2015-10-11T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -17297,7 +17387,9 @@
         "wind_mph_avg": 4.7,
         "wind_mph_max": 7.0,
         "window_end_local": "2015-03-07T13:00",
-        "window_start_local": "2015-03-07T07:00"
+        "window_start_local": "2015-03-07T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -17600,7 +17692,9 @@
         "wind_mph_avg": 1.8,
         "wind_mph_max": 2.1,
         "window_end_local": "2014-11-27T11:00",
-        "window_start_local": "2014-11-27T08:00"
+        "window_start_local": "2014-11-27T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -17923,7 +18017,9 @@
         "wind_mph_avg": 8.9,
         "wind_mph_max": 9.8,
         "window_end_local": "2014-10-12T12:00",
-        "window_start_local": "2014-10-12T07:00"
+        "window_start_local": "2014-10-12T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -18216,7 +18312,9 @@
         "wind_mph_avg": 7.6,
         "wind_mph_max": 8.1,
         "window_end_local": "2014-06-21T10:00",
-        "window_start_local": "2014-06-21T08:00"
+        "window_start_local": "2014-06-21T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -18509,7 +18607,9 @@
         "wind_mph_avg": 7.6,
         "wind_mph_max": 8.1,
         "window_end_local": "2014-06-21T10:00",
-        "window_start_local": "2014-06-21T08:00"
+        "window_start_local": "2014-06-21T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -18842,7 +18942,9 @@
         "wind_mph_avg": 4.8,
         "wind_mph_max": 7.1,
         "window_end_local": "2014-04-05T12:00",
-        "window_start_local": "2014-04-05T06:00"
+        "window_start_local": "2014-04-05T06:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -19175,7 +19277,9 @@
         "wind_mph_avg": 3.7,
         "wind_mph_max": 5.6,
         "window_end_local": "2014-03-08T14:00",
-        "window_start_local": "2014-03-08T08:00"
+        "window_start_local": "2014-03-08T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -19468,7 +19572,9 @@
         "wind_mph_avg": 1.9,
         "wind_mph_max": 2.4,
         "window_end_local": "2013-12-31T09:00",
-        "window_start_local": "2013-12-31T07:00"
+        "window_start_local": "2013-12-31T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -19801,7 +19907,9 @@
         "wind_mph_avg": 4.0,
         "wind_mph_max": 5.7,
         "window_end_local": "2013-12-14T14:30",
-        "window_start_local": "2013-12-14T08:30"
+        "window_start_local": "2013-12-14T08:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -20124,7 +20232,9 @@
         "wind_mph_avg": 7.6,
         "wind_mph_max": 8.1,
         "window_end_local": "2013-10-13T12:30",
-        "window_start_local": "2013-10-13T07:30"
+        "window_start_local": "2013-10-13T07:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -20447,7 +20557,9 @@
         "wind_mph_avg": 2.5,
         "wind_mph_max": 4.3,
         "window_end_local": "2013-09-29T12:00",
-        "window_start_local": "2013-09-29T07:00"
+        "window_start_local": "2013-09-29T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -20780,7 +20892,9 @@
         "wind_mph_avg": 10.0,
         "wind_mph_max": 12.9,
         "window_end_local": "2013-09-21T14:00",
-        "window_start_local": "2013-09-21T08:00"
+        "window_start_local": "2013-09-21T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -21113,7 +21227,9 @@
         "wind_mph_avg": 6.0,
         "wind_mph_max": 7.2,
         "window_end_local": "2013-08-11T13:00",
-        "window_start_local": "2013-08-11T07:00"
+        "window_start_local": "2013-08-11T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -21446,7 +21562,9 @@
         "wind_mph_avg": 5.4,
         "wind_mph_max": 6.3,
         "window_end_local": "2013-06-09T15:00",
-        "window_start_local": "2013-06-09T09:00"
+        "window_start_local": "2013-06-09T09:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -21739,7 +21857,9 @@
         "wind_mph_avg": 3.3,
         "wind_mph_max": 3.8,
         "window_end_local": "2013-05-25T10:00",
-        "window_start_local": "2013-05-25T08:00"
+        "window_start_local": "2013-05-25T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -22072,7 +22192,9 @@
         "wind_mph_avg": 2.1,
         "wind_mph_max": 4.5,
         "window_end_local": "2013-05-11T12:00",
-        "window_start_local": "2013-05-11T06:00"
+        "window_start_local": "2013-05-11T06:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -22395,7 +22517,9 @@
         "wind_mph_avg": 4.5,
         "wind_mph_max": 5.1,
         "window_end_local": "2013-04-28T11:45",
-        "window_start_local": "2013-04-28T06:45"
+        "window_start_local": "2013-04-28T06:45",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -22728,7 +22852,9 @@
         "wind_mph_avg": 3.8,
         "wind_mph_max": 5.7,
         "window_end_local": "2013-03-24T14:00",
-        "window_start_local": "2013-03-24T08:00"
+        "window_start_local": "2013-03-24T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -23061,7 +23187,9 @@
         "wind_mph_avg": 3.8,
         "wind_mph_max": 5.7,
         "window_end_local": "2013-03-24T14:00",
-        "window_start_local": "2013-03-24T08:00"
+        "window_start_local": "2013-03-24T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -23364,7 +23492,9 @@
         "wind_mph_avg": 3.5,
         "wind_mph_max": 4.2,
         "window_end_local": "2013-02-03T11:00",
-        "window_start_local": "2013-02-03T08:00"
+        "window_start_local": "2013-02-03T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -23657,7 +23787,9 @@
         "wind_mph_avg": 3.6,
         "wind_mph_max": 3.7,
         "window_end_local": "2012-12-31T11:00",
-        "window_start_local": "2012-12-31T09:00"
+        "window_start_local": "2012-12-31T09:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -23990,7 +24122,9 @@
         "wind_mph_avg": 10.8,
         "wind_mph_max": 11.1,
         "window_end_local": "2012-12-01T11:00",
-        "window_start_local": "2012-12-01T05:00"
+        "window_start_local": "2012-12-01T05:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -24303,7 +24437,9 @@
         "wind_mph_avg": 6.3,
         "wind_mph_max": 7.7,
         "window_end_local": "2012-10-20T12:00",
-        "window_start_local": "2012-10-20T08:00"
+        "window_start_local": "2012-10-20T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -24636,7 +24772,9 @@
         "wind_mph_avg": 4.3,
         "wind_mph_max": 5.3,
         "window_end_local": "2012-08-14T13:00",
-        "window_start_local": "2012-08-14T07:00"
+        "window_start_local": "2012-08-14T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -24929,7 +25067,9 @@
         "wind_mph_avg": 6.4,
         "wind_mph_max": 7.3,
         "window_end_local": "2012-08-12T14:00",
-        "window_start_local": "2012-08-12T12:00"
+        "window_start_local": "2012-08-12T12:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -25252,7 +25392,9 @@
         "wind_mph_avg": 7.0,
         "wind_mph_max": 7.2,
         "window_end_local": "2012-07-29T10:30",
-        "window_start_local": "2012-07-29T05:30"
+        "window_start_local": "2012-07-29T05:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -25555,7 +25697,9 @@
         "wind_mph_avg": 5.2,
         "wind_mph_max": 5.3,
         "window_end_local": "2012-07-14T11:15",
-        "window_start_local": "2012-07-14T08:15"
+        "window_start_local": "2012-07-14T08:15",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -25858,7 +26002,9 @@
         "wind_mph_avg": 9.6,
         "wind_mph_max": 9.9,
         "window_end_local": "2012-06-23T11:00",
-        "window_start_local": "2012-06-23T08:00"
+        "window_start_local": "2012-06-23T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -26151,7 +26297,9 @@
         "wind_mph_avg": 5.7,
         "wind_mph_max": 6.7,
         "window_end_local": "2012-05-26T10:00",
-        "window_start_local": "2012-05-26T08:00"
+        "window_start_local": "2012-05-26T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -26474,7 +26622,9 @@
         "wind_mph_avg": 2.6,
         "wind_mph_max": 3.9,
         "window_end_local": "2012-04-29T11:30",
-        "window_start_local": "2012-04-29T06:30"
+        "window_start_local": "2012-04-29T06:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -26767,7 +26917,9 @@
         "wind_mph_avg": 4.1,
         "wind_mph_max": 4.3,
         "window_end_local": "2012-04-15T10:00",
-        "window_start_local": "2012-04-15T08:00"
+        "window_start_local": "2012-04-15T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -27060,7 +27212,9 @@
         "wind_mph_avg": 10.3,
         "wind_mph_max": 11.3,
         "window_end_local": "2012-04-01T09:00",
-        "window_start_local": "2012-04-01T07:00"
+        "window_start_local": "2012-04-01T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -27363,7 +27517,9 @@
         "wind_mph_avg": 17.2,
         "wind_mph_max": 21.2,
         "window_end_local": "2012-03-31T10:00",
-        "window_start_local": "2012-03-31T07:00"
+        "window_start_local": "2012-03-31T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -27676,7 +27832,9 @@
         "wind_mph_avg": 3.2,
         "wind_mph_max": 5.0,
         "window_end_local": "2012-03-03T12:00",
-        "window_start_local": "2012-03-03T08:00"
+        "window_start_local": "2012-03-03T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -27979,7 +28137,9 @@
         "wind_mph_avg": 4.8,
         "wind_mph_max": 5.2,
         "window_end_local": "2012-02-05T11:00",
-        "window_start_local": "2012-02-05T08:00"
+        "window_start_local": "2012-02-05T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -28272,7 +28432,9 @@
         "wind_mph_avg": 5.2,
         "wind_mph_max": 5.5,
         "window_end_local": "2011-12-31T20:00",
-        "window_start_local": "2011-12-31T18:00"
+        "window_start_local": "2011-12-31T18:00",
+        "day_period": "night",
+        "day_period_label": "Night race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -28605,7 +28767,9 @@
         "wind_mph_avg": 2.3,
         "wind_mph_max": 2.9,
         "window_end_local": "2011-12-04T13:00",
-        "window_start_local": "2011-12-04T07:00"
+        "window_start_local": "2011-12-04T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -28928,7 +29092,9 @@
         "wind_mph_avg": 3.6,
         "wind_mph_max": 4.3,
         "window_end_local": "2011-10-09T12:00",
-        "window_start_local": "2011-10-09T07:00"
+        "window_start_local": "2011-10-09T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -29231,7 +29397,9 @@
         "wind_mph_avg": 3.6,
         "wind_mph_max": 4.1,
         "window_end_local": "2011-08-13T11:30",
-        "window_start_local": "2011-08-13T08:30"
+        "window_start_local": "2011-08-13T08:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -29564,7 +29732,9 @@
         "wind_mph_avg": 6.9,
         "wind_mph_max": 8.2,
         "window_end_local": "2011-07-31T11:30",
-        "window_start_local": "2011-07-31T05:30"
+        "window_start_local": "2011-07-31T05:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -29897,7 +30067,9 @@
         "wind_mph_avg": 4.3,
         "wind_mph_max": 8.1,
         "window_end_local": "2011-06-05T13:00",
-        "window_start_local": "2011-06-05T07:00"
+        "window_start_local": "2011-06-05T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -30220,7 +30392,9 @@
         "wind_mph_avg": 1.6,
         "wind_mph_max": 2.7,
         "window_end_local": "2011-05-01T11:30",
-        "window_start_local": "2011-05-01T06:30"
+        "window_start_local": "2011-05-01T06:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -30522,7 +30696,9 @@
         "wind_mph_avg": 5.0,
         "wind_mph_max": 5.8,
         "window_end_local": "2011-04-23T13:30",
-        "window_start_local": "2011-04-23T10:30"
+        "window_start_local": "2011-04-23T10:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -30845,7 +31021,9 @@
         "wind_mph_avg": 7.5,
         "wind_mph_max": 10.6,
         "window_end_local": "2011-03-27T12:00",
-        "window_start_local": "2011-03-27T07:00"
+        "window_start_local": "2011-03-27T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -31148,7 +31326,9 @@
         "wind_mph_avg": 6.1,
         "wind_mph_max": 6.7,
         "window_end_local": "2011-02-06T10:00",
-        "window_start_local": "2011-02-06T07:00"
+        "window_start_local": "2011-02-06T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -31441,7 +31621,9 @@
         "wind_mph_avg": 3.5,
         "wind_mph_max": 3.7,
         "window_end_local": "2010-12-31T11:00",
-        "window_start_local": "2010-12-31T09:00"
+        "window_start_local": "2010-12-31T09:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -31744,7 +31926,9 @@
         "wind_mph_avg": 3.3,
         "wind_mph_max": 4.0,
         "window_end_local": "2010-11-14T10:00",
-        "window_start_local": "2010-11-14T07:00"
+        "window_start_local": "2010-11-14T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -31980,106 +32164,106 @@
         "timezone": "America/Chicago"
       },
       "weather": {
-        "source": "open-meteo",
-        "timezone": "America/Chicago",
-        "race_window_hours": 6,
-        "window_start_local": "2010-10-10T07:30",
-        "window_end_local": "2010-10-10T13:30",
-        "hour_count": 7,
-        "day_period": "day",
-        "day_period_label": "Day race",
-        "temperature_f_start": 62.0,
-        "temperature_f_avg": 69.6,
-        "temperature_f_max": 78.5,
+        "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=41.85003&longitude=-87.65005&start_date=2010-10-10&end_date=2010-10-10&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FChicago",
         "apparent_temperature_f_avg": 70.2,
-        "humidity_pct_avg": 64.6,
-        "precipitation_in_total": 0.0,
-        "rain_in_total": 0.0,
-        "snowfall_in_total": 0.0,
-        "wind_mph_avg": 4.4,
-        "wind_mph_max": 6.1,
         "cloud_cover_pct_avg": 25.7,
         "condition_flags": {
+          "cold": false,
+          "hot": true,
+          "humid": false,
           "rainy": false,
           "snowy": false,
-          "hot": true,
-          "cold": false,
-          "windy": false,
-          "humid": false
+          "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
+        "hour_count": 7,
         "hourly_sample": [
           {
-            "time": "2010-10-10T07:00",
-            "temperature_f": 62.0,
             "apparent_temperature_f": 61.2,
+            "cloud_cover_pct": 89,
             "humidity_pct": 79,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 6.1,
-            "cloud_cover_pct": 89
+            "rain_in": 0.0,
+            "temperature_f": 62.0,
+            "time": "2010-10-10T07:00",
+            "wind_mph": 6.1
           },
           {
-            "time": "2010-10-10T08:00",
-            "temperature_f": 62.2,
             "apparent_temperature_f": 61.9,
+            "cloud_cover_pct": 52,
             "humidity_pct": 80,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 5.2,
-            "cloud_cover_pct": 52
+            "rain_in": 0.0,
+            "temperature_f": 62.2,
+            "time": "2010-10-10T08:00",
+            "wind_mph": 5.2
           },
           {
-            "time": "2010-10-10T09:00",
-            "temperature_f": 65.9,
             "apparent_temperature_f": 66.5,
+            "cloud_cover_pct": 0,
             "humidity_pct": 72,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 3.6,
-            "cloud_cover_pct": 0
+            "rain_in": 0.0,
+            "temperature_f": 65.9,
+            "time": "2010-10-10T09:00",
+            "wind_mph": 3.6
           },
           {
-            "time": "2010-10-10T10:00",
-            "temperature_f": 69.6,
             "apparent_temperature_f": 70.5,
+            "cloud_cover_pct": 1,
             "humidity_pct": 64,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 3.1,
-            "cloud_cover_pct": 1
+            "rain_in": 0.0,
+            "temperature_f": 69.6,
+            "time": "2010-10-10T10:00",
+            "wind_mph": 3.1
           },
           {
-            "time": "2010-10-10T11:00",
-            "temperature_f": 73.0,
             "apparent_temperature_f": 73.9,
+            "cloud_cover_pct": 2,
             "humidity_pct": 58,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 3.5,
-            "cloud_cover_pct": 2
+            "rain_in": 0.0,
+            "temperature_f": 73.0,
+            "time": "2010-10-10T11:00",
+            "wind_mph": 3.5
           },
           {
-            "time": "2010-10-10T12:00",
-            "temperature_f": 76.1,
             "apparent_temperature_f": 77.5,
+            "cloud_cover_pct": 2,
             "humidity_pct": 52,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 4.2,
-            "cloud_cover_pct": 2
+            "rain_in": 0.0,
+            "temperature_f": 76.1,
+            "time": "2010-10-10T12:00",
+            "wind_mph": 4.2
           },
           {
-            "time": "2010-10-10T13:00",
-            "temperature_f": 78.5,
             "apparent_temperature_f": 79.6,
+            "cloud_cover_pct": 34,
             "humidity_pct": 47,
-            "rain_in": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 5.2,
-            "cloud_cover_pct": 34
+            "rain_in": 0.0,
+            "temperature_f": 78.5,
+            "time": "2010-10-10T13:00",
+            "wind_mph": 5.2
           }
         ],
-        "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=41.85003&longitude=-87.65005&start_date=2010-10-10&end_date=2010-10-10&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FChicago"
+        "humidity_pct_avg": 64.6,
+        "precipitation_in_total": 0.0,
+        "race_window_hours": 6,
+        "rain_in_total": 0.0,
+        "snowfall_in_total": 0.0,
+        "source": "open-meteo",
+        "temperature_f_avg": 69.6,
+        "temperature_f_max": 78.5,
+        "temperature_f_start": 62.0,
+        "timezone": "America/Chicago",
+        "wind_mph_avg": 4.4,
+        "wind_mph_max": 6.1,
+        "window_end_local": "2010-10-10T13:30",
+        "window_start_local": "2010-10-10T07:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -32372,7 +32556,9 @@
         "wind_mph_avg": 6.9,
         "wind_mph_max": 7.1,
         "window_end_local": "2010-10-03T10:00",
-        "window_start_local": "2010-10-03T08:00"
+        "window_start_local": "2010-10-03T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -32675,7 +32861,9 @@
         "wind_mph_avg": 7.2,
         "wind_mph_max": 7.7,
         "window_end_local": "2010-07-25T08:30",
-        "window_start_local": "2010-07-25T05:30"
+        "window_start_local": "2010-07-25T05:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -32968,7 +33156,9 @@
         "wind_mph_avg": 5.3,
         "wind_mph_max": 5.9,
         "window_end_local": "2010-02-27T10:30",
-        "window_start_local": "2010-02-27T08:30"
+        "window_start_local": "2010-02-27T08:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -33251,7 +33441,9 @@
         "wind_mph_avg": 4.2,
         "wind_mph_max": 4.7,
         "window_end_local": "2010-02-07T08:00",
-        "window_start_local": "2010-02-07T07:00"
+        "window_start_local": "2010-02-07T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -33533,7 +33725,9 @@
         "wind_mph_avg": 4.7,
         "wind_mph_max": 4.7,
         "window_end_local": "2009-12-19T09:30",
-        "window_start_local": "2009-12-19T08:30"
+        "window_start_local": "2009-12-19T08:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -33816,7 +34010,9 @@
         "wind_mph_avg": 4.8,
         "wind_mph_max": 4.8,
         "window_end_local": "2009-11-26T09:00",
-        "window_start_local": "2009-11-26T08:00"
+        "window_start_local": "2009-11-26T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -34139,7 +34335,9 @@
         "wind_mph_avg": 6.6,
         "wind_mph_max": 7.6,
         "window_end_local": "2009-10-11T12:30",
-        "window_start_local": "2009-10-11T07:30"
+        "window_start_local": "2009-10-11T07:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -34432,7 +34630,9 @@
         "wind_mph_avg": 4.8,
         "wind_mph_max": 5.0,
         "window_end_local": "2009-10-04T09:00",
-        "window_start_local": "2009-10-04T07:00"
+        "window_start_local": "2009-10-04T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -34735,7 +34935,9 @@
         "wind_mph_avg": 0.9,
         "wind_mph_max": 1.5,
         "window_end_local": "2009-06-27T10:00",
-        "window_start_local": "2009-06-27T07:00"
+        "window_start_local": "2009-06-27T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -35018,7 +35220,9 @@
         "wind_mph_avg": 4.0,
         "wind_mph_max": 4.3,
         "window_end_local": "2009-02-01T09:00",
-        "window_start_local": "2009-02-01T08:00"
+        "window_start_local": "2009-02-01T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -35351,7 +35555,9 @@
         "wind_mph_avg": 6.5,
         "wind_mph_max": 7.1,
         "window_end_local": "2008-10-12T14:00",
-        "window_start_local": "2008-10-12T08:00"
+        "window_start_local": "2008-10-12T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -35654,7 +35860,9 @@
         "wind_mph_avg": 1.3,
         "wind_mph_max": 2.5,
         "window_end_local": "2008-05-04T10:30",
-        "window_start_local": "2008-05-04T07:30"
+        "window_start_local": "2008-05-04T07:30",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -35947,7 +36155,9 @@
         "wind_mph_avg": 2.2,
         "wind_mph_max": 2.5,
         "window_end_local": "2007-09-30T10:00",
-        "window_start_local": "2007-09-30T08:00"
+        "window_start_local": "2007-09-30T08:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -36250,7 +36460,9 @@
         "wind_mph_avg": 7.6,
         "wind_mph_max": 8.1,
         "window_end_local": "2007-07-29T08:00",
-        "window_start_local": "2007-07-29T05:00"
+        "window_start_local": "2007-07-29T05:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -36543,7 +36755,9 @@
         "wind_mph_avg": 8.1,
         "wind_mph_max": 8.7,
         "window_end_local": "2007-05-20T09:00",
-        "window_start_local": "2007-05-20T07:00"
+        "window_start_local": "2007-05-20T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -36876,7 +37090,9 @@
         "wind_mph_avg": 16.9,
         "wind_mph_max": 18.9,
         "window_end_local": "2006-10-22T13:00",
-        "window_start_local": "2006-10-22T07:00"
+        "window_start_local": "2006-10-22T07:00",
+        "day_period": "day",
+        "day_period_label": "Day race"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
