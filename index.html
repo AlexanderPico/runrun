@@ -3,658 +3,1059 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RunRun - Marathon Results Explorer</title>
+    <title>Elisa’s Run Diary</title>
     <style>
-      :root { --bg:#0f172a; --fg:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --good:#22c55e; --warn:#f59e0b; --bad:#ef4444; --card:#111827; --border:#374151; }
-      html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-      header { padding:16px; border-bottom:1px solid var(--border); position:sticky; top:0; background:linear-gradient(180deg, rgba(15,23,42,0.98), rgba(15,23,42,0.90)); backdrop-filter:saturate(140%) blur(6px); z-index:10; }
-      h1 { margin:0 0 8px 0; font-size:18px; font-weight:600; color:var(--fg); }
-      .controls { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:flex-end; }
-      .field { display:flex; flex-direction:column; gap:4px; }
-      label { font-size:12px; color:var(--muted); }
-      input[type="text"], input[type="number"], select { background:var(--card); border:1px solid var(--border); color:var(--fg); padding:8px 10px; border-radius:8px; min-width:160px; }
-      .sources { display:flex; gap:12px; align-items:center; flex-wrap:wrap; color:var(--muted); }
-      .btn { background:var(--accent); color:#001018; border:none; padding:10px 14px; border-radius:8px; font-weight:600; cursor:pointer; }
-      .btn.secondary { background:transparent; color:var(--fg); border:1px solid var(--border); }
-      .btn.warn { background:var(--warn); color:#1c1400; }
-      .status { margin-left:auto; color:var(--muted); font-size:12px; max-width:40ch; }
-      .container { padding:16px; }
-      .tabs { display:flex; gap:8px; border-bottom:1px solid var(--border); margin-bottom:12px; }
-      .tab { padding:8px 12px; cursor:pointer; border-bottom:2px solid transparent; color:var(--muted); }
-      .tab.active { color:var(--fg); border-color:var(--accent); }
-      .tabpanel { display:none; }
-      .tabpanel.active { display:block; }
-      .grid { width:100%; border-collapse:collapse; overflow:auto; }
-      .grid th, .grid td { border-bottom:1px solid var(--border); padding:8px 10px; text-align:left; font-size:13px; }
-      .grid th { position:sticky; top:0; background:var(--card); z-index:1; }
-      .row-actions { display:flex; gap:6px; }
-      .panels { display:grid; grid-template-columns: 2fr 1fr; gap:16px; align-items:start; }
-      .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px; }
-      .card h3 { margin:0 0 8px; font-size:14px; color:var(--fg); }
-      .small { font-size:12px; color:var(--muted); }
-      .json-editor { width:100%; height:280px; background:#0a0f1f; color:#d1e9ff; border:1px solid var(--border); border-radius:8px; padding:8px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-      .kv { display:grid; grid-template-columns: 160px 1fr; gap:8px 12px; }
-      .muted { color:var(--muted); }
-      .charts { display:grid; grid-template-columns: 1fr; gap:16px; }
-      svg { width:100%; height:280px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00)); border:1px solid var(--border); border-radius:10px; }
-      .footer { margin-top:16px; font-size:12px; color:var(--muted); display:flex; gap:12px; align-items:center; }
-      .badge { display:inline-block; padding:2px 6px; border-radius:6px; border:1px solid var(--border); background:#0b1327; color:#bfe7ff; font-size:11px; }
-      details summary { cursor:pointer; }
-      .nowrap { white-space:nowrap; }
+      :root {
+        --bg: #fcfaf6;
+        --paper: #ffffff;
+        --paper-soft: #f7f2ea;
+        --ink: #1f1a17;
+        --muted: #7a6f64;
+        --line: #e8ddd0;
+        --sand: #ddcfbd;
+        --taupe: #b69b7a;
+        --olive: #7c8471;
+        --accent: #8e7056;
+        --shadow: 0 24px 60px rgba(31, 26, 23, 0.08);
+        --radius: 28px;
+        --max: 1240px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(221, 207, 189, 0.16), transparent 20%),
+          linear-gradient(180deg, #fffdfa 0%, var(--bg) 100%);
+      }
+
+      a { color: inherit; }
+      button, input, select { font: inherit; }
+
+      .shell {
+        width: min(calc(100% - 32px), var(--max));
+        margin: 0 auto;
+        padding: 24px 0 96px;
+      }
+
+      .hero,
+      .card {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(232, 221, 208, 0.9);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 34px;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -120px -110px auto;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, rgba(221, 207, 189, 0.45), rgba(221, 207, 189, 0));
+        pointer-events: none;
+      }
+
+      .hero-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: var(--paper-soft);
+        color: var(--muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      h1 {
+        margin: 14px 0 10px;
+        font-size: clamp(42px, 6vw, 74px);
+        line-height: 0.94;
+        letter-spacing: -0.06em;
+      }
+
+      .hero-copy p {
+        max-width: 720px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .pill,
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+        color: var(--muted);
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .hero-quote {
+        min-width: 260px;
+        max-width: 320px;
+        padding: 18px;
+        border-radius: 22px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247,242,234,0.95));
+        border: 1px solid var(--line);
+      }
+
+      .hero-quote strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .hero-quote p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .stats-grid,
+      .summary-grid,
+      .weather-top,
+      .notable-grid,
+      .cards-grid,
+      .source-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .stats-grid {
+        margin-top: 28px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .summary-grid,
+      .weather-top,
+      .notable-grid,
+      .cards-grid,
+      .source-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+      }
+
+      .stat,
+      .mini-card,
+      .viz-card,
+      .source-card {
+        padding: 18px;
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(252,250,246,0.94));
+      }
+
+      .stat-label,
+      .mini-label {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .stat-value {
+        margin-top: 8px;
+        font-size: clamp(28px, 3vw, 42px);
+        letter-spacing: -0.05em;
+      }
+
+      .stat-sub,
+      .mini-copy,
+      .source-card p {
+        margin-top: 8px;
+        color: var(--muted);
+        line-height: 1.55;
+        font-size: 14px;
+      }
+
+      section { margin-top: 24px; }
+      .card { padding: 26px; }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: end;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 42px);
+        letter-spacing: -0.05em;
+      }
+
+      .section-head p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.6;
+        max-width: 760px;
+      }
+
+      .summary-grid .mini-card:nth-child(1) { grid-column: span 4; }
+      .summary-grid .mini-card:nth-child(2) { grid-column: span 4; }
+      .summary-grid .mini-card:nth-child(3) { grid-column: span 4; }
+      .summary-grid .mini-card:nth-child(4) { grid-column: span 3; }
+      .summary-grid .mini-card:nth-child(5) { grid-column: span 3; }
+      .summary-grid .mini-card:nth-child(6) { grid-column: span 3; }
+      .summary-grid .mini-card:nth-child(7) { grid-column: span 3; }
+
+      .weather-top .mini-card:nth-child(1),
+      .weather-top .mini-card:nth-child(2),
+      .weather-top .mini-card:nth-child(3),
+      .weather-top .mini-card:nth-child(4) { grid-column: span 3; }
+
+      .cards-grid .viz-card:nth-child(1) { grid-column: span 5; }
+      .cards-grid .viz-card:nth-child(2) { grid-column: span 3; }
+      .cards-grid .viz-card:nth-child(3) { grid-column: span 4; }
+      .cards-grid .viz-card:nth-child(4) { grid-column: span 7; }
+      .cards-grid .viz-card:nth-child(5) { grid-column: span 5; }
+
+      .notable-grid .mini-card { grid-column: span 4; }
+      .source-grid .source-card { grid-column: span 4; }
+
+      .viz-title {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: start;
+        margin-bottom: 16px;
+      }
+
+      .viz-title h3,
+      .mini-title {
+        margin: 6px 0 0;
+        font-size: 18px;
+        letter-spacing: -0.03em;
+      }
+
+      .chart-list { display: grid; gap: 14px; }
+      .chart-row { display: grid; gap: 6px; }
+      .chart-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: baseline;
+        font-size: 13px;
+      }
+      .chart-meta strong { font-size: 14px; }
+      .track {
+        width: 100%;
+        height: 12px;
+        background: #f1e9df;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .fill {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--sand), var(--taupe));
+      }
+      .fill.alt { background: linear-gradient(90deg, #ccd2c1, var(--olive)); }
+      .fill.ink { background: linear-gradient(90deg, #3d3530, #141110); }
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .legend i {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 99px;
+      }
+
+      .scatter-wrap {
+        width: 100%;
+        overflow: auto;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, #fff, #fbf8f3);
+      }
+      svg { display: block; width: 100%; height: auto; }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .input,
+      .select {
+        min-height: 46px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 0 16px;
+        color: var(--ink);
+      }
+      .input { min-width: min(340px, 100%); }
+      .upload {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .upload input {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .results-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 18px 0 14px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .table-wrap {
+        overflow: auto;
+        border-radius: 24px;
+        border: 1px solid var(--line);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 1120px;
+        background: rgba(255,255,255,0.94);
+      }
+      th, td {
+        padding: 14px 16px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+      }
+      th {
+        position: sticky;
+        top: 0;
+        background: #fbf7f1;
+        color: var(--muted);
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        z-index: 1;
+      }
+      tbody tr:hover { background: #fcfaf6; }
+      .result-name { font-weight: 700; }
+      .subtle { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+      .weather-pill {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .weather-pill span {
+        display: inline-flex;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: var(--paper-soft);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .foot {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .cat-zone {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 82px;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 60;
+      }
+      .cat {
+        position: absolute;
+        left: -90px;
+        bottom: 8px;
+        font-size: 46px;
+        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.18));
+        transform: translate3d(var(--cat-x, 0px), 0, 0) scaleX(var(--cat-dir, 1));
+        transition: transform 180ms ease;
+      }
+      .cat.swat::after {
+        content: "✦";
+        position: absolute;
+        right: -8px;
+        top: -12px;
+        font-size: 18px;
+        color: var(--taupe);
+        animation: paw 380ms ease-out;
+      }
+      .cat-note {
+        position: absolute;
+        left: 18px;
+        bottom: 66px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.88);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+        opacity: 0;
+        transform: translateY(6px);
+        transition: 220ms ease;
+      }
+      .cat-note.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes paw {
+        from { opacity: 0; transform: translate(2px, 8px) scale(0.5) rotate(-22deg); }
+        45% { opacity: 1; }
+        to { opacity: 0; transform: translate(18px, -10px) scale(1.2) rotate(16deg); }
+      }
+
+      @media (max-width: 1040px) {
+        .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .summary-grid .mini-card,
+        .weather-top .mini-card,
+        .cards-grid .viz-card,
+        .notable-grid .mini-card,
+        .source-grid .source-card { grid-column: span 6; }
+      }
+
+      @media (max-width: 720px) {
+        .shell { width: min(calc(100% - 18px), var(--max)); padding-top: 10px; }
+        .hero, .card { padding: 18px; border-radius: 24px; }
+        .hero-top { flex-direction: column; }
+        .hero-quote { max-width: none; width: 100%; }
+        .stats-grid { grid-template-columns: 1fr 1fr; }
+        .summary-grid .mini-card,
+        .weather-top .mini-card,
+        .cards-grid .viz-card,
+        .notable-grid .mini-card,
+        .source-grid .source-card { grid-column: span 12; }
+        .controls { width: 100%; }
+        .input { min-width: 100%; }
+      }
     </style>
+    <script src="./data/athlete-diary.js"></script>
   </head>
   <body>
-    <header>
-      <h1>RunRun — Marathon Results Explorer</h1>
-      <div class="controls">
-        <div class="field">
-          <label>Full name</label>
-          <input id="fullName" type="text" placeholder="e.g., Elisa Park" />
+    <div class="shell">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="hero-copy">
+            <div class="eyebrow">Custom run diary · clean mode</div>
+            <h1 id="heroName">Run diary</h1>
+            <p id="heroSummary">Athlinks Overview, Results, and Stats collected into a clean local diary, then enriched with historical race-day weather.</p>
+            <div id="heroMeta" class="hero-meta"></div>
+          </div>
+          <aside class="hero-quote">
+            <strong>Weather lens</strong>
+            <p id="heroWeatherBlurb">Loading race-day conditions…</p>
+          </aside>
         </div>
-        <div class="field">
-          <label>Birth year</label>
-          <input id="birthYear" type="number" min="1900" max="2100" placeholder="1980" />
-        </div>
-        <div class="field">
-          <label>Gender (optional)</label>
-          <select id="gender">
-            <option value="">—</option>
-            <option value="F">Female</option>
-            <option value="M">Male</option>
-            <option value="X">Other</option>
-          </select>
-        </div>
-        
-        <div class="field" style="min-width:320px">
-          <label>Athlinks API Key</label>
-          <input id="athlinksApiKey" type="text" placeholder="Paste API key here" />
-        </div>
-        <div class="field" style="min-width:320px">
-          <label>Athlinks Base URL</label>
-          <input id="athlinksBase" type="text" placeholder="https://api.athlinks.com/v1" />
-        </div>
-        
-        <button id="btnSearch" class="btn">Search</button>
-        <button id="btnStop" class="btn secondary">Stop</button>
-        <button id="btnClear" class="btn warn">Clear</button>
-        <div id="status" class="status"></div>
-      </div>
-    </header>
+        <div id="statsGrid" class="stats-grid"></div>
+      </section>
 
-    <div class="container">
-      <div class="tabs">
-        <div class="tab active" data-tab="data">Data</div>
-        <div class="tab" data-tab="view">View</div>
-        <div class="tab" data-tab="about">About</div>
-      </div>
-
-      <div id="tab-data" class="tabpanel active">
-        <div class="panels">
-          <div class="card">
-            <h3>Results</h3>
-            <div class="small">Editable table. Click a row to edit details on the right.</div>
-            <div style="overflow:auto; max-height:420px; margin-top:8px;">
-              <table class="grid" id="resultsTable">
-                <thead>
-                  <tr>
-                    <th class="nowrap">Date</th>
-                    <th>Event</th>
-                    <th>Location</th>
-                    <th class="nowrap">Distance</th>
-                    <th class="nowrap">Net time</th>
-                    <th class="nowrap">Pace /km</th>
-                    <th class="nowrap">Place (O/G/AG)</th>
-                    <th>Flags</th>
-                    <th>Source</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="resultsTbody"></tbody>
-              </table>
-            </div>
-            <div class="footer">
-              <button id="btnExport" class="btn secondary">Export JSON</button>
-              <label class="btn secondary" style="cursor:pointer;">
-                Import JSON
-                <input id="importFile" type="file" accept="application/json" style="display:none" />
-              </label>
-              <span class="muted">Snapshot:</span>
-              <button id="btnSaveSnapshot" class="btn secondary">Save</button>
-              <button id="btnLoadSnapshot" class="btn secondary">Load</button>
-              <span id="saveInfo" class="muted"></span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Details</h3>
-            <div class="small">Edit selected result JSON. Validate before saving.</div>
-            <textarea id="detailEditor" class="json-editor" placeholder="Select a result row to view/edit JSON"></textarea>
-            <div style="display:flex; gap:8px; margin-top:8px;">
-              <button id="btnApplyEdit" class="btn secondary">Apply Edit</button>
-              <button id="btnRevertEdit" class="btn secondary">Revert</button>
-            </div>
-            <details style="margin-top:8px;">
-              <summary>Provenance & raw payloads</summary>
-              <pre id="provenance" class="json-editor" style="height:180px;"></pre>
-            </details>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-view" class="tabpanel">
-        <div class="charts">
-          <div class="card">
-            <h3>Finish time trend</h3>
-            <svg id="chartTrend"></svg>
-          </div>
-          <div class="card">
-            <h3>Pace vs distance</h3>
-            <svg id="chartPaceDist"></svg>
-          </div>
-          <div class="card">
-            <h3>Negative split bars</h3>
-            <svg id="chartNegative"></svg>
-          </div>
-          <div class="card">
-            <h3>Conditions</h3>
-            <div class="kv">
-              <div class="muted">Hot ≥ °F</div>
-              <input id="thrHot" type="number" value="68" />
-              <div class="muted">Windy ≥ mph</div>
-              <input id="thrWind" type="number" value="10" />
-              <div class="muted">Humid ≥ %</div>
-              <input id="thrHumid" type="number" value="70" />
-            </div>
-            <div style="margin-top:8px; display:flex; gap:8px;">
-              <button id="btnApplyThresholds" class="btn secondary">Apply Thresholds</button>
-              <span class="small">Affects hot/windy/humid flags; rainy derives from precip.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="tab-about" class="tabpanel">
+      <section>
         <div class="card">
-          <h3>About</h3>
-          <div class="kv">
-            <div class="muted">Version</div>
-            <div id="appVersion"></div>
-            <div class="muted">Schema</div>
-            <div id="schemaVersion"></div>
-            <div class="muted">Notes</div>
-            <div>All data stays in your browser unless you export it. Use source toggles with awareness of source ToS. Weather and some sources are mocked in MVP.</div>
+          <div class="section-head">
+            <div>
+              <h2>Snapshot</h2>
+              <p>A Quince-inspired white, sand, and ink palette around a structured local JSON mirror of Athlinks profile, result, and stat data.</p>
+            </div>
+            <div id="categoryChips" class="controls"></div>
           </div>
+          <div id="summaryGrid" class="summary-grid"></div>
         </div>
-      </div>
+      </section>
+
+      <section>
+        <div class="card">
+          <div class="section-head">
+            <div>
+              <h2>Weather x performance</h2>
+              <p>Historical conditions come from Open-Meteo archive weather using each race city/state/country and the local race start window. Visuals compare pace and pace-vs-pattern baseline by temperature, rain, and wind.</p>
+            </div>
+            <div id="coveragePill" class="pill">Loading weather coverage…</div>
+          </div>
+          <div id="weatherTop" class="weather-top"></div>
+          <div id="weatherCharts" class="cards-grid" style="margin-top:16px;"></div>
+          <div id="notableGrid" class="notable-grid" style="margin-top:16px;"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card">
+          <div class="section-head">
+            <div>
+              <h2>Results</h2>
+              <p>Search, filter, and sort all normalized races. Weather tags are shown whenever the archive lookup resolved successfully.</p>
+            </div>
+            <div class="controls">
+              <input id="searchInput" class="input" type="search" placeholder="Search race, city, course, state…" />
+              <select id="distanceFilter" class="select">
+                <option value="all">All distances</option>
+                <option value="short">Short / 5K-ish</option>
+                <option value="10k">10K-ish</option>
+                <option value="half">Half marathon-ish</option>
+                <option value="marathon">Marathon+</option>
+                <option value="trail">Trail / ultra</option>
+              </select>
+              <select id="sortInput" class="select">
+                <option value="date-desc">Newest first</option>
+                <option value="date-asc">Oldest first</option>
+                <option value="pace-asc">Fastest pace</option>
+                <option value="distance-desc">Longest distance</option>
+              </select>
+              <label class="chip upload">Load JSON<input id="fileInput" type="file" accept="application/json" /></label>
+            </div>
+          </div>
+          <div class="results-meta">
+            <div id="resultsMeta">Loading results…</div>
+            <div id="sourceMeta"></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Race</th>
+                  <th>Distance</th>
+                  <th>Finish</th>
+                  <th>Pace</th>
+                  <th>Place</th>
+                  <th>Weather</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody"></tbody>
+            </table>
+          </div>
+          <div class="foot" id="tableFoot"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card">
+          <div class="section-head">
+            <div>
+              <h2>Sources</h2>
+              <p>The diary is local-first: data is stored in ignored JSON/JS files under the repo’s data folder, and can be rebuilt from public Athlinks and Open-Meteo endpoints.</p>
+            </div>
+          </div>
+          <div class="source-grid" id="sourceGrid"></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="cat-zone" aria-hidden="true">
+      <div id="catNote" class="cat-note">black cat patrol</div>
+      <div id="cat" class="cat">🐈‍⬛</div>
     </div>
 
     <script>
-      // Debug helper (enable by setting localStorage.DEBUG to a comma-separated list of keys)
-      const DEBUG_KEYS = (localStorage.getItem('DEBUG') || '').split(',').map(s => s.trim()).filter(Boolean);
-      function debug(key, ...args) { if (!key || DEBUG_KEYS.includes(key) || DEBUG_KEYS.includes('*')) { console.log('[DBG]', key, ...args); } }
+      (() => {
+        const state = { data: null, visibleResults: [] };
 
-      // App constants
-      const APP = { version: '0.1.0', schemaVersion: '0.1.0' };
-      const UI = { activeTab: 'data', selectedIndex: -1 };
-      const STORAGE_PREFIX = 'runrun__';
+        function round(value, digits = 1) {
+          return value == null || Number.isNaN(value) ? null : Number(value.toFixed(digits));
+        }
 
-      // State
-      const state = {
-        person: { full_name: '', birth_year: null, gender: '' },
-        sources: { athlinks: true },
-        config: { athlinks: { api_key: '', base_url: 'https://api.athlinks.com/v1', max_athletes: 3 } },
-        fetching: false,
-        raw_by_source: {},
-        dataset: { person: {}, results: [] },
-        history: [],
-        thresholds: { hot_f: 68, wind_mph: 10, humid_pct: 70 },
-      };
+        function formatInteger(value) {
+          return value == null ? '—' : new Intl.NumberFormat('en-US').format(value);
+        }
 
-      // Utilities
-      function clone(v) { return JSON.parse(JSON.stringify(v)); }
-      function fmtDate(dStr) { try { const d = new Date(dStr); return d.toISOString().slice(0,10); } catch { return dStr; } }
-      function parseTimeToSeconds(t) { if (t == null) return null; const parts = String(t).split(':').map(Number); if (parts.some(isNaN)) return null; let s = 0; for (let i=0;i<parts.length;i++) s = s*60 + parts[i]; return s; }
-      function secondsToTimeStr(s) { if (s == null || !isFinite(s)) return ''; const h = Math.floor(s/3600); const m = Math.floor((s%3600)/60); const sec = Math.round(s%60); return [h, String(m).padStart(2,'0'), String(sec).padStart(2,'0')].join(':'); }
-      function kmPaceFromSecondsPerKm(secPerKm) { if (!secPerKm) return ''; return secondsToTimeStr(secPerKm); }
-      function distanceBucket(km) { if (km == null) return 'unknown'; const d = Math.round(km*10)/10; if (Math.abs(d-42.2) < 1) return 'marathon'; if (Math.abs(d-21.1) < 0.6) return 'half'; if (Math.abs(d-10) < 0.5) return '10k'; if (Math.abs(d-5) < 0.3) return '5k'; return d>=30?'>=30k': d>=15?'>=15k': '<15k'; }
-      function normalizeEventName(name) { return String(name||'').trim().toLowerCase().replace(/\s+/g,' '); }
-      function eventKey(e) { return [fmtDate(e.date), normalizeEventName(e.event_name), distanceBucket(e.distance_km||42.2), e.bib||''].join('|'); }
-      function computePace(result) { if (!result.net_time_s || !result.distance_km) return null; const pace = result.net_time_s / result.distance_km; return pace; }
-      function hasNegativeSplit(result) { if (!result.splits || result.splits.length === 0) return null; const half = result.splits.find(s => /half|21|13\.1/i.test(s.name)); const finish = result.splits[result.splits.length - 1]; if (!half || !finish || !half.elapsed_s || !finish.elapsed_s) return null; const firstHalf = half.elapsed_s; const secondHalf = finish.elapsed_s - half.elapsed_s; return secondHalf < firstHalf; }
-      function normalizeName(n) { return String(n||'').trim().toLowerCase().replace(/\s+/g,' '); }
-      function calcAgeAtDate(birthYear, dateStr) { if (!birthYear || !dateStr) return null; const d = new Date(dateStr); return d.getUTCFullYear() - Number(birthYear); }
-      function ageGroupFromAge(age) { if (age == null || !isFinite(age)) return null; const start = Math.floor(age/5)*5; const end = start+4; return `${start}-${end}`; }
+        function formatNumber(value, digits = 1) {
+          return value == null ? '—' : Number(value).toLocaleString('en-US', { maximumFractionDigits: digits, minimumFractionDigits: digits });
+        }
 
-      // Normalized schema: result
-      // {
-      //   source, source_ids, event_name, date, location: {city,state,country}, distance_km,
-      //   bib, division, status, net_time_s, gun_time_s, overall_place, gender_place, age_group, age_group_place,
-      //   splits: [{name, km, elapsed_s, rank_overall}],
-      //   weather: { temperature_c, wind_kph, humidity_pct, precip_mm },
-      //   derived_flags: { hot:false, windy:false, humid:false, rainy:false, negative_splits:false },
-      //   provenance: { url, fetched_at, raw }
-      // }
+        function formatPercent(value, digits = 1) {
+          return value == null ? '—' : `${Number(value).toFixed(digits)}%`;
+        }
 
-      // Fetch helper with optional proxy
-      async function proxiedFetch(url, extraHeaders) {
-        const candidates = [url];
-        const errors = [];
-        for (const u of candidates) {
-          try {
-            const resp = await fetch(u, { headers: { 'accept':'application/json,text/plain;q=0.9,*/*;q=0.8', ...(extraHeaders||{}) } });
-            if (!resp.ok) { errors.push(`${u} -> HTTP ${resp.status}`); continue; }
-            const text = await resp.text();
-            try { return JSON.parse(text); } catch {
-              // Some proxies return correct JSON with text/plain; above covers it. If HTML, fail.
-              if (text && text.trim().startsWith('{') || text.trim().startsWith('[')) return JSON.parse(text);
-              errors.push(`${u} -> Non-JSON response`);
-            }
-          } catch (e) {
-            errors.push(`${u} -> ${e.message}`);
+        function formatSignedPercent(value, digits = 1) {
+          if (value == null || Number.isNaN(value)) return '—';
+          const n = Number(value);
+          return `${n > 0 ? '+' : ''}${n.toFixed(digits)}% vs pattern`;
+        }
+
+        function formatDistance(result) {
+          const mi = result?.distance_miles;
+          const km = result?.distance_km;
+          if (mi == null && km == null) return '—';
+          return `${mi != null ? Number(mi).toFixed(1) + ' mi' : '—'} · ${km != null ? Number(km).toFixed(1) + ' km' : '—'}`;
+        }
+
+        function classifyDistance(result) {
+          const miles = Number(result?.distance_miles || 0);
+          const category = String(result?.race_category || '').toLowerCase();
+          if (category.includes('trail') || miles >= 26.2) return miles > 26.3 ? 'trail' : 'marathon';
+          if (miles >= 12.4 && miles <= 14.2) return 'half';
+          if (miles >= 5.8 && miles <= 7.5) return '10k';
+          if (miles > 0 && miles <= 4.5) return 'short';
+          return miles >= 15 ? 'trail' : 'short';
+        }
+
+        function deriveVisibleResults(results, searchTerm = '', filter = 'all', sort = 'date-desc') {
+          const q = String(searchTerm || '').trim().toLowerCase();
+          const filtered = (results || []).filter((result) => {
+            const hay = [
+              result.race_name,
+              result.city,
+              result.state,
+              result.course_name,
+              result.course_pattern,
+              result.race_category,
+            ].join(' ').toLowerCase();
+            const matchesSearch = !q || hay.includes(q);
+            const distanceKey = classifyDistance(result);
+            const matchesFilter = filter === 'all' || distanceKey === filter;
+            return matchesSearch && matchesFilter;
+          });
+
+          const copy = [...filtered];
+          copy.sort((a, b) => {
+            if (sort === 'date-asc') return String(a.race_date).localeCompare(String(b.race_date));
+            if (sort === 'pace-asc') return (a.pace_seconds_per_mile || 1e9) - (b.pace_seconds_per_mile || 1e9);
+            if (sort === 'distance-desc') return (b.distance_miles || 0) - (a.distance_miles || 0);
+            return String(b.race_date).localeCompare(String(a.race_date));
+          });
+          return copy;
+        }
+
+        async function loadData() {
+          if (state.data) return state.data;
+          if (globalThis.RUNRUN_DIARY_DATA) {
+            state.data = globalThis.RUNRUN_DIARY_DATA;
+            return state.data;
           }
+          const response = await fetch('./data/athlete-diary.json', { cache: 'no-store' });
+          if (!response.ok) throw new Error(`Failed to load diary data: ${response.status}`);
+          state.data = await response.json();
+          return state.data;
         }
-        throw new Error('All endpoints failed. ' + errors.join(' | '));
-      }
 
-      function splitName(full) {
-        const parts = String(full||'').trim().split(/\s+/);
-        const last = parts.pop() || '';
-        const first = parts.join(' ');
-        return { first, last };
-      }
-
-      async function tryJsonFrom(urls) {
-        const errors = [];
-        for (const url of urls) {
-          try { const json = await proxiedFetch(url); return { url, json }; } catch (e) { errors.push(`${url}: ${e.message}`); }
+        function sentenceCase(text) {
+          if (!text) return '—';
+          return String(text).charAt(0).toUpperCase() + String(text).slice(1);
         }
-        throw new Error('All endpoints failed. ' + errors.join(' | '));
-      }
-      // Athlinks adapter
-      const GENDER_MAP = new Map([["f","F"],["female","F"],["w","F"],["m","M"],["male","M"],["man","M"]]);
-      function normalizeGender(v){ if(v==null) return null; const s=String(v).trim().toLowerCase(); return GENDER_MAP.get(s)||null; }
-      function nameMatches(fullName, firstName, lastName){ if(!fullName) return false; const norm=s=>String(s||"").toLowerCase().replace(/[^a-z\s\-']/g,"").replace(/\s+/g," ").trim(); const fn=norm(fullName); const f=norm(firstName); const l=norm(lastName); const hasF = fn.includes(` ${f} `)||fn.startsWith(`${f} `)||fn.endsWith(` ${f}`)||fn===f; const hasL = fn.includes(` ${l} `)||fn.startsWith(`${l} `)||fn.endsWith(` ${l}`)||fn===l; return hasF && hasL; }
 
-      function chooseTimeSeconds(obj){
-        const candidates = ['netTime','net_time','finishNet','finish_time','time','chipTime','duration','officialTime','official_time'];
-        for(const k of candidates){ const v = obj?.[k]; if(v == null) continue; if(typeof v==='number') return v; if(typeof v==='string'){ if(/\d:\d{2}(:\d{2})?$/.test(v)) return parseTimeToSeconds(v); const n = Number(v); if(Number.isFinite(n)) return n; } }
-        return null;
-      }
-      function chooseGunTimeSeconds(obj){
-        const candidates = ['gunTime','gun_time','finishGun','start_to_finish','elapsed'];
-        for(const k of candidates){ const v = obj?.[k]; if(v == null) continue; if(typeof v==='number') return v; if(typeof v==='string'){ if(/\d:\d{2}(:\d{2})?$/.test(v)) return parseTimeToSeconds(v); const n = Number(v); if(Number.isFinite(n)) return n; } }
-        return null;
-      }
-      function chooseDistanceKm(obj){
-        const km = obj?.distanceKm || obj?.distance_km; if(typeof km==='number') return km;
-        const miles = obj?.distanceMiles || obj?.distance_miles; if(typeof miles==='number') return miles * 1.60934;
-        const name = (obj?.raceName||obj?.eventName||'').toLowerCase(); if(/marathon/.test(name)) return 42.195; if(/half/.test(name)) return 21.097; if(/10k/.test(name)) return 10; if(/5k/.test(name)) return 5; return null;
-      }
-
-      async function fetchAthlinks(person){
-        const base = (state.config.athlinks.base_url||'').replace(/\/$/,'');
-        const key = state.config.athlinks.api_key||'';
-        if(!base || !key) { setStatus('Athlinks base URL or API key missing.'); return []; }
-        const headers = { 'authorization': `Bearer ${key}` };
-        const { first, last } = splitName(person.full_name);
-        const params = new URLSearchParams({ query: `${first} ${last}`, limit: String(state.config.athlinks.max_athletes||3) });
-        if(person.gender) params.set('gender', person.gender);
-        if(person.birth_year) params.set('birthYear', String(person.birth_year));
-        const searchUrl = `${base}/athletes/search?${params.toString()}`;
-        let searchJson; try { searchJson = await proxiedFetch(searchUrl, headers); } catch(e){ setStatus('Athlinks search failed.'); debug('athlinks', 'search error', e.message); return []; }
-        const items = searchJson?.items || searchJson?.athletes || searchJson?.results || [];
-        const candidates = items.map(a => ({ id: a?.id || a?.athleteId, name: a?.name || `${a?.firstName||''} ${a?.lastName||''}`.trim(), gender: a?.gender||'', birthYear: a?.birthYear||a?.yob||null })).filter(a=>a&&a.id);
-        const filtered = candidates.filter(a => nameMatches(` ${a.name} `, first, last) && (!person.gender || !a.gender || person.gender===a.gender) && (!person.birth_year || !a.birthYear || Math.abs(person.birth_year - a.birthYear) <= 2));
-        const chosen = filtered.slice(0, state.config.athlinks.max_athletes||3);
-        const all = [];
-        for(const a of chosen){
-          const resUrl = `${base}/athletes/${encodeURIComponent(a.id)}/results?limit=200&sport=running`;
-          let resJson; try { resJson = await proxiedFetch(resUrl, headers); } catch(e){ debug('athlinks','results error', a.id, e.message); continue; }
-          const results = resJson?.items || resJson?.results || [];
-          for(const r of results){
-            const distanceKm = chooseDistanceKm(r) || 42.195;
-            const net = chooseTimeSeconds(r);
-            const gun = chooseGunTimeSeconds(r);
-            all.push({
-              source: 'athlinks', source_ids: { athlete_id: a.id, result_id: r?.id||null },
-              event_name: r?.raceName || r?.eventName || 'Athlinks Race',
-              date: r?.date || r?.raceDate || '',
-              location: { city: r?.city||'', state: r?.state||'', country: r?.country||'' },
-              distance_km: distanceKm,
-              bib: r?.bib||null,
-              division: r?.division||r?.ageGroup||null,
-              status: (r?.status||'FIN').toUpperCase(),
-              net_time_s: net,
-              gun_time_s: gun,
-              overall_place: r?.overallPlace||r?.overall||null,
-              gender_place: r?.genderPlace||null,
-              age_group: r?.ageGroup||null,
-              age_group_place: r?.ageGroupPlace||null,
-              splits: Array.isArray(r?.splits)? r.splits.map(s=>({ name: s?.name||'', km: s?.km||null, elapsed_s: chooseTimeSeconds({time:s?.time}) })) : [],
-              weather: null,
-              athlete: { full_name: a.name, gender: a.gender||'', birth_year: a.birthYear||null },
-              derived_flags: {},
-              provenance: { url: resUrl, fetched_at: new Date().toISOString(), raw: r }
-            });
-          }
+        function paceFromSeconds(value) {
+          if (value == null) return '—';
+          const total = Math.round(value);
+          return `${Math.floor(total / 60)}:${String(total % 60).padStart(2, '0')}/mi`;
         }
-        return all;
-      }
 
-      // Merge and de-duplicate
-      function mergeResults(results) {
-        const byKey = new Map();
-        const conflicts = [];
-        for (const r of results) {
-          const key = eventKey(r);
-          if (!byKey.has(key)) {
-            byKey.set(key, { ...clone(r), provenance: { ...r.provenance, merged_sources: [r.source] } });
-          } else {
-            const existing = byKey.get(key);
-            // Prefer record with more splits or closer net time agreement
-            const pick = (a, b) => {
-              const aSplits = (a.splits||[]).length; const bSplits = (b.splits||[]).length;
-              if (aSplits !== bSplits) return aSplits > bSplits ? a : b;
-              const aNet = a.net_time_s||Infinity; const bNet = b.net_time_s||Infinity;
-              return aNet <= bNet ? a : b;
-            };
-            const chosen = pick(existing, r);
-            const other = chosen === existing ? r : existing;
-            const merged = { ...clone(chosen) };
-            merged.provenance = {
-              url: chosen.provenance?.url || existing.provenance?.url || r.provenance?.url,
-              fetched_at: new Date().toISOString(),
-              raw: { chosen: chosen.provenance?.raw, other: other.provenance?.raw },
-              merged_sources: Array.from(new Set([...(existing.provenance?.merged_sources||[]), r.source]))
-            };
-            // If simple numeric fields differ slightly, keep the chosen, record conflict
-            if (Math.abs((existing.net_time_s||0) - (r.net_time_s||0)) > 1) {
-              conflicts.push({ key, field: 'net_time_s', values: [existing.net_time_s, r.net_time_s] });
-            }
-            byKey.set(key, merged);
-          }
+        function createBarList(items, valueKey, className = '', formatter = null) {
+          const values = items.map((item) => item[valueKey]).filter((value) => typeof value === 'number');
+          const max = Math.max(...values.map((value) => Math.abs(value)), 1);
+          return `
+            <div class="chart-list">
+              ${items.map((item) => {
+                const value = item[valueKey];
+                const width = value == null ? 0 : Math.max(6, (Math.abs(value) / max) * 100);
+                const display = formatter ? formatter(value) : valueKey.includes('pace_seconds') ? paceFromSeconds(value) : formatSignedPercent(value);
+                return `
+                  <div class="chart-row">
+                    <div class="chart-meta">
+                      <div><strong>${item.label}</strong><span class="subtle">${item.race_count} races</span></div>
+                      <div>${display}</div>
+                    </div>
+                    <div class="track"><div class="fill ${className}" style="width:${width}%"></div></div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          `;
         }
-        return { results: Array.from(byKey.values()), conflicts };
-      }
 
-      // Derived metrics and flags
-      function cToF(c){ return (c * 9/5) + 32; }
-      function kphToMph(k){ return k * 0.621371; }
-      function enrichDerived(results) {
-        const out = [];
-        for (const r of results) {
-          const pace = computePace(r);
-          const neg = hasNegativeSplit(r);
-          const thr = state.thresholds || { hot_f: 68, wind_mph: 10, humid_pct: 70 };
-          const flags = { hot: false, windy: false, humid: false, rainy: false, negative_splits: neg === true };
-          if (r.weather) {
-            // Accept either C/F and kph/mph fields; compute comparisons in Fahrenheit and mph
-            const tempF = (typeof r.weather.temperature_f === 'number') ? r.weather.temperature_f : (typeof r.weather.temperature_c === 'number' ? cToF(r.weather.temperature_c) : null);
-            const windMph = (typeof r.weather.wind_mph === 'number') ? r.weather.wind_mph : (typeof r.weather.wind_kph === 'number' ? kphToMph(r.weather.wind_kph) : null);
-            if (typeof tempF === 'number' && tempF >= thr.hot_f) flags.hot = true;
-            if (typeof windMph === 'number' && windMph >= thr.wind_mph) flags.windy = true;
-            if (typeof r.weather.humidity_pct === 'number' && r.weather.humidity_pct >= thr.humid_pct) flags.humid = true;
-            if (typeof r.weather.precip_mm === 'number' && r.weather.precip_mm > 0) flags.rainy = true;
-          }
-          out.push({ ...r, derived: { pace_s_per_km: pace }, derived_flags: flags });
+        function createRainComparison(items) {
+          const max = Math.max(...items.map((item) => item.avg_pace_seconds_per_mile || 0), 1);
+          return `
+            <div class="chart-list">
+              ${items.map((item, index) => `
+                <div class="chart-row">
+                  <div class="chart-meta">
+                    <div><strong>${item.label}</strong><span class="subtle">${item.race_count} races</span></div>
+                    <div>${paceFromSeconds(item.avg_pace_seconds_per_mile)} · ${formatSignedPercent(item.avg_pace_vs_pattern_baseline_pct)}</div>
+                  </div>
+                  <div class="track"><div class="fill ${index ? 'ink' : ''}" style="width:${Math.max(8, ((item.avg_pace_seconds_per_mile || 0) / max) * 100)}%"></div></div>
+                </div>
+              `).join('')}
+            </div>
+          `;
         }
-        return out;
-      }
 
-      // Rendering: table
-      function renderTable() {
-        const tbody = document.getElementById('resultsTbody');
-        tbody.innerHTML = '';
-        state.dataset.results.forEach((r, idx) => {
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td class="nowrap">${fmtDate(r.date)}</td>
-            <td>${r.event_name || ''}</td>
-            <td>${[r.location?.city, r.location?.state, r.location?.country].filter(Boolean).join(', ')}</td>
-            <td class="nowrap">${(r.distance_km||'').toFixed ? (r.distance_km).toFixed(1)+' km' : ''}</td>
-            <td class="nowrap">${secondsToTimeStr(r.net_time_s)}</td>
-            <td class="nowrap">${kmPaceFromSecondsPerKm(r.derived?.pace_s_per_km)}</td>
-            <td class="nowrap">${[r.overall_place, r.gender_place, r.age_group_place].filter(x=>x!=null).join('/')}</td>
-            <td>${Object.entries(r.derived_flags||{}).filter(([k,v])=>v).map(([k])=>`<span class="badge">${k}</span>`).join(' ')}</td>
-            <td><span class="badge">${(r.provenance?.merged_sources||[r.source]).join('+')}</span></td>
-            <td class="row-actions">
-              <button class="btn secondary" data-action="edit" data-index="${idx}">Edit</button>
-            </td>`;
-          tbody.appendChild(tr);
-        });
-      }
-
-      function selectRow(index) {
-        UI.selectedIndex = index;
-        const r = state.dataset.results[index];
-        const editor = document.getElementById('detailEditor');
-        const prov = document.getElementById('provenance');
-        if (!r) { editor.value = ''; prov.textContent=''; return; }
-        editor.value = JSON.stringify(r, null, 2);
-        prov.textContent = JSON.stringify(r.provenance || {}, null, 2);
-      }
-
-      // Charts
-      function clearSvg(svg) { while (svg.firstChild) svg.removeChild(svg.firstChild); }
-      function drawAxes(svg, x0, y0, x1, y1) {
-        const g = document.createElementNS('http://www.w3.org/2000/svg','g');
-        const ax = document.createElementNS('http://www.w3.org/2000/svg','line');
-        ax.setAttribute('x1', x0); ax.setAttribute('y1', y1); ax.setAttribute('x2', x1); ax.setAttribute('y2', y1); ax.setAttribute('stroke', '#42526b');
-        const ay = document.createElementNS('http://www.w3.org/2000/svg','line');
-        ay.setAttribute('x1', x0); ay.setAttribute('y1', y0); ay.setAttribute('x2', x0); ay.setAttribute('y2', y1); ay.setAttribute('stroke', '#42526b');
-        g.appendChild(ax); g.appendChild(ay); svg.appendChild(g);
-      }
-      function drawTrendChart() {
-        const svg = document.getElementById('chartTrend'); clearSvg(svg);
-        const margin = { t:10, r:20, b:30, l:40 };
-        const width = svg.clientWidth || 600; const height = svg.clientHeight || 280;
-        const x0 = margin.l, y0 = margin.t, x1 = width - margin.r, y1 = height - margin.b;
-        drawAxes(svg, x0, y0, x1, y1);
-        const data = state.dataset.results.slice().sort((a,b)=>new Date(a.date)-new Date(b.date));
-        if (data.length === 0) return;
-        const minDate = +new Date(data[0].date); const maxDate = +new Date(data[data.length-1].date);
-        const times = data.map(d => d.net_time_s).filter(Boolean);
-        const minT = Math.min(...times), maxT = Math.max(...times);
-        const xScale = d => x0 + (x1-x0) * ((+new Date(d.date) - minDate) / (maxDate - minDate || 1));
-        const yScale = d => y1 - (y1-y0) * ((d.net_time_s - minT) / (maxT - minT || 1));
-        // line
-        let dAttr = '';
-        data.forEach((d,i)=>{ const x=xScale(d), y=yScale(d); dAttr += (i? ' L':'M')+x+','+y; });
-        const path = document.createElementNS('http://www.w3.org/2000/svg','path');
-        path.setAttribute('d', dAttr); path.setAttribute('fill','none'); path.setAttribute('stroke', '#38bdf8'); path.setAttribute('stroke-width','2');
-        svg.appendChild(path);
-        // points with condition icons
-        data.forEach(d => {
-          const x=xScale(d), y=yScale(d);
-          const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
-          circle.setAttribute('cx', x); circle.setAttribute('cy', y); circle.setAttribute('r', 4); circle.setAttribute('fill', '#93c5fd');
-          circle.setAttribute('data-title', `${d.event_name} ${fmtDate(d.date)}\n${secondsToTimeStr(d.net_time_s)}`);
-          svg.appendChild(circle);
-          const flags = Object.entries(d.derived_flags||{}).filter(([k,v])=>v).map(([k])=>k.slice(0,1).toUpperCase()).slice(0,3);
-          if (flags.length) {
-            const text = document.createElementNS('http://www.w3.org/2000/svg','text');
-            text.setAttribute('x', x+6); text.setAttribute('y', y-6); text.setAttribute('fill', '#fbbf24'); text.setAttribute('font-size','10'); text.textContent = flags.join('');
-            svg.appendChild(text);
-          }
-        });
-      }
-
-      function drawPaceDistanceScatter() {
-        const svg = document.getElementById('chartPaceDist'); clearSvg(svg);
-        const margin = { t:10, r:20, b:30, l:40 };
-        const width = svg.clientWidth || 600; const height = svg.clientHeight || 280;
-        const x0 = margin.l, y0 = margin.t, x1 = width - margin.r, y1 = height - margin.b;
-        drawAxes(svg, x0, y0, x1, y1);
-        const data = state.dataset.results.slice();
-        if (data.length === 0) return;
-        const minD = Math.min(...data.map(d=>d.distance_km||0));
-        const maxD = Math.max(...data.map(d=>d.distance_km||0));
-        const paces = data.map(d => d.derived?.pace_s_per_km).filter(Boolean);
-        const minP = Math.min(...paces), maxP = Math.max(...paces);
-        const xScale = d => x0 + (x1-x0) * ((d.distance_km - minD) / (maxD - minD || 1));
-        const yScale = d => y1 - (y1-y0) * ((d.derived.pace_s_per_km - minP) / (maxP - minP || 1));
-        data.forEach(d => {
-          if (!d.derived || !d.derived.pace_s_per_km) return;
-          const x = xScale(d), y = yScale(d);
-          const color = d.distance_km > 40 ? '#38bdf8' : d.distance_km > 20 ? '#22c55e' : '#f472b6';
-          const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
-          circle.setAttribute('cx', x); circle.setAttribute('cy', y); circle.setAttribute('r', 4); circle.setAttribute('fill', color);
-          svg.appendChild(circle);
-        });
-      }
-
-      function drawNegativeSplitBars() {
-        const svg = document.getElementById('chartNegative'); clearSvg(svg);
-        const margin = { t:10, r:20, b:30, l:40 };
-        const width = svg.clientWidth || 600; const height = svg.clientHeight || 280;
-        const x0 = margin.l, y0 = margin.t, x1 = width - margin.r, y1 = height - margin.b;
-        drawAxes(svg, x0, y0, x1, y1);
-        const data = state.dataset.results.filter(r => r.splits && r.splits.length>1).slice().sort((a,b)=>new Date(a.date)-new Date(b.date));
-        if (data.length === 0) return;
-        const barsWidth = x1-x0;
-        const barW = Math.max(6, Math.min(24, Math.floor(barsWidth / (data.length*1.5))));
-        const deltas = data.map(d => {
-          const half = d.splits.find(s=>/half|21|13\.1/i.test(s.name)); const fin = d.splits[d.splits.length-1];
-          if (!half || !fin) return 0; return (fin.elapsed_s - half.elapsed_s) - half.elapsed_s; // second - first
-        });
-        const minD = Math.min(...deltas), maxD = Math.max(...deltas);
-        const yScale = delta => y1 - (y1-y0) * ((delta - minD) / (maxD - minD || 1));
-        data.forEach((d,i)=>{
-          const x = x0 + i*(barW+4);
-          const delta = deltas[i];
-          const y = yScale(delta); const h = y1 - y;
-          const rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
-          rect.setAttribute('x', x); rect.setAttribute('y', y); rect.setAttribute('width', barW); rect.setAttribute('height', h);
-          rect.setAttribute('fill', delta < 0 ? '#22c55e' : '#ef4444');
-          svg.appendChild(rect);
-        });
-      }
-
-      function renderAll() {
-        renderTable();
-        drawTrendChart();
-        drawPaceDistanceScatter();
-        drawNegativeSplitBars();
-        document.getElementById('appVersion').textContent = APP.version;
-        document.getElementById('schemaVersion').textContent = APP.schemaVersion;
-      }
-
-      // IO: export/import/snapshots
-      function exportJSON() {
-        const blob = new Blob([JSON.stringify(state.dataset, null, 2)], { type: 'application/json' });
-        const url = URL.createObjectURL(blob); const a = document.createElement('a');
-        const key = snapshotKey();
-        a.href = url; a.download = `${key}.json`; a.click();
-        URL.revokeObjectURL(url);
-      }
-      function importJSONFile(file) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          try { const data = JSON.parse(reader.result); if (!data || !Array.isArray(data.results)) throw new Error('Invalid schema'); state.dataset = data; UI.selectedIndex = -1; renderAll(); saveInfo('Imported.'); } catch (e) { alert('Import error: '+e.message); }
-        };
-        reader.readAsText(file);
-      }
-      function snapshotKey() { const p = state.person; return `${(p.full_name||'anon').replace(/\s+/g,'_')}_${p.birth_year||'yyyy'}`; }
-      function saveSnapshot() { const key = STORAGE_PREFIX + snapshotKey(); localStorage.setItem(key, JSON.stringify(state.dataset)); saveInfo('Saved to local storage.'); }
-      function loadSnapshot() { const key = STORAGE_PREFIX + snapshotKey(); const v = localStorage.getItem(key); if (!v) { saveInfo('No snapshot found.'); return; } try { state.dataset = JSON.parse(v); renderAll(); saveInfo('Loaded from local storage.'); } catch { saveInfo('Load error.'); } }
-      function saveInfo(msg) { document.getElementById('saveInfo').textContent = msg + ' ' + new Date().toLocaleTimeString(); setTimeout(()=>{ document.getElementById('saveInfo').textContent=''; }, 4000); }
-
-      // Fetch flow
-      async function runSearch() {
-        if (state.fetching) return; state.fetching = true; setStatus('Searching...');
-        try {
-          const person = clone(state.person);
-          const tasks = [];
-          state.raw_by_source = {};
-          if (state.sources.athlinks) tasks.push(fetchAthlinks(person).then(r=>{ state.raw_by_source.athlinks = r; return r; }));
-          const resultsNested = await Promise.all(tasks);
-          const resultsFlat = resultsNested.flat();
-          const merged = mergeResults(resultsFlat);
-          const enriched = enrichDerived(merged.results);
-          state.dataset = { person: clone(state.person), results: enriched };
-          setStatus(`Loaded ${enriched.length} results for ${state.person.full_name||'unknown'}. Conflicts: ${merged.conflicts.length}`);
-          UI.selectedIndex = -1;
-          renderAll();
-          saveSnapshot();
-        } catch (e) {
-          console.error(e); alert('Error during search: '+e.message);
-          setStatus('Error.');
-        } finally {
-          state.fetching = false;
+        function createScatter(points) {
+          const clean = (points || []).filter((point) => point.temperature_f != null && point.pace_seconds_per_mile != null).slice(0, 160);
+          if (!clean.length) return '<p class="mini-copy">No scatter points available.</p>';
+          const minTemp = Math.min(...clean.map((point) => point.temperature_f));
+          const maxTemp = Math.max(...clean.map((point) => point.temperature_f));
+          const minPace = Math.min(...clean.map((point) => point.pace_seconds_per_mile));
+          const maxPace = Math.max(...clean.map((point) => point.pace_seconds_per_mile));
+          const width = 640;
+          const height = 340;
+          const pad = 36;
+          const x = (value) => pad + ((value - minTemp) / Math.max(maxTemp - minTemp, 1)) * (width - pad * 2);
+          const y = (value) => height - pad - ((value - minPace) / Math.max(maxPace - minPace, 1)) * (height - pad * 2);
+          const circles = clean.map((point) => {
+            const rainy = (point.rain_in || 0) > 0.02;
+            const fill = rainy ? '#1f1a17' : '#b69b7a';
+            const title = `${point.race_name} (${point.race_date}) · ${Math.round(point.temperature_f)}°F · ${paceFromSeconds(point.pace_seconds_per_mile)}${point.pace_vs_pattern_baseline_pct != null ? ` · ${formatSignedPercent(point.pace_vs_pattern_baseline_pct)}` : ''}`;
+            return `<circle cx="${x(point.temperature_f).toFixed(1)}" cy="${y(point.pace_seconds_per_mile).toFixed(1)}" r="5" fill="${fill}" fill-opacity="0.78"><title>${title}</title></circle>`;
+          }).join('');
+          return `
+            <div class="scatter-wrap">
+              <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Scatter plot of race pace against temperature">
+                <rect x="0" y="0" width="${width}" height="${height}" fill="transparent"></rect>
+                <line x1="${pad}" x2="${width - pad}" y1="${height - pad}" y2="${height - pad}" stroke="#d8ccbd"></line>
+                <line x1="${pad}" x2="${pad}" y1="${pad}" y2="${height - pad}" stroke="#d8ccbd"></line>
+                <text x="${pad}" y="20" fill="#7a6f64" font-size="12">Faster pace</text>
+                <text x="${width - 120}" y="${height - 12}" fill="#7a6f64" font-size="12">Warmer temp →</text>
+                <text x="${pad}" y="${height - 12}" fill="#7a6f64" font-size="12">${Math.round(minTemp)}°F</text>
+                <text x="${width - pad - 24}" y="${height - 12}" fill="#7a6f64" font-size="12">${Math.round(maxTemp)}°F</text>
+                <text x="8" y="${pad + 4}" fill="#7a6f64" font-size="12">${paceFromSeconds(minPace)}</text>
+                <text x="8" y="${height - pad + 4}" fill="#7a6f64" font-size="12">${paceFromSeconds(maxPace)}</text>
+                ${circles}
+              </svg>
+            </div>
+            <div class="legend">
+              <span><i style="background:#b69b7a"></i> Dry race</span>
+              <span><i style="background:#1f1a17"></i> Rainy race</span>
+            </div>
+          `;
         }
-      }
 
-      function stopSearch() { setStatus('Stopped.'); /* In real APIs, use AbortController */ }
-      function clearAll() { state.person = { full_name:'', birth_year:null, gender:'', location_hint:'' }; state.dataset = { person:{}, results:[] }; state.raw_by_source={}; UI.selectedIndex=-1; bindInputsFromState(); renderAll(); setStatus('Cleared.'); }
-      function setStatus(msg) { document.getElementById('status').textContent = msg; }
+        function renderSummary(data) {
+          const overview = data.overview || {};
+          const weather = data.stats?.weather_analysis || {};
+          const cards = [
+            { label: 'Base city', title: `${data.athlete?.city || '—'}, ${data.athlete?.state || ''}`, copy: `Athlinks lists ${data.athlete?.display_name || 'the athlete'} in ${data.athlete?.country_name || data.athlete?.country || ''}.` },
+            { label: 'Years active', title: `${overview.years_active || '—'} seasons`, copy: `${overview.first_race_date || '—'} to ${overview.latest_race_date || '—'}.` },
+            { label: 'Distance bank', title: `${formatNumber(overview.miles_raced || 0, 1)} miles`, copy: `${formatNumber(overview.kilometers_raced || 0, 1)} km logged across ${formatInteger(overview.total_races || 0)} races.` },
+            { label: 'Road focus', title: formatInteger(overview.road_races || 0), copy: 'Road events in the scraped history.' },
+            { label: 'Trail focus', title: formatInteger(overview.trail_races || 0), copy: 'Trail races and ultras.' },
+            { label: 'Adventure', title: formatInteger(overview.adventure_races || 0), copy: 'Adventure race entries.' },
+            { label: 'Weather coverage', title: `${formatInteger(overview.weather_coverage_count || 0)} races`, copy: `${round(overview.weather_coverage_pct || 0, 1)}% of results mapped to archive weather.` },
+          ];
+          document.getElementById('summaryGrid').innerHTML = cards.map((card) => `
+            <article class="mini-card">
+              <div class="mini-label">${card.label}</div>
+              <div class="mini-title">${card.title}</div>
+              <div class="mini-copy">${card.copy}</div>
+            </article>
+          `).join('');
+          document.getElementById('categoryChips').innerHTML = (overview.race_categories || []).map((item) => `<div class="chip">${item.label} · ${item.count}</div>`).join('');
+        }
 
-      // UI wiring
-      function bindInputsFromState() {
-        document.getElementById('fullName').value = state.person.full_name || '';
-        document.getElementById('birthYear').value = state.person.birth_year || '';
-        document.getElementById('gender').value = state.person.gender || '';
-        document.getElementById('athlinksApiKey').value = state.config.athlinks.api_key || '';
-        document.getElementById('athlinksBase').value = state.config.athlinks.base_url || '';
-      }
+        function renderWeather(data) {
+          const weather = data.stats?.weather_analysis || {};
+          const correlations = weather.correlations || {};
+          const top = [
+            { label: 'Weather coverage', title: `${formatInteger(weather.coverage_count || 0)} completed races`, copy: weather.coverage_note || 'Archive weather resolved for most races.' },
+            { label: 'Temp vs pace', title: correlations.temperature_vs_pace_seconds_per_mile == null ? '—' : String(correlations.temperature_vs_pace_seconds_per_mile), copy: 'Positive means warmer races tended to line up with slower pace.' },
+            { label: 'Wind vs pace', title: correlations.wind_vs_pace_seconds_per_mile == null ? '—' : String(correlations.wind_vs_pace_seconds_per_mile), copy: 'Near zero means wind was not the strongest overall separator here.' },
+            { label: 'Humidity vs pace', title: correlations.humidity_vs_pace_seconds_per_mile == null ? '—' : String(correlations.humidity_vs_pace_seconds_per_mile), copy: 'Negative means more humid races skewed a bit faster in this sample.' },
+          ];
+          document.getElementById('weatherTop').innerHTML = top.map((card) => `
+            <article class="mini-card">
+              <div class="mini-label">${card.label}</div>
+              <div class="mini-title">${card.title}</div>
+              <div class="mini-copy">${card.copy}</div>
+            </article>
+          `).join('');
+          document.getElementById('coveragePill').textContent = `${formatInteger(weather.coverage_count || 0)} races with weather`; 
 
-      function readInputsToState() {
-        state.person.full_name = document.getElementById('fullName').value.trim();
-        state.person.birth_year = Number(document.getElementById('birthYear').value) || null;
-        state.person.gender = document.getElementById('gender').value;
-        state.config.athlinks.api_key = document.getElementById('athlinksApiKey').value.trim();
-        state.config.athlinks.base_url = document.getElementById('athlinksBase').value.trim() || 'https://api.athlinks.com/v1';
-      }
+          const charts = [
+            {
+              title: 'Temperature buckets',
+              copy: 'Average pace by race-day temperature window.',
+              body: createBarList(weather.temperature_bins || [], 'avg_pace_seconds_per_mile'),
+            },
+            {
+              title: 'Dry vs rainy',
+              copy: 'Rainy races were rarer but usually slower.',
+              body: createRainComparison(weather.rain_comparison || []),
+            },
+            {
+              title: 'Wind buckets',
+              copy: 'Avg pace-vs-pattern baseline by wind speed bin.',
+              body: createBarList(weather.wind_bins || [], 'avg_pace_vs_pattern_baseline_pct', 'alt'),
+            },
+            {
+              title: 'Temperature vs pace scatter',
+              copy: 'Each dot is a race with resolved weather.',
+              body: createScatter(weather.scatter_points || []),
+            },
+            {
+              title: 'Humidity buckets',
+              copy: 'Baseline-relative pacing by humidity.',
+              body: createBarList(weather.humidity_bins || [], 'avg_pace_vs_pattern_baseline_pct', 'alt'),
+            },
+          ];
 
-      function initTabs() {
-        document.querySelectorAll('.tab').forEach(el => {
-          el.addEventListener('click', () => {
-            const tab = el.getAttribute('data-tab');
-            UI.activeTab = tab;
-            document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t===el));
-            document.querySelectorAll('.tabpanel').forEach(panel => panel.classList.toggle('active', panel.id === 'tab-'+tab));
+          document.getElementById('weatherCharts').innerHTML = charts.map((chart) => `
+            <article class="viz-card">
+              <div class="viz-title">
+                <div>
+                  <div class="mini-label">Analysis</div>
+                  <h3>${chart.title}</h3>
+                </div>
+              </div>
+              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">${chart.copy}</div>
+              ${chart.body}
+            </article>
+          `).join('');
+
+          const notable = weather.notable_races || {};
+          const notableCards = [
+            { label: 'Hottest race', item: notable.hottest, accent: '☀️' },
+            { label: 'Rainiest race', item: notable.rainiest, accent: '🌧️' },
+            { label: 'Windiest race', item: notable.windiest, accent: '🌬️' },
+          ].map(({ label, item, accent }) => {
+            if (!item) return '';
+            const w = item.weather || {};
+            return `
+              <article class="mini-card">
+                <div class="mini-label">${label}</div>
+                <div class="mini-title">${accent} ${item.race_name}</div>
+                <div class="mini-copy">${item.race_date_local || item.race_date?.slice(0, 10) || '—'} · ${item.city || '—'}, ${item.state || ''}</div>
+                <div class="mini-copy">${formatDistance(item)} · ${item.finish_time || '—'} · ${item.pace_per_mile || '—'}/mi</div>
+                <div class="mini-copy">${Math.round(w.temperature_f_avg || 0)}°F avg · ${formatNumber(w.rain_in_total || 0, 2)} in rain · ${formatNumber(w.wind_mph_avg || 0, 1)} mph wind</div>
+              </article>
+            `;
+          }).join('');
+          document.getElementById('notableGrid').innerHTML = notableCards;
+        }
+
+        function weatherTags(result) {
+          const weather = result.weather;
+          if (!weather) return '<span>weather unavailable</span>';
+          const tags = [];
+          if (weather.temperature_f_avg != null) tags.push(`${Math.round(weather.temperature_f_avg)}°F`);
+          if (weather.rain_in_total != null) tags.push(`${Number(weather.rain_in_total).toFixed(2)} in rain`);
+          if (weather.wind_mph_avg != null) tags.push(`${Number(weather.wind_mph_avg).toFixed(1)} mph wind`);
+          if (weather.humidity_pct_avg != null) tags.push(`${Math.round(weather.humidity_pct_avg)}% humidity`);
+          return tags.map((tag) => `<span>${tag}</span>`).join('');
+        }
+
+        function renderResults() {
+          const search = document.getElementById('searchInput').value;
+          const filter = document.getElementById('distanceFilter').value;
+          const sort = document.getElementById('sortInput').value;
+          const results = deriveVisibleResults(state.data.results, search, filter, sort);
+          state.visibleResults = results;
+          document.getElementById('resultsMeta').textContent = `${formatInteger(results.length)} visible of ${formatInteger(state.data.results.length)} total races`;
+          document.getElementById('resultsBody').innerHTML = results.map((result) => `
+            <tr>
+              <td>${result.race_date_local || String(result.race_date).slice(0, 10)}</td>
+              <td>
+                <span class="result-name">${result.race_name || '—'}</span>
+                <span class="subtle">${result.city || '—'}${result.state ? ', ' + result.state : ''} · ${result.race_category || '—'}</span>
+              </td>
+              <td>${formatDistance(result)}<span class="subtle">${result.course_pattern || result.course_name || '—'}</span></td>
+              <td>${result.finish_time || '—'}</td>
+              <td>${result.pace_per_mile ? result.pace_per_mile + '/mi' : '—'}<span class="subtle">${result.pace_per_km ? result.pace_per_km + '/km' : ''}</span></td>
+              <td>#${result.rank_overall || '—'}<span class="subtle">gender #${result.rank_gender || '—'} · age #${result.rank_age_group || '—'}</span></td>
+              <td><div class="weather-pill">${weatherTags(result)}</div></td>
+            </tr>
+          `).join('');
+          document.getElementById('tableFoot').textContent = 'Weather rows are generated from Open-Meteo archive data; locations come from Athlinks race metadata with cached geocodes in the local data folder.';
+        }
+
+        function renderSources(data) {
+          const meta = data.meta || {};
+          const cards = [
+            {
+              title: 'Athlinks athlete data',
+              copy: `${meta.source_site || 'Athlinks'} Overview, Results, and Stats tabs were normalized from public JSON endpoints.`,
+              detail: Object.values(meta.source_apis || {}).map((url) => `<div class="subtle">${url}</div>`).join(''),
+            },
+            {
+              title: 'Weather enrichment',
+              copy: 'Historical race-day weather comes from Open-Meteo geocoding + archive APIs. The update script caches geocodes and weather windows locally to stay polite with public endpoints.',
+              detail: Object.values(meta.weather_sources || {}).map((url) => `<div class="subtle">${url}</div>`).join(''),
+            },
+            {
+              title: 'Local-first files',
+              copy: 'Primary files live in data/athlete-diary.json and data/athlete-diary.js, both ignored from git. The tracked script can rebuild them at any time.',
+              detail: `<div class="subtle">Generated: ${meta.generated_at || '—'}</div>`,
+            },
+          ];
+          document.getElementById('sourceGrid').innerHTML = cards.map((card) => `
+            <article class="source-card">
+              <div class="mini-label">Source</div>
+              <div class="mini-title">${card.title}</div>
+              <p>${card.copy}</p>
+              ${card.detail}
+            </article>
+          `).join('');
+        }
+
+        function renderHero(data) {
+          const athlete = data.athlete || {};
+          const overview = data.overview || {};
+          const weather = data.stats?.weather_analysis || {};
+          const hottest = weather.notable_races?.hottest;
+          const rainy = weather.rain_comparison?.find?.((item) => item.label === 'Rainy');
+          document.getElementById('heroName').textContent = `${athlete.first_name || athlete.display_name || 'Runner'}’s run diary`;
+          document.getElementById('heroSummary').textContent = `${athlete.display_name || 'Athlete'} has ${formatInteger(overview.total_races || 0)} results across ${overview.years_active || '—'} years, with ${formatNumber(overview.miles_raced || 0, 1)} lifetime miles in the scraped Athlinks history.`;
+          document.getElementById('heroWeatherBlurb').textContent = hottest
+            ? `Warmest logged race: ${hottest.race_name} at ${Math.round(hottest.weather?.temperature_f_avg || 0)}°F avg. Rainy races were ${rainy?.race_count || 0} of ${weather.coverage_count || 0} weather-resolved results.`
+            : 'Weather highlights unavailable.';
+
+          const meta = [
+            `${athlete.gender || 'Runner'} · requested age ${athlete.requested_age || '—'}`,
+            `${athlete.city || '—'}, ${athlete.state || ''}`,
+            `${overview.weather_coverage_pct || 0}% weather coverage`,
+            `latest race ${overview.latest_race_date || '—'}`,
+          ];
+          document.getElementById('heroMeta').innerHTML = meta.map((item) => `<div class="pill">${item}</div>`).join('');
+
+          const statCards = [
+            { label: 'Total races', value: formatInteger(overview.total_races || 0), sub: 'Overview count from Athlinks' },
+            { label: 'Miles raced', value: formatNumber(overview.miles_raced || 0, 1), sub: 'Across road, trail, and adventure' },
+            { label: 'PR distances', value: formatInteger((data.stats?.personal_records || []).length), sub: 'Distinct personal record buckets' },
+            { label: 'Weather coverage', value: formatInteger(overview.weather_coverage_count || 0), sub: `${round(overview.weather_coverage_pct || 0, 1)}% of race history` },
+            { label: 'Latest season', value: overview.latest_race_date?.slice(0, 4) || '—', sub: `${overview.years_active || '—'} active years` },
+          ];
+          document.getElementById('statsGrid').innerHTML = statCards.map((stat) => `
+            <article class="stat">
+              <div class="stat-label">${stat.label}</div>
+              <div class="stat-value">${stat.value}</div>
+              <div class="stat-sub">${stat.sub}</div>
+            </article>
+          `).join('');
+        }
+
+        function bindControls() {
+          ['searchInput', 'distanceFilter', 'sortInput'].forEach((id) => {
+            document.getElementById(id).addEventListener('input', renderResults);
+            document.getElementById(id).addEventListener('change', renderResults);
+          });
+
+          document.getElementById('fileInput').addEventListener('change', async (event) => {
+            const file = event.target.files?.[0];
+            if (!file) return;
+            const text = await file.text();
+            state.data = JSON.parse(text);
             renderAll();
           });
-        });
-      }
+        }
 
-      function initEvents() {
-        document.getElementById('btnSearch').addEventListener('click', () => { readInputsToState(); runSearch(); });
-        document.getElementById('btnStop').addEventListener('click', stopSearch);
-        document.getElementById('btnClear').addEventListener('click', clearAll);
-        document.getElementById('btnExport').addEventListener('click', exportJSON);
-        document.getElementById('importFile').addEventListener('change', (e)=>{ const f = e.target.files[0]; if (f) importJSONFile(f); e.target.value = ''; });
-        document.getElementById('btnSaveSnapshot').addEventListener('click', saveSnapshot);
-        document.getElementById('btnLoadSnapshot').addEventListener('click', loadSnapshot);
-        document.getElementById('resultsTbody').addEventListener('click', (e) => {
-          const btn = e.target.closest('button[data-action="edit"]');
-          if (btn) { const i = Number(btn.getAttribute('data-index')); selectRow(i); }
-        });
-        document.getElementById('btnApplyEdit').addEventListener('click', () => {
-          if (UI.selectedIndex < 0) return; const txt = document.getElementById('detailEditor').value; try {
-            const obj = JSON.parse(txt); state.dataset.results[UI.selectedIndex] = obj; renderAll(); selectRow(UI.selectedIndex); saveSnapshot();
-          } catch (e) { alert('Invalid JSON: '+e.message); }
-        });
-        document.getElementById('btnRevertEdit').addEventListener('click', () => { selectRow(UI.selectedIndex); });
-        document.getElementById('btnApplyThresholds').addEventListener('click', () => {
-          const hot = Number(document.getElementById('thrHot').value) || 68;
-          const wind = Number(document.getElementById('thrWind').value) || 10;
-          const humid = Number(document.getElementById('thrHumid').value) || 70;
-          state.thresholds = { hot_f: hot, wind_mph: wind, humid_pct: humid };
-          state.dataset.results = enrichDerived(state.dataset.results.map(r => ({ ...r, derived_flags: {} })));
+        function startCat() {
+          const cat = document.getElementById('cat');
+          const note = document.getElementById('catNote');
+          let lastSwat = 0;
+          let start = performance.now();
+          let showingNote = false;
+
+          function tick(now) {
+            const width = window.innerWidth + 180;
+            const progress = ((now - start) / 22000) % 1;
+            const x = progress * width;
+            const dir = progress > 0.5 ? -1 : 1;
+            cat.style.setProperty('--cat-x', `${x}px`);
+            cat.style.setProperty('--cat-dir', String(dir));
+            requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+
+          window.addEventListener('mousemove', (event) => {
+            if (!showingNote) {
+              showingNote = true;
+              note.classList.add('show');
+              setTimeout(() => note.classList.remove('show'), 1800);
+            }
+            const nearBottom = window.innerHeight - event.clientY < 140;
+            const catRect = cat.getBoundingClientRect();
+            const closeX = Math.abs((catRect.left + catRect.width / 2) - event.clientX) < 180;
+            if (nearBottom && closeX && performance.now() - lastSwat > 900) {
+              lastSwat = performance.now();
+              cat.classList.remove('swat');
+              void cat.offsetWidth;
+              cat.classList.add('swat');
+            }
+          }, { passive: true });
+        }
+
+        function renderAll() {
+          renderHero(state.data);
+          renderSummary(state.data);
+          renderWeather(state.data);
+          renderResults();
+          renderSources(state.data);
+          document.getElementById('sourceMeta').textContent = `Updated ${state.data.meta?.generated_at?.slice(0, 10) || '—'}`;
+        }
+
+        async function init() {
+          state.data = await loadData();
           renderAll();
-          saveSnapshot();
-          setStatus('Applied thresholds.');
-        });
-        window.addEventListener('resize', () => { if (UI.activeTab==='view') { drawTrendChart(); drawPaceDistanceScatter(); drawNegativeSplitBars(); } });
-      }
+          bindControls();
+          startCat();
+        }
 
-      function boot() {
-        bindInputsFromState(); initTabs(); initEvents(); renderAll(); setStatus('Ready.');
-        // Expose for tests
-        window.RunRun = { state, mergeResults, enrichDerived, parseTimeToSeconds, secondsToTimeStr, distanceBucket, computePace, hasNegativeSplit, fetchAthlinks };
-      }
-      document.addEventListener('DOMContentLoaded', boot);
+        globalThis.RunRunDiary = {
+          loadData,
+          classifyDistance,
+          formatDistance,
+          deriveVisibleResults,
+        };
+
+        init().catch((error) => {
+          console.error(error);
+          document.body.innerHTML = `<pre style="padding:24px;white-space:pre-wrap;">${String(error.stack || error.message || error)}</pre>`;
+        });
+      })();
     </script>
   </body>
 </html>
-
-

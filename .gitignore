@@ -1,0 +1,6 @@
+AGENTS_README.local.md
+data/athlete-diary.json
+data/athlete-diary.js
+data/geocode-cache.json
+data/weather-cache.json
+scripts/__pycache__/

@@ -5,72 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RunRun Tests</title>
     <style>
-      body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial; padding: 16px; background:#0f172a; color:#e2e8f0; }
-      .test { padding:8px 12px; border:1px solid #334155; border-radius:8px; margin-bottom:8px; background:#111827; }
-      .ok { color:#22c55e; }
-      .fail { color:#ef4444; }
-      pre { background:#0b1327; padding:8px; border-radius:8px; overflow:auto; color:#d1e9ff; }
+      body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; padding: 16px; background: #f6f6f2; color: #171717; }
+      .test { padding: 10px 12px; border: 1px solid #e7e4dc; border-radius: 12px; margin-bottom: 10px; background: #ffffff; }
+      .ok { color: #126a3a; }
+      .fail { color: #b42318; }
+      pre { background: #fbfbf8; padding: 8px; border-radius: 10px; overflow: auto; }
     </style>
   </head>
   <body>
-    <h1>RunRun Unit Tests</h1>
+    <h1>RunRun smoke tests</h1>
     <div id="results"></div>
-
     <iframe id="app" src="../index.html" style="width:0;height:0;border:0;" onload="runTests()"></iframe>
-
     <script>
       function logResult(name, pass, details) {
         const div = document.createElement('div');
         div.className = 'test';
-        div.innerHTML = `<div>${pass ? '✅' : '❌'} <strong>${name}</strong> <span class="${pass ? 'ok':'fail'}">${pass ? 'PASS' : 'FAIL'}</span></div>` + (details ? `<pre>${details}</pre>` : '');
+        div.innerHTML = `<div>${pass ? '✅' : '❌'} <strong>${name}</strong> <span class="${pass ? 'ok' : 'fail'}">${pass ? 'PASS' : 'FAIL'}</span></div>` + (details ? `<pre>${details}</pre>` : '');
         document.getElementById('results').appendChild(div);
       }
 
-      function approxEqual(a, b, eps=1) { return Math.abs(a-b) <= eps; }
-
-      function runTests() {
+      async function runTests() {
         const appWin = document.getElementById('app').contentWindow;
-        const RR = appWin.RunRun;
+        const API = appWin.RunRunDiary;
         try {
-          // parse/format time
-          const s = RR.parseTimeToSeconds('1:23:45');
-          logResult('parseTimeToSeconds 1:23:45', s === 5025, 'Expected 5025, got '+s);
-          const t = RR.secondsToTimeStr(5025);
-          logResult('secondsToTimeStr 5025', t === '1:23:45', 'Expected 1:23:45, got '+t);
-
-          // distance bucket
-          logResult('distanceBucket(42.195)', RR.distanceBucket(42.195) === 'marathon', RR.distanceBucket(42.195));
-          logResult('distanceBucket(21.1)', RR.distanceBucket(21.1) === 'half', RR.distanceBucket(21.1));
-
-          // pace computation
-          const pace = RR.computePace({ net_time_s: 3*3600+30*60, distance_km: 42.195 });
-          logResult('computePace marathon 3:30', Math.abs(pace - ((3*3600+30*60)/42.195)) < 0.001, String(pace));
-
-          // negative split
-          const neg = RR.hasNegativeSplit({ splits: [ { name:'Half', elapsed_s: 2*3600 }, { name:'Finish', elapsed_s: 3*3600+50 } ]});
-          logResult('hasNegativeSplit false', neg === false, String(neg));
-          const neg2 = RR.hasNegativeSplit({ splits: [ { name:'Half', elapsed_s: 2*3600 }, { name:'Finish', elapsed_s: 3*3600-60 } ]});
-          logResult('hasNegativeSplit true', neg2 === true, String(neg2));
-
-          // merge & dedupe
-          const A = { source:'sporthive', event_name:'Test', date:'2024-01-01', distance_km:42.195, bib:'1', net_time_s: 14000, splits:[{name:'Half', elapsed_s:7000}, {name:'Finish', elapsed_s:14000}], provenance:{raw:{a:1}} };
-          const B = { source:'runsignup', event_name:'Test', date:'2024-01-01', distance_km:42.195, bib:'1', net_time_s: 14002, splits:[{name:'Finish', elapsed_s:14002}], provenance:{raw:{b:1}} };
-          const merged = RR.mergeResults([A,B]);
-          const res = merged.results[0];
-          logResult('mergeResults picks richer record', res.source === 'sporthive' || (res.splits||[]).length === 2, JSON.stringify(res));
-          const enriched = appWin.RunRun.enrichDerived(merged.results);
-          logResult('enrichDerived adds pace', enriched[0].derived && enriched[0].derived.pace_s_per_km > 0, JSON.stringify(enriched[0].derived));
-
-          // Real Sporthive fetch requires event and race IDs and likely a CORS proxy.
-          // We skip network integration tests here; manual verification is via the main app.
-          logResult('network integration skipped', true, 'Provide Sporthive event/race IDs in app UI');
-
-        } catch (e) {
-          logResult('Unhandled exception', false, e.stack || e.message);
+          const data = await API.loadData();
+          logResult('loadData returns data', !!data, JSON.stringify({ hasData: !!data, results: data?.results?.length }));
+          logResult('athlete name', data?.athlete?.display_name === 'Elisa Park', data?.athlete?.display_name || 'missing');
+          logResult('result count', data?.results?.length === 107, String(data?.results?.length));
+          logResult('classifyDistance marathon', API.classifyDistance({ distance_miles: 26.2 }) === 'marathon', API.classifyDistance({ distance_miles: 26.2 }));
+          logResult('formatDistance half', API.formatDistance({ distance_miles: 13.1, distance_km: 21.1 }) === '13.1 mi · 21.1 km', API.formatDistance({ distance_miles: 13.1, distance_km: 21.1 }));
+          const trail = API.deriveVisibleResults(data.results, '', 'trail', 'date-desc');
+          logResult('trail filter non-empty', trail.length > 0, String(trail.length));
+          const chicago = API.deriveVisibleResults(data.results, 'Chicago', 'all', 'date-desc');
+          logResult('search Chicago non-empty', chicago.length > 0, String(chicago.length));
+        } catch (error) {
+          logResult('Unhandled exception', false, error.stack || error.message);
         }
       }
     </script>
   </body>
 </html>
-
-
