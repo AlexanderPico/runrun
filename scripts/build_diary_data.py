@@ -49,6 +49,30 @@ WEATHER_START_OVERRIDES = {
     ('J.P. Morgan Chase Corporate Challenge', '2016-09-08'): '2016-09-08T17:00:00',
 }
 
+ELEVATION_GAIN_FT_OVERRIDES = {
+    ('american river 50-mile endurance run', '50mi trail run'): 6332,
+    ('ayala cove trail run 2011', '10mi trail run'): 1380,
+    ('ayala cove trail run 2012', '10mi trail run'): 1380,
+    ('cinderella trail run', '13.1mi trail run'): 2385,
+    ('crystal springs', '13.1mi trail run'): 2190,
+    ('crystal springs (summer)', '13.1mi trail run'): 2190,
+    ('crystal springs trail run', '13.1mi trail run'): 2190,
+    ('golden gate trail run 2012', '13.1mi trail run'): 2550,
+    ('leadville trail 10k 2012', '10k trail run'): 475,
+    ('montara mountain trail run 2012', '13.1mi trail run'): 2900,
+    ('mount diablo trail run', '13.1mi trail run'): 3420,
+    ('mount diablo trail run - "when hell freezes over"', '13.1mi trail run'): 4180,
+    ('rodeo beach trail run 2009', '8k trail run'): 1055,
+    ('salt point trail run', '15k trail run'): 1179,
+    ('san lorenzo river trail run', '13.1mi trail run'): 2175,
+    ('san lorenzo river trail run 2012', '13.1mi trail run'): 2175,
+    ('santa cruz', '13.1mi trail run'): 2425,
+    ('santa cruz trail run', '13.1mi trail run'): 2425,
+    ('spasm crystal springs trail run', '13.1mi trail run'): 2190,
+    ('way too cool', '50k trail run'): 4799,
+    ('way too cool 50k', '50k trail run'): 4799,
+}
+
 
 def get_json(url: str, *, params: dict[str, Any] | None = None, timeout: int = 60) -> Any:
     for attempt in range(3):
@@ -171,6 +195,14 @@ def meters_to_km(meters: float | None) -> float | None:
 
 def meters_to_miles(meters: float | None) -> float | None:
     return round(meters / 1609.344, 3) if meters not in (None, 0) else (0 if meters == 0 else None)
+
+
+def normalize_lookup(value: str | None) -> str:
+    return ' '.join((value or '').strip().lower().split())
+
+
+def elevation_gain_ft_for(race_name: str | None, course_pattern: str | None) -> int | None:
+    return ELEVATION_GAIN_FT_OVERRIDES.get((normalize_lookup(race_name), normalize_lookup(course_pattern)))
 
 
 def pace_per_unit(ms: int | None, meters: float | None, unit: str) -> str | None:
@@ -447,6 +479,7 @@ def build() -> dict[str, Any]:
         place = normalize_place(race.get('City') or entry.get('City'), race.get('StateProvAbbrev') or entry.get('StateProv'), race.get('CountryID3') or entry.get('CountryID3'))
         geo = geocode_place(place)
         weather = fetch_weather(geo, race_dt, entry.get('Ticks'), race.get('RaceName') or race.get('EventName'))
+        elevation_gain_ft = elevation_gain_ft_for(race.get('RaceName'), course.get('CoursePattern'))
         normalized_results.append({
             'entry_id': entry.get('EntryID'),
             'entry_unique_id': entry.get('EntryUniqueID'),
@@ -466,6 +499,7 @@ def build() -> dict[str, Any]:
             'distance_meters': meters,
             'distance_km': meters_to_km(meters),
             'distance_miles': meters_to_miles(meters),
+            'elevation_gain_ft': elevation_gain_ft,
             'race_date': race.get('RaceDate'),
             'race_date_local': iso_date(race.get('RaceDate')),
             'status': 'completed' if race_dt and race_dt <= now else 'upcoming',
@@ -675,6 +709,7 @@ def build() -> dict[str, Any]:
                 'Athlinks profile API reports Elisa Park as age 45; requested diary persona is 46-year-old female.',
                 'EventDate was blank in race entries, so Race.RaceDate was used for chronology.',
                 'Historical weather is inferred from Open-Meteo archive data using geocoded race city/state/country plus the race start hour and a capped finish-duration window.',
+                'Trail elevation_gain_ft is manually filled where official course pages or race PDFs exposed trustworthy climb totals.',
                 'A local JS mirror is generated from this JSON so the diary opens under file:// without fetch/CORS issues.',
             ],
         },

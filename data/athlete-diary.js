@@ -1,6 +1,6 @@
 globalThis.RUNRUN_DIARY_DATA = {
   "meta": {
-    "generated_at": "2026-05-01T19:15:07.593932Z",
+    "generated_at": "2026-05-01T19:46:25.105850Z",
     "repo": "/Users/aimee/.openclaw/git/AlexanderPico/runrun",
     "source_site": "Athlinks",
     "athlete_page": "https://www.athlinks.com/athletes/92157185",
@@ -22,6 +22,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "Athlinks profile API reports Elisa Park as age 45; requested diary persona is 46-year-old female.",
       "EventDate was blank in race entries, so Race.RaceDate was used for chronology.",
       "Historical weather is inferred from Open-Meteo archive data using geocoded race city/state/country plus the race start hour and a capped finish-duration window.",
+      "Trail elevation_gain_ft is manually filled where official course pages or race PDFs exposed trustworthy climb totals.",
       "A local JS mirror is generated from this JSON so the diary opens under file:// without fetch/CORS issues."
     ]
   },
@@ -2667,6 +2668,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "distance_meters": 15000.0,
           "distance_km": 15.0,
           "distance_miles": 9.321,
+          "elevation_gain_ft": 1179,
           "race_date": "2016-07-23T10:00:00",
           "race_date_local": "2016-07-23",
           "status": "completed",
@@ -2716,6 +2718,8 @@ globalThis.RUNRUN_DIARY_DATA = {
               "snowy": false,
               "windy": false
             },
+            "day_period": "day",
+            "day_period_label": "Day race",
             "hour_count": 4,
             "hourly_sample": [
               {
@@ -2772,9 +2776,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "wind_mph_avg": 6.4,
             "wind_mph_max": 7.9,
             "window_end_local": "2016-07-23T13:00",
-            "window_start_local": "2016-07-23T10:00",
-            "day_period": "day",
-            "day_period_label": "Day race"
+            "window_start_local": "2016-07-23T10:00"
           },
           "source_urls": {
             "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -2972,6 +2974,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "distance_meters": 42164.81,
           "distance_km": 42.165,
           "distance_miles": 26.2,
+          "elevation_gain_ft": null,
           "race_date": "2009-10-11T07:30:00",
           "race_date_local": "2009-10-11",
           "status": "completed",
@@ -3021,6 +3024,8 @@ globalThis.RUNRUN_DIARY_DATA = {
               "snowy": false,
               "windy": false
             },
+            "day_period": "day",
+            "day_period_label": "Day race",
             "hour_count": 6,
             "hourly_sample": [
               {
@@ -3097,9 +3102,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "wind_mph_avg": 6.6,
             "wind_mph_max": 7.6,
             "window_end_local": "2009-10-11T12:30",
-            "window_start_local": "2009-10-11T07:30",
-            "day_period": "day",
-            "day_period_label": "Day race"
+            "window_start_local": "2009-10-11T07:30"
           },
           "source_urls": {
             "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -3297,6 +3300,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "distance_meters": 20000.0,
           "distance_km": 20.0,
           "distance_miles": 12.427,
+          "elevation_gain_ft": null,
           "race_date": "2016-12-10T08:45:00",
           "race_date_local": "2016-12-10",
           "status": "completed",
@@ -3346,6 +3350,8 @@ globalThis.RUNRUN_DIARY_DATA = {
               "snowy": false,
               "windy": true
             },
+            "day_period": "day",
+            "day_period_label": "Day race",
             "hour_count": 4,
             "hourly_sample": [
               {
@@ -3402,9 +3408,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "wind_mph_avg": 13.7,
             "wind_mph_max": 14.1,
             "window_end_local": "2016-12-10T11:45",
-            "window_start_local": "2016-12-10T08:45",
-            "day_period": "day",
-            "day_period_label": "Day race"
+            "window_start_local": "2016-12-10T08:45"
           },
           "source_urls": {
             "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -3602,6 +3606,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "distance_meters": 10000.0,
           "distance_km": 10.0,
           "distance_miles": 6.214,
+          "elevation_gain_ft": null,
           "race_date": "2023-02-05T08:00:00",
           "race_date_local": "2023-02-05",
           "status": "completed",
@@ -3651,6 +3656,8 @@ globalThis.RUNRUN_DIARY_DATA = {
               "snowy": false,
               "windy": true
             },
+            "day_period": "day",
+            "day_period_label": "Day race",
             "hour_count": 3,
             "hourly_sample": [
               {
@@ -3697,9 +3704,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "wind_mph_avg": 17.4,
             "wind_mph_max": 18.6,
             "window_end_local": "2023-02-05T10:00",
-            "window_start_local": "2023-02-05T08:00",
-            "day_period": "day",
-            "day_period_label": "Day race"
+            "window_start_local": "2023-02-05T08:00"
           },
           "source_urls": {
             "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -3901,6 +3906,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2026-02-22T08:00:00",
       "race_date_local": "2026-02-22",
       "status": "completed",
@@ -3950,6 +3956,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -4006,9 +4014,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.6,
         "wind_mph_max": 5.5,
         "window_end_local": "2026-02-22T11:00",
-        "window_start_local": "2026-02-22T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2026-02-22T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -4206,6 +4212,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": null,
       "race_date": "2025-11-22T08:00:00",
       "race_date_local": "2025-11-22",
       "status": "completed",
@@ -4255,6 +4262,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -4301,9 +4310,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.0,
         "wind_mph_max": 4.2,
         "window_end_local": "2025-11-22T10:00",
-        "window_start_local": "2025-11-22T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2025-11-22T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -4501,6 +4508,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2025-11-02T04:00:00",
       "race_date_local": "2025-11-02",
       "status": "completed",
@@ -4550,6 +4558,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -4606,9 +4616,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 2.4,
         "wind_mph_max": 4.4,
         "window_end_local": "2025-11-02T07:00",
-        "window_start_local": "2025-11-02T04:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2025-11-02T04:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -4806,6 +4814,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2025-10-12T04:00:00",
       "race_date_local": "2025-10-12",
       "status": "completed",
@@ -4855,6 +4864,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -4931,9 +4942,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.7,
         "wind_mph_max": 5.7,
         "window_end_local": "2025-10-12T09:00",
-        "window_start_local": "2025-10-12T04:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2025-10-12T04:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -5131,6 +5140,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.0,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2025-08-23T06:55:00",
       "race_date_local": "2025-08-23",
       "status": "completed",
@@ -5180,6 +5190,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -5236,9 +5248,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.1,
         "wind_mph_max": 3.8,
         "window_end_local": "2025-08-23T09:55",
-        "window_start_local": "2025-08-23T06:55",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2025-08-23T06:55"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -5436,6 +5446,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": null,
       "race_date": "2025-07-12T08:00:00",
       "race_date_local": "2025-07-12",
       "status": "completed",
@@ -5485,6 +5496,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "night",
+        "day_period_label": "Night race",
         "hour_count": 2,
         "hourly_sample": [
           {
@@ -5521,9 +5534,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 9.5,
         "wind_mph_max": 9.8,
         "window_end_local": "2025-07-12T21:00",
-        "window_start_local": "2025-07-12T20:00",
-        "day_period": "night",
-        "day_period_label": "Night race"
+        "window_start_local": "2025-07-12T20:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -5721,6 +5732,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": null,
       "race_date": "2025-03-21T07:00:00",
       "race_date_local": "2025-03-21",
       "status": "completed",
@@ -5770,6 +5782,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -5816,9 +5830,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 1.8,
         "wind_mph_max": 2.7,
         "window_end_local": "2025-03-21T09:00",
-        "window_start_local": "2025-03-21T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2025-03-21T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -6016,6 +6028,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": null,
       "race_date": "2025-02-23T08:00:00",
       "race_date_local": "2025-02-23",
       "status": "completed",
@@ -6065,6 +6078,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -6111,9 +6126,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.5,
         "wind_mph_max": 4.8,
         "window_end_local": "2025-02-23T10:00",
-        "window_start_local": "2025-02-23T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2025-02-23T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -6311,6 +6324,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2024-11-03T07:00:00",
       "race_date_local": "2024-11-03",
       "status": "completed",
@@ -6360,6 +6374,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -6416,9 +6432,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 9.0,
         "wind_mph_max": 10.4,
         "window_end_local": "2024-11-03T10:00",
-        "window_start_local": "2024-11-03T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2024-11-03T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -6616,6 +6630,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2024-10-13T04:00:00",
       "race_date_local": "2024-10-13",
       "status": "completed",
@@ -6665,6 +6680,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -6751,9 +6768,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 8.6,
         "wind_mph_max": 9.7,
         "window_end_local": "2024-10-13T10:00",
-        "window_start_local": "2024-10-13T04:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2024-10-13T04:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -6951,6 +6966,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2190,
       "race_date": "2024-09-01T07:00:00",
       "race_date_local": "2024-09-01",
       "status": "completed",
@@ -7000,6 +7016,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -7066,9 +7084,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.5,
         "wind_mph_max": 4.4,
         "window_end_local": "2024-09-01T11:00",
-        "window_start_local": "2024-09-01T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2024-09-01T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -7266,6 +7282,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2024-08-17T08:00:00",
       "race_date_local": "2024-08-17",
       "status": "completed",
@@ -7315,6 +7332,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -7391,9 +7410,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.2,
         "wind_mph_max": 7.3,
         "window_end_local": "2024-08-17T13:00",
-        "window_start_local": "2024-08-17T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2024-08-17T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -7591,6 +7608,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2024-08-03T07:00:00",
       "race_date_local": "2024-08-03",
       "status": "completed",
@@ -7640,6 +7658,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -7696,9 +7716,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.7,
         "wind_mph_max": 6.2,
         "window_end_local": "2024-08-03T10:00",
-        "window_start_local": "2024-08-03T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2024-08-03T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -7896,6 +7914,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2175,
       "race_date": "2024-07-13T06:00:00",
       "race_date_local": "2024-07-13",
       "status": "completed",
@@ -7945,6 +7964,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -8011,9 +8032,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.0,
         "wind_mph_max": 8.5,
         "window_end_local": "2024-07-13T10:00",
-        "window_start_local": "2024-07-13T06:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2024-07-13T06:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -8211,6 +8230,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2023-11-23T08:00:00",
       "race_date_local": "2023-11-23",
       "status": "completed",
@@ -8260,6 +8280,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -8316,9 +8338,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.0,
         "wind_mph_max": 5.2,
         "window_end_local": "2023-11-23T11:00",
-        "window_start_local": "2023-11-23T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2023-11-23T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -8516,6 +8536,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2023-10-08T07:00:00",
       "race_date_local": "2023-10-08",
       "status": "completed",
@@ -8565,6 +8586,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -8651,9 +8674,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 9.3,
         "wind_mph_max": 10.7,
         "window_end_local": "2023-10-08T13:00",
-        "window_start_local": "2023-10-08T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2023-10-08T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -8851,6 +8872,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2425,
       "race_date": "2023-08-26T08:00:00",
       "race_date_local": "2023-08-26",
       "status": "completed",
@@ -8900,6 +8922,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -8966,9 +8990,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.6,
         "wind_mph_max": 6.8,
         "window_end_local": "2023-08-26T12:00",
-        "window_start_local": "2023-08-26T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2023-08-26T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -9166,6 +9188,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2023-05-14T04:00:00",
       "race_date_local": "2023-05-14",
       "status": "completed",
@@ -9214,6 +9237,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -9300,9 +9325,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.6,
         "wind_mph_max": 10.5,
         "window_end_local": "2023-05-14T10:00",
-        "window_start_local": "2023-05-14T04:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2023-05-14T04:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -9500,6 +9523,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2023-03-05T08:00:00",
       "race_date_local": "2023-03-05",
       "status": "completed",
@@ -9549,6 +9573,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -9605,9 +9631,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 9.6,
         "wind_mph_max": 10.5,
         "window_end_local": "2023-03-05T11:00",
-        "window_start_local": "2023-03-05T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2023-03-05T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -9805,6 +9829,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": null,
       "race_date": "2023-02-05T08:00:00",
       "race_date_local": "2023-02-05",
       "status": "completed",
@@ -9854,6 +9879,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": true
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -9900,9 +9927,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 17.4,
         "wind_mph_max": 18.6,
         "window_end_local": "2023-02-05T10:00",
-        "window_start_local": "2023-02-05T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2023-02-05T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -10100,6 +10125,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 5000.0,
       "distance_km": 5.0,
       "distance_miles": 3.107,
+      "elevation_gain_ft": null,
       "race_date": "2022-11-24T08:00:00",
       "race_date_local": "2022-11-24",
       "status": "completed",
@@ -10149,6 +10175,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 2,
         "hourly_sample": [
           {
@@ -10185,9 +10213,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.1,
         "wind_mph_max": 4.1,
         "window_end_local": "2022-11-24T09:00",
-        "window_start_local": "2022-11-24T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2022-11-24T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -10385,6 +10411,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": null,
       "race_date": "2022-11-19T18:30:00",
       "race_date_local": "2022-11-19",
       "status": "completed",
@@ -10680,6 +10707,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 5000.0,
       "distance_km": 5.0,
       "distance_miles": 3.107,
+      "elevation_gain_ft": null,
       "race_date": "2022-11-12T08:00:00",
       "race_date_local": "2022-11-12",
       "status": "completed",
@@ -10729,6 +10757,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 2,
         "hourly_sample": [
           {
@@ -10765,9 +10795,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 1.8,
         "wind_mph_max": 2.0,
         "window_end_local": "2022-11-12T09:00",
-        "window_start_local": "2022-11-12T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2022-11-12T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -10965,6 +10993,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2425,
       "race_date": "2022-08-27T07:00:00",
       "race_date_local": "2022-08-27",
       "status": "completed",
@@ -11014,6 +11043,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -11080,9 +11111,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.6,
         "wind_mph_max": 4.1,
         "window_end_local": "2022-08-27T11:00",
-        "window_start_local": "2022-08-27T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2022-08-27T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -11280,6 +11309,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2022-08-06T07:00:00",
       "race_date_local": "2022-08-06",
       "status": "completed",
@@ -11329,6 +11359,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -11395,9 +11427,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 8.0,
         "wind_mph_max": 8.4,
         "window_end_local": "2022-08-06T11:00",
-        "window_start_local": "2022-08-06T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2022-08-06T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -11595,6 +11625,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2022-03-06T08:00:00",
       "race_date_local": "2022-03-06",
       "status": "completed",
@@ -11644,6 +11675,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -11700,9 +11733,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.4,
         "wind_mph_max": 4.4,
         "window_end_local": "2022-03-06T11:00",
-        "window_start_local": "2022-03-06T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2022-03-06T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -11900,6 +11931,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 4180,
       "race_date": "2022-01-29T08:00:00",
       "race_date_local": "2022-01-29",
       "status": "completed",
@@ -11949,6 +11981,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -12025,9 +12059,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.6,
         "wind_mph_max": 4.7,
         "window_end_local": "2022-01-29T13:00",
-        "window_start_local": "2022-01-29T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2022-01-29T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -12225,6 +12257,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2190,
       "race_date": "2022-01-16T08:00:00",
       "race_date_local": "2022-01-16",
       "status": "completed",
@@ -12274,6 +12307,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -12340,9 +12375,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 1.7,
         "wind_mph_max": 3.5,
         "window_end_local": "2022-01-16T12:00",
-        "window_start_local": "2022-01-16T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2022-01-16T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -12540,6 +12573,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 20000.0,
       "distance_km": 20.0,
       "distance_miles": 12.427,
+      "elevation_gain_ft": null,
       "race_date": "2021-12-11T08:00:00",
       "race_date_local": "2021-12-11",
       "status": "completed",
@@ -12589,6 +12623,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -12655,9 +12691,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 2.4,
         "wind_mph_max": 3.6,
         "window_end_local": "2021-12-11T12:00",
-        "window_start_local": "2021-12-11T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2021-12-11T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -12855,6 +12889,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2018-09-22T08:00:00",
       "race_date_local": "2018-09-22",
       "status": "completed",
@@ -12903,6 +12938,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -12969,9 +13006,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 2.4,
         "wind_mph_max": 4.0,
         "window_end_local": "2018-09-22T12:00",
-        "window_start_local": "2018-09-22T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2018-09-22T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -13169,6 +13204,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2385,
       "race_date": "2018-08-11T08:00:00",
       "race_date_local": "2018-08-11",
       "status": "completed",
@@ -13218,6 +13254,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -13284,9 +13322,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 8.4,
         "wind_mph_max": 8.9,
         "window_end_local": "2018-08-11T12:00",
-        "window_start_local": "2018-08-11T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2018-08-11T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -13484,6 +13520,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2018-07-07T00:00:00",
       "race_date_local": "2018-07-07",
       "status": "completed",
@@ -13533,6 +13570,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -13579,9 +13618,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.0,
         "wind_mph_max": 7.5,
         "window_end_local": "2018-07-07T02:00",
-        "window_start_local": "2018-07-07T00:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2018-07-07T00:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -13779,6 +13816,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2017-09-23T08:00:00",
       "race_date_local": "2017-09-23",
       "status": "completed",
@@ -13827,6 +13865,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -13893,9 +13933,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.3,
         "wind_mph_max": 7.2,
         "window_end_local": "2017-09-23T12:00",
-        "window_start_local": "2017-09-23T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2017-09-23T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -14093,6 +14131,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2190,
       "race_date": "2017-08-05T08:00:00",
       "race_date_local": "2017-08-05",
       "status": "completed",
@@ -14142,6 +14181,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -14208,9 +14249,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 5.7,
         "wind_mph_max": 9.2,
         "window_end_local": "2017-08-05T12:00",
-        "window_start_local": "2017-08-05T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2017-08-05T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -14408,6 +14447,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 20000.0,
       "distance_km": 20.0,
       "distance_miles": 12.427,
+      "elevation_gain_ft": null,
       "race_date": "2016-12-10T08:45:00",
       "race_date_local": "2016-12-10",
       "status": "completed",
@@ -14457,6 +14497,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": true
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -14513,9 +14555,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 13.7,
         "wind_mph_max": 14.1,
         "window_end_local": "2016-12-10T11:45",
-        "window_start_local": "2016-12-10T08:45",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2016-12-10T08:45"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -14713,6 +14753,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2016-11-19T08:00:00",
       "race_date_local": "2016-11-19",
       "status": "completed",
@@ -14762,6 +14803,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -14828,9 +14871,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 10.1,
         "wind_mph_max": 12.0,
         "window_end_local": "2016-11-19T12:00",
-        "window_start_local": "2016-11-19T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2016-11-19T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -15028,6 +15069,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2016-10-09T07:20:00",
       "race_date_local": "2016-10-09",
       "status": "completed",
@@ -15077,6 +15119,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -15163,9 +15207,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.6,
         "wind_mph_max": 8.6,
         "window_end_local": "2016-10-09T13:20",
-        "window_start_local": "2016-10-09T07:20",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2016-10-09T07:20"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -15363,6 +15405,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2016-09-18T07:00:00",
       "race_date_local": "2016-09-18",
       "status": "completed",
@@ -15412,6 +15455,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -15498,9 +15543,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 1.7,
         "wind_mph_max": 4.0,
         "window_end_local": "2016-09-18T13:00",
-        "window_start_local": "2016-09-18T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2016-09-18T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -15698,6 +15741,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 5149.9,
       "distance_km": 5.15,
       "distance_miles": 3.2,
+      "elevation_gain_ft": null,
       "race_date": "2016-09-08T19:15:00",
       "race_date_local": "2016-09-08",
       "status": "completed",
@@ -15983,6 +16027,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 3420,
       "race_date": "2016-08-28T08:00:00",
       "race_date_local": "2016-08-28",
       "status": "completed",
@@ -16031,6 +16076,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -16097,9 +16144,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 5.9,
         "wind_mph_max": 6.9,
         "window_end_local": "2016-08-28T12:00",
-        "window_start_local": "2016-08-28T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2016-08-28T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -16297,6 +16342,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2190,
       "race_date": "2016-08-07T08:30:00",
       "race_date_local": "2016-08-07",
       "status": "completed",
@@ -16346,6 +16392,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -16412,9 +16460,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.1,
         "wind_mph_max": 6.5,
         "window_end_local": "2016-08-07T12:30",
-        "window_start_local": "2016-08-07T08:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2016-08-07T08:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -16612,6 +16658,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 15000.0,
       "distance_km": 15.0,
       "distance_miles": 9.321,
+      "elevation_gain_ft": 1179,
       "race_date": "2016-07-23T10:00:00",
       "race_date_local": "2016-07-23",
       "status": "completed",
@@ -16661,6 +16708,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -16717,9 +16766,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.4,
         "wind_mph_max": 7.9,
         "window_end_local": "2016-07-23T13:00",
-        "window_start_local": "2016-07-23T10:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2016-07-23T10:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -16917,6 +16964,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2015-10-11T07:00:00",
       "race_date_local": "2015-10-11",
       "status": "completed",
@@ -16966,6 +17014,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": true
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -17052,9 +17102,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 12.6,
         "wind_mph_max": 13.6,
         "window_end_local": "2015-10-11T13:00",
-        "window_start_local": "2015-10-11T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2015-10-11T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -17252,6 +17300,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": 4799,
       "race_date": "2015-03-07T07:00:00",
       "race_date_local": "2015-03-07",
       "status": "completed",
@@ -17301,6 +17350,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -17387,9 +17438,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.7,
         "wind_mph_max": 7.0,
         "window_end_local": "2015-03-07T13:00",
-        "window_start_local": "2015-03-07T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2015-03-07T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -17587,6 +17636,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2014-11-27T08:00:00",
       "race_date_local": "2014-11-27",
       "status": "completed",
@@ -17636,6 +17686,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -17692,9 +17744,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 1.8,
         "wind_mph_max": 2.1,
         "window_end_local": "2014-11-27T11:00",
-        "window_start_local": "2014-11-27T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2014-11-27T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -17892,6 +17942,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2014-10-12T07:00:00",
       "race_date_local": "2014-10-12",
       "status": "completed",
@@ -17941,6 +17992,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -18017,9 +18070,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 8.9,
         "wind_mph_max": 9.8,
         "window_end_local": "2014-10-12T12:00",
-        "window_start_local": "2014-10-12T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2014-10-12T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -18217,6 +18268,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2014-06-21T08:00:00",
       "race_date_local": "2014-06-21",
       "status": "completed",
@@ -18266,6 +18318,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -18312,9 +18366,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.6,
         "wind_mph_max": 8.1,
         "window_end_local": "2014-06-21T10:00",
-        "window_start_local": "2014-06-21T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2014-06-21T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -18512,6 +18564,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2014-06-21T08:00:00",
       "race_date_local": "2014-06-21",
       "status": "completed",
@@ -18561,6 +18614,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -18607,9 +18662,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.6,
         "wind_mph_max": 8.1,
         "window_end_local": "2014-06-21T10:00",
-        "window_start_local": "2014-06-21T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2014-06-21T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -18807,6 +18860,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 80467.2,
       "distance_km": 80.467,
       "distance_miles": 50.0,
+      "elevation_gain_ft": 6332,
       "race_date": "2014-04-05T06:00:00",
       "race_date_local": "2014-04-05",
       "status": "completed",
@@ -18856,6 +18910,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -18942,9 +18998,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.8,
         "wind_mph_max": 7.1,
         "window_end_local": "2014-04-05T12:00",
-        "window_start_local": "2014-04-05T06:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2014-04-05T06:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -19142,6 +19196,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": 4799,
       "race_date": "2014-03-08T08:00:00",
       "race_date_local": "2014-03-08",
       "status": "completed",
@@ -19191,6 +19246,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -19277,9 +19334,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.7,
         "wind_mph_max": 5.6,
         "window_end_local": "2014-03-08T14:00",
-        "window_start_local": "2014-03-08T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2014-03-08T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -19477,6 +19532,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2013-12-31T07:00:00",
       "race_date_local": "2013-12-31",
       "status": "completed",
@@ -19526,6 +19582,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -19572,9 +19630,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 1.9,
         "wind_mph_max": 2.4,
         "window_end_local": "2013-12-31T09:00",
-        "window_start_local": "2013-12-31T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-12-31T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -19772,6 +19828,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": null,
       "race_date": "2013-12-14T08:30:00",
       "race_date_local": "2013-12-14",
       "status": "completed",
@@ -19821,6 +19878,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -19907,9 +19966,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.0,
         "wind_mph_max": 5.7,
         "window_end_local": "2013-12-14T14:30",
-        "window_start_local": "2013-12-14T08:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-12-14T08:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -20107,6 +20164,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2013-10-13T07:30:00",
       "race_date_local": "2013-10-13",
       "status": "completed",
@@ -20156,6 +20214,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -20232,9 +20292,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.6,
         "wind_mph_max": 8.1,
         "window_end_local": "2013-10-13T12:30",
-        "window_start_local": "2013-10-13T07:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-10-13T07:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -20432,6 +20490,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2013-09-29T07:00:00",
       "race_date_local": "2013-09-29",
       "status": "completed",
@@ -20481,6 +20540,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -20557,9 +20618,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 2.5,
         "wind_mph_max": 4.3,
         "window_end_local": "2013-09-29T12:00",
-        "window_start_local": "2013-09-29T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-09-29T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -20757,6 +20816,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": null,
       "race_date": "2013-09-21T08:00:00",
       "race_date_local": "2013-09-21",
       "status": "completed",
@@ -20806,6 +20866,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -20892,9 +20954,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 10.0,
         "wind_mph_max": 12.9,
         "window_end_local": "2013-09-21T14:00",
-        "window_start_local": "2013-09-21T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-09-21T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -21092,6 +21152,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": null,
       "race_date": "2013-08-11T07:00:00",
       "race_date_local": "2013-08-11",
       "status": "completed",
@@ -21141,6 +21202,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -21227,9 +21290,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.0,
         "wind_mph_max": 7.2,
         "window_end_local": "2013-08-11T13:00",
-        "window_start_local": "2013-08-11T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-08-11T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -21427,6 +21488,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": null,
       "race_date": "2013-06-09T09:00:00",
       "race_date_local": "2013-06-09",
       "status": "completed",
@@ -21476,6 +21538,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -21562,9 +21626,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 5.4,
         "wind_mph_max": 6.3,
         "window_end_local": "2013-06-09T15:00",
-        "window_start_local": "2013-06-09T09:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-06-09T09:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -21762,6 +21824,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2013-05-25T08:00:00",
       "race_date_local": "2013-05-25",
       "status": "completed",
@@ -21811,6 +21874,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -21857,9 +21922,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.3,
         "wind_mph_max": 3.8,
         "window_end_local": "2013-05-25T10:00",
-        "window_start_local": "2013-05-25T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-05-25T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -22057,6 +22120,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": null,
       "race_date": "2013-05-11T06:00:00",
       "race_date_local": "2013-05-11",
       "status": "completed",
@@ -22106,6 +22170,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -22192,9 +22258,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 2.1,
         "wind_mph_max": 4.5,
         "window_end_local": "2013-05-11T12:00",
-        "window_start_local": "2013-05-11T06:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-05-11T06:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -22392,6 +22456,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 33796.22,
       "distance_km": 33.796,
       "distance_miles": 21.0,
+      "elevation_gain_ft": null,
       "race_date": "2013-04-28T06:45:00",
       "race_date_local": "2013-04-28",
       "status": "completed",
@@ -22441,6 +22506,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -22517,9 +22584,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.5,
         "wind_mph_max": 5.1,
         "window_end_local": "2013-04-28T11:45",
-        "window_start_local": "2013-04-28T06:45",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-04-28T06:45"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -22717,6 +22782,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": null,
       "race_date": "2013-03-24T08:00:00",
       "race_date_local": "2013-03-24",
       "status": "completed",
@@ -22766,6 +22832,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -22852,9 +22920,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.8,
         "wind_mph_max": 5.7,
         "window_end_local": "2013-03-24T14:00",
-        "window_start_local": "2013-03-24T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-03-24T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -23052,6 +23118,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 50000.0,
       "distance_km": 50.0,
       "distance_miles": 31.069,
+      "elevation_gain_ft": null,
       "race_date": "2013-03-24T08:00:00",
       "race_date_local": "2013-03-24",
       "status": "completed",
@@ -23101,6 +23168,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -23187,9 +23256,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.8,
         "wind_mph_max": 5.7,
         "window_end_local": "2013-03-24T14:00",
-        "window_start_local": "2013-03-24T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-03-24T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -23387,6 +23454,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2013-02-03T08:00:00",
       "race_date_local": "2013-02-03",
       "status": "completed",
@@ -23436,6 +23504,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -23492,9 +23562,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.5,
         "wind_mph_max": 4.2,
         "window_end_local": "2013-02-03T11:00",
-        "window_start_local": "2013-02-03T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2013-02-03T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -23692,6 +23760,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2012-12-31T09:00:00",
       "race_date_local": "2012-12-31",
       "status": "completed",
@@ -23741,6 +23810,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -23787,9 +23858,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.6,
         "wind_mph_max": 3.7,
         "window_end_local": "2012-12-31T11:00",
-        "window_start_local": "2012-12-31T09:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-12-31T09:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -23987,6 +24056,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2012-12-01T05:00:00",
       "race_date_local": "2012-12-01",
       "status": "completed",
@@ -24036,6 +24106,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -24122,9 +24194,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 10.8,
         "wind_mph_max": 11.1,
         "window_end_local": "2012-12-01T11:00",
-        "window_start_local": "2012-12-01T05:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-12-01T05:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -24322,6 +24392,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2012-10-20T08:00:00",
       "race_date_local": "2012-10-20",
       "status": "completed",
@@ -24371,6 +24442,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -24437,9 +24510,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.3,
         "wind_mph_max": 7.7,
         "window_end_local": "2012-10-20T12:00",
-        "window_start_local": "2012-10-20T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-10-20T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -24637,6 +24708,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 193121.28,
       "distance_km": 193.121,
       "distance_miles": 120.0,
+      "elevation_gain_ft": null,
       "race_date": "2012-08-14T07:00:00",
       "race_date_local": "2012-08-14",
       "status": "completed",
@@ -24686,6 +24758,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -24772,9 +24846,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.3,
         "wind_mph_max": 5.3,
         "window_end_local": "2012-08-14T13:00",
-        "window_start_local": "2012-08-14T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-08-14T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -24972,6 +25044,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": 475,
       "race_date": "2012-08-12T12:00:00",
       "race_date_local": "2012-08-12",
       "status": "completed",
@@ -25021,6 +25094,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -25067,9 +25142,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.4,
         "wind_mph_max": 7.3,
         "window_end_local": "2012-08-12T14:00",
-        "window_start_local": "2012-08-12T12:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-08-12T12:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -25267,6 +25340,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2012-07-29T05:30:00",
       "race_date_local": "2012-07-29",
       "status": "completed",
@@ -25316,6 +25390,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -25392,9 +25468,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.0,
         "wind_mph_max": 7.2,
         "window_end_local": "2012-07-29T10:30",
-        "window_start_local": "2012-07-29T05:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-07-29T05:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -25592,6 +25666,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2550,
       "race_date": "2012-07-14T08:15:00",
       "race_date_local": "2012-07-14",
       "status": "completed",
@@ -25641,6 +25716,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -25697,9 +25774,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 5.2,
         "wind_mph_max": 5.3,
         "window_end_local": "2012-07-14T11:15",
-        "window_start_local": "2012-07-14T08:15",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-07-14T08:15"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -25897,6 +25972,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2175,
       "race_date": "2012-06-23T08:00:00",
       "race_date_local": "2012-06-23",
       "status": "completed",
@@ -25946,6 +26022,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -26002,9 +26080,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 9.6,
         "wind_mph_max": 9.9,
         "window_end_local": "2012-06-23T11:00",
-        "window_start_local": "2012-06-23T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-06-23T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -26202,6 +26278,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2012-05-26T08:00:00",
       "race_date_local": "2012-05-26",
       "status": "completed",
@@ -26251,6 +26328,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -26297,9 +26376,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 5.7,
         "wind_mph_max": 6.7,
         "window_end_local": "2012-05-26T10:00",
-        "window_start_local": "2012-05-26T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-05-26T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -26497,6 +26574,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2012-04-29T06:30:00",
       "race_date_local": "2012-04-29",
       "status": "completed",
@@ -26546,6 +26624,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -26622,9 +26702,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 2.6,
         "wind_mph_max": 3.9,
         "window_end_local": "2012-04-29T11:30",
-        "window_start_local": "2012-04-29T06:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-04-29T06:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -26822,6 +26900,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 16093.44,
       "distance_km": 16.093,
       "distance_miles": 10.0,
+      "elevation_gain_ft": null,
       "race_date": "2012-04-15T08:00:00",
       "race_date_local": "2012-04-15",
       "status": "completed",
@@ -26871,6 +26950,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -26917,9 +26998,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.1,
         "wind_mph_max": 4.3,
         "window_end_local": "2012-04-15T10:00",
-        "window_start_local": "2012-04-15T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-04-15T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -27117,6 +27196,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": null,
       "race_date": "2012-04-01T07:00:00",
       "race_date_local": "2012-04-01",
       "status": "completed",
@@ -27166,6 +27246,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -27212,9 +27294,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 10.3,
         "wind_mph_max": 11.3,
         "window_end_local": "2012-04-01T09:00",
-        "window_start_local": "2012-04-01T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-04-01T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -27412,6 +27492,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 16093.44,
       "distance_km": 16.093,
       "distance_miles": 10.0,
+      "elevation_gain_ft": 1380,
       "race_date": "2012-03-31T07:00:00",
       "race_date_local": "2012-03-31",
       "status": "completed",
@@ -27461,6 +27542,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": true
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -27517,9 +27600,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 17.2,
         "wind_mph_max": 21.2,
         "window_end_local": "2012-03-31T10:00",
-        "window_start_local": "2012-03-31T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-03-31T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -27717,6 +27798,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": 2900,
       "race_date": "2012-03-03T08:00:00",
       "race_date_local": "2012-03-03",
       "status": "completed",
@@ -27766,6 +27848,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 5,
         "hourly_sample": [
           {
@@ -27832,9 +27916,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.2,
         "wind_mph_max": 5.0,
         "window_end_local": "2012-03-03T12:00",
-        "window_start_local": "2012-03-03T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-03-03T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -28032,6 +28114,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2012-02-05T08:00:00",
       "race_date_local": "2012-02-05",
       "status": "completed",
@@ -28081,6 +28164,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -28137,9 +28222,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.8,
         "wind_mph_max": 5.2,
         "window_end_local": "2012-02-05T11:00",
-        "window_start_local": "2012-02-05T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2012-02-05T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -28337,6 +28420,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2011-12-31T18:00:00",
       "race_date_local": "2011-12-31",
       "status": "completed",
@@ -28386,6 +28470,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "night",
+        "day_period_label": "Night race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -28432,9 +28518,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 5.2,
         "wind_mph_max": 5.5,
         "window_end_local": "2011-12-31T20:00",
-        "window_start_local": "2011-12-31T18:00",
-        "day_period": "night",
-        "day_period_label": "Night race"
+        "window_start_local": "2011-12-31T18:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -28632,6 +28716,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2011-12-04T07:00:00",
       "race_date_local": "2011-12-04",
       "status": "completed",
@@ -28681,6 +28766,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -28767,9 +28854,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 2.3,
         "wind_mph_max": 2.9,
         "window_end_local": "2011-12-04T13:00",
-        "window_start_local": "2011-12-04T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-12-04T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -28967,6 +29052,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2011-10-09T07:00:00",
       "race_date_local": "2011-10-09",
       "status": "completed",
@@ -29016,6 +29102,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -29092,9 +29180,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.6,
         "wind_mph_max": 4.3,
         "window_end_local": "2011-10-09T12:00",
-        "window_start_local": "2011-10-09T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-10-09T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -29292,6 +29378,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 17702.78,
       "distance_km": 17.703,
       "distance_miles": 11.0,
+      "elevation_gain_ft": null,
       "race_date": "2011-08-13T08:30:00",
       "race_date_local": "2011-08-13",
       "status": "completed",
@@ -29341,6 +29428,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -29397,9 +29486,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.6,
         "wind_mph_max": 4.1,
         "window_end_local": "2011-08-13T11:30",
-        "window_start_local": "2011-08-13T08:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-08-13T08:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -29597,6 +29684,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2011-07-31T05:30:00",
       "race_date_local": "2011-07-31",
       "status": "completed",
@@ -29646,6 +29734,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -29732,9 +29822,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.9,
         "wind_mph_max": 8.2,
         "window_end_local": "2011-07-31T11:30",
-        "window_start_local": "2011-07-31T05:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-07-31T05:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -29932,6 +30020,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2011-06-05T07:00:00",
       "race_date_local": "2011-06-05",
       "status": "completed",
@@ -29981,6 +30070,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -30067,9 +30158,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.3,
         "wind_mph_max": 8.1,
         "window_end_local": "2011-06-05T13:00",
-        "window_start_local": "2011-06-05T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-06-05T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -30267,6 +30356,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2011-05-01T06:30:00",
       "race_date_local": "2011-05-01",
       "status": "completed",
@@ -30316,6 +30406,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -30392,9 +30484,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 1.6,
         "wind_mph_max": 2.7,
         "window_end_local": "2011-05-01T11:30",
-        "window_start_local": "2011-05-01T06:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-05-01T06:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -30592,6 +30682,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 16093.44,
       "distance_km": 16.093,
       "distance_miles": 10.0,
+      "elevation_gain_ft": 1380,
       "race_date": "2011-04-23T10:30:00",
       "race_date_local": "2011-04-23",
       "status": "completed",
@@ -30640,6 +30731,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -30696,9 +30789,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 5.0,
         "wind_mph_max": 5.8,
         "window_end_local": "2011-04-23T13:30",
-        "window_start_local": "2011-04-23T10:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-04-23T10:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -30896,6 +30987,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2011-03-27T07:00:00",
       "race_date_local": "2011-03-27",
       "status": "completed",
@@ -30945,6 +31037,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -31021,9 +31115,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.5,
         "wind_mph_max": 10.6,
         "window_end_local": "2011-03-27T12:00",
-        "window_start_local": "2011-03-27T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-03-27T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -31221,6 +31313,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2011-02-06T07:00:00",
       "race_date_local": "2011-02-06",
       "status": "completed",
@@ -31270,6 +31363,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -31326,9 +31421,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.1,
         "wind_mph_max": 6.7,
         "window_end_local": "2011-02-06T10:00",
-        "window_start_local": "2011-02-06T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2011-02-06T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -31526,6 +31619,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 0.0,
       "distance_km": 0,
       "distance_miles": 0,
+      "elevation_gain_ft": null,
       "race_date": "2010-12-31T09:00:00",
       "race_date_local": "2010-12-31",
       "status": "completed",
@@ -31575,6 +31669,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -31621,9 +31717,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.5,
         "wind_mph_max": 3.7,
         "window_end_local": "2010-12-31T11:00",
-        "window_start_local": "2010-12-31T09:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2010-12-31T09:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -31821,6 +31915,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2010-11-14T07:00:00",
       "race_date_local": "2010-11-14",
       "status": "completed",
@@ -31870,6 +31965,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -31926,9 +32023,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 3.3,
         "wind_mph_max": 4.0,
         "window_end_local": "2010-11-14T10:00",
-        "window_start_local": "2010-11-14T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2010-11-14T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -32126,6 +32221,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2010-10-10T19:30:00",
       "race_date_local": "2010-10-10",
       "status": "completed",
@@ -32461,6 +32557,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 12000.0,
       "distance_km": 12.0,
       "distance_miles": 7.456,
+      "elevation_gain_ft": null,
       "race_date": "2010-10-03T08:00:00",
       "race_date_local": "2010-10-03",
       "status": "completed",
@@ -32510,6 +32607,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -32556,9 +32655,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.9,
         "wind_mph_max": 7.1,
         "window_end_local": "2010-10-03T10:00",
-        "window_start_local": "2010-10-03T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2010-10-03T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -32756,6 +32853,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2010-07-25T05:30:00",
       "race_date_local": "2010-07-25",
       "status": "completed",
@@ -32805,6 +32903,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -32861,9 +32961,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.2,
         "wind_mph_max": 7.7,
         "window_end_local": "2010-07-25T08:30",
-        "window_start_local": "2010-07-25T05:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2010-07-25T05:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -33061,6 +33159,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 10000.0,
       "distance_km": 10.0,
       "distance_miles": 6.214,
+      "elevation_gain_ft": null,
       "race_date": "2010-02-27T08:30:00",
       "race_date_local": "2010-02-27",
       "status": "completed",
@@ -33110,6 +33209,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -33156,9 +33257,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 5.3,
         "wind_mph_max": 5.9,
         "window_end_local": "2010-02-27T10:30",
-        "window_start_local": "2010-02-27T08:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2010-02-27T08:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -33356,6 +33455,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 5000.0,
       "distance_km": 5.0,
       "distance_miles": 3.107,
+      "elevation_gain_ft": null,
       "race_date": "2010-02-07T07:00:00",
       "race_date_local": "2010-02-07",
       "status": "completed",
@@ -33405,6 +33505,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 2,
         "hourly_sample": [
           {
@@ -33441,9 +33543,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.2,
         "wind_mph_max": 4.7,
         "window_end_local": "2010-02-07T08:00",
-        "window_start_local": "2010-02-07T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2010-02-07T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -33641,6 +33741,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 8000.0,
       "distance_km": 8.0,
       "distance_miles": 4.971,
+      "elevation_gain_ft": 1055,
       "race_date": "2009-12-19T08:30:00",
       "race_date_local": "2009-12-19",
       "status": "completed",
@@ -33689,6 +33790,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 2,
         "hourly_sample": [
           {
@@ -33725,9 +33828,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.7,
         "wind_mph_max": 4.7,
         "window_end_local": "2009-12-19T09:30",
-        "window_start_local": "2009-12-19T08:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2009-12-19T08:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -33925,6 +34026,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 5000.0,
       "distance_km": 5.0,
       "distance_miles": 3.107,
+      "elevation_gain_ft": null,
       "race_date": "2009-11-26T08:00:00",
       "race_date_local": "2009-11-26",
       "status": "completed",
@@ -33974,6 +34076,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 2,
         "hourly_sample": [
           {
@@ -34010,9 +34114,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.8,
         "wind_mph_max": 4.8,
         "window_end_local": "2009-11-26T09:00",
-        "window_start_local": "2009-11-26T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2009-11-26T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -34210,6 +34312,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2009-10-11T07:30:00",
       "race_date_local": "2009-10-11",
       "status": "completed",
@@ -34259,6 +34362,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 6,
         "hourly_sample": [
           {
@@ -34335,9 +34440,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.6,
         "wind_mph_max": 7.6,
         "window_end_local": "2009-10-11T12:30",
-        "window_start_local": "2009-10-11T07:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2009-10-11T07:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -34535,6 +34638,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 12000.0,
       "distance_km": 12.0,
       "distance_miles": 7.456,
+      "elevation_gain_ft": null,
       "race_date": "2009-10-04T07:00:00",
       "race_date_local": "2009-10-04",
       "status": "completed",
@@ -34584,6 +34688,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -34630,9 +34736,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.8,
         "wind_mph_max": 5.0,
         "window_end_local": "2009-10-04T09:00",
-        "window_start_local": "2009-10-04T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2009-10-04T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -34830,6 +34934,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2009-06-27T07:00:00",
       "race_date_local": "2009-06-27",
       "status": "completed",
@@ -34879,6 +34984,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -34935,9 +35042,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 0.9,
         "wind_mph_max": 1.5,
         "window_end_local": "2009-06-27T10:00",
-        "window_start_local": "2009-06-27T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2009-06-27T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -35135,6 +35240,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 5000.0,
       "distance_km": 5.0,
       "distance_miles": 3.107,
+      "elevation_gain_ft": null,
       "race_date": "2009-02-01T08:00:00",
       "race_date_local": "2009-02-01",
       "status": "completed",
@@ -35184,6 +35290,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 2,
         "hourly_sample": [
           {
@@ -35220,9 +35328,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 4.0,
         "wind_mph_max": 4.3,
         "window_end_local": "2009-02-01T09:00",
-        "window_start_local": "2009-02-01T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2009-02-01T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -35420,6 +35526,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2008-10-12T08:00:00",
       "race_date_local": "2008-10-12",
       "status": "completed",
@@ -35469,6 +35576,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -35555,9 +35664,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 6.5,
         "wind_mph_max": 7.1,
         "window_end_local": "2008-10-12T14:00",
-        "window_start_local": "2008-10-12T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2008-10-12T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -35755,6 +35862,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2008-05-04T07:30:00",
       "race_date_local": "2008-05-04",
       "status": "completed",
@@ -35804,6 +35912,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -35860,9 +35970,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 1.3,
         "wind_mph_max": 2.5,
         "window_end_local": "2008-05-04T10:30",
-        "window_start_local": "2008-05-04T07:30",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2008-05-04T07:30"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -36060,6 +36168,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 12000.0,
       "distance_km": 12.0,
       "distance_miles": 7.456,
+      "elevation_gain_ft": null,
       "race_date": "2007-09-30T08:00:00",
       "race_date_local": "2007-09-30",
       "status": "completed",
@@ -36109,6 +36218,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -36155,9 +36266,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 2.2,
         "wind_mph_max": 2.5,
         "window_end_local": "2007-09-30T10:00",
-        "window_start_local": "2007-09-30T08:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2007-09-30T08:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -36355,6 +36464,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 21082.41,
       "distance_km": 21.082,
       "distance_miles": 13.1,
+      "elevation_gain_ft": null,
       "race_date": "2007-07-29T05:00:00",
       "race_date_local": "2007-07-29",
       "status": "completed",
@@ -36404,6 +36514,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 4,
         "hourly_sample": [
           {
@@ -36460,9 +36572,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 7.6,
         "wind_mph_max": 8.1,
         "window_end_local": "2007-07-29T08:00",
-        "window_start_local": "2007-07-29T05:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2007-07-29T05:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -36660,6 +36770,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 12000.0,
       "distance_km": 12.0,
       "distance_miles": 7.456,
+      "elevation_gain_ft": null,
       "race_date": "2007-05-20T07:00:00",
       "race_date_local": "2007-05-20",
       "status": "completed",
@@ -36709,6 +36820,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": false
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 3,
         "hourly_sample": [
           {
@@ -36755,9 +36868,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 8.1,
         "wind_mph_max": 8.7,
         "window_end_local": "2007-05-20T09:00",
-        "window_start_local": "2007-05-20T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2007-05-20T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
@@ -36955,6 +37066,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "distance_meters": 42164.81,
       "distance_km": 42.165,
       "distance_miles": 26.2,
+      "elevation_gain_ft": null,
       "race_date": "2006-10-22T07:00:00",
       "race_date_local": "2006-10-22",
       "status": "completed",
@@ -37004,6 +37116,8 @@ globalThis.RUNRUN_DIARY_DATA = {
           "snowy": false,
           "windy": true
         },
+        "day_period": "day",
+        "day_period_label": "Day race",
         "hour_count": 7,
         "hourly_sample": [
           {
@@ -37090,9 +37204,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "wind_mph_avg": 16.9,
         "wind_mph_max": 18.9,
         "window_end_local": "2006-10-22T13:00",
-        "window_start_local": "2006-10-22T07:00",
-        "day_period": "day",
-        "day_period_label": "Day race"
+        "window_start_local": "2006-10-22T07:00"
       },
       "source_urls": {
         "athlete": "https://www.athlinks.com/athletes/92157185",
