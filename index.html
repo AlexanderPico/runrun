@@ -874,7 +874,7 @@
             </article>
           `).join('');
 
-          const yearBars = season.recentYears;
+          const yearBars = [...season.years];
           const maxMiles = Math.max(...yearBars.map((row) => row.miles), 1);
           const mileageChart = `
             <div class="chart-list">
@@ -891,6 +891,10 @@
           `;
 
           const bestRaceDensity = [...season.years].sort((a, b) => b.races - a.races)[0] || null;
+          const totalMarathonPlus = season.years.reduce((sum, row) => sum + row.marathonPlus, 0);
+          const bestTrailYear = [...season.years].sort((a, b) => b.trail - a.trail || b.miles - a.miles)[0] || null;
+          const biggestOutingYear = [...season.years].sort((a, b) => (b.avgMilesPerRace || 0) - (a.avgMilesPerRace || 0) || b.miles - a.miles)[0] || null;
+          const quietestYear = [...season.years].sort((a, b) => a.races - b.races || a.miles - b.miles)[0] || null;
           const consistencyCard = `
             <div class="chart-list">
               <div class="chart-row">
@@ -902,21 +906,33 @@
                 <div class="track"><div class="fill alt" style="width:${bestRaceDensity ? Math.max(12, (bestRaceDensity.races / Math.max(...season.years.map((row) => row.races), 1)) * 100) : 12}%"></div></div>
               </div>
               <div class="chart-row">
-                <div class="chart-meta"><div><strong>Marathon+ finishes</strong><span class="subtle">26.2 miles or longer</span></div><div>${formatInteger(season.years.reduce((sum, row) => sum + row.marathonPlus, 0))}</div></div>
-                <div class="track"><div class="fill" style="width:${Math.max(10, ((season.years.reduce((sum, row) => sum + row.marathonPlus, 0) || 0) / Math.max(season.totalRaces, 1)) * 100)}%"></div></div>
+                <div class="chart-meta"><div><strong>Marathon+ finishes</strong><span class="subtle">26.2 miles or longer</span></div><div>${formatInteger(totalMarathonPlus)}</div></div>
+                <div class="track"><div class="fill" style="width:${Math.max(10, ((totalMarathonPlus || 0) / Math.max(season.totalRaces, 1)) * 100)}%"></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-meta"><div><strong>Most trail-heavy year</strong><span class="subtle">Highest trail race count</span></div><div>${bestTrailYear ? `${bestTrailYear.year} · ${bestTrailYear.trail} trail` : '—'}</div></div>
+                <div class="track"><div class="fill alt" style="width:${bestTrailYear ? Math.max(10, (bestTrailYear.trail / Math.max(...season.years.map((row) => row.races), 1)) * 100) : 10}%"></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-meta"><div><strong>Biggest average outing</strong><span class="subtle">Miles per race in one year</span></div><div>${biggestOutingYear ? `${biggestOutingYear.year} · ${formatNumber(biggestOutingYear.avgMilesPerRace || 0, 1)} mi/race` : '—'}</div></div>
+                <div class="track"><div class="fill ink" style="width:${biggestOutingYear ? Math.max(10, ((biggestOutingYear.avgMilesPerRace || 0) / Math.max(...season.years.map((row) => row.avgMilesPerRace || 0), 1)) * 100) : 10}%"></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-meta"><div><strong>Quietest active year</strong><span class="subtle">Fewest races with at least one result</span></div><div>${quietestYear ? `${quietestYear.year} · ${quietestYear.races} race${quietestYear.races === 1 ? '' : 's'}` : '—'}</div></div>
+                <div class="track"><div class="fill" style="width:${quietestYear ? Math.max(10, (quietestYear.races / Math.max(...season.years.map((row) => row.races), 1)) * 100) : 10}%"></div></div>
               </div>
             </div>
           `;
 
           document.getElementById('seasonGrid').innerHTML = `
             <article class="viz-card">
-              <div class="viz-title"><div><div class="mini-label">Mileage trend</div><h3>Recent annual mileage</h3></div></div>
-              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">Last ${yearBars.length} active seasons by year, with race count and trail/road mix.</div>
+              <div class="viz-title"><div><div class="mini-label">Mileage trend</div><h3>Annual mileage history</h3></div></div>
+              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">All ${yearBars.length} active seasons in chronological order, with race count and trail/road mix.</div>
               ${mileageChart}
             </article>
             <article class="viz-card">
               <div class="viz-title"><div><div class="mini-label">Consistency</div><h3>Season density</h3></div></div>
-              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">A compact read on annual load, busiest race year, and marathon-plus frequency.</div>
+              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">Annual load plus trail concentration, average outing size, and low-volume seasons.</div>
               ${consistencyCard}
             </article>
           `;
