@@ -674,6 +674,7 @@
                   <th>Date</th>
                   <th>Race</th>
                   <th>Distance</th>
+                  <th>Elevation gain</th>
                   <th>Finish</th>
                   <th>Pace</th>
                   <th>Place</th>
@@ -736,6 +737,10 @@
           const km = result?.distance_km;
           if (mi == null && km == null) return '—';
           return `${mi != null ? Number(mi).toFixed(1) + ' mi' : '—'} · ${km != null ? Number(km).toFixed(1) + ' km' : '—'}`;
+        }
+
+        function formatElevationGain(value) {
+          return value == null ? '—' : `${formatInteger(value)} ft`;
         }
 
         function isTrailEffort(result) {
@@ -890,6 +895,13 @@
         function createScatter(points) {
           const clean = (points || []).filter((point) => point.temperature_f != null && point.pace_seconds_per_mile != null).slice(0, 160);
           if (!clean.length) return '<p class="mini-copy">No scatter points available.</p>';
+          const highlighted = new Set(
+            [...clean]
+              .filter((point) => Number.isFinite(Number(point.elevation_gain_ft)))
+              .sort((a, b) => Number(b.elevation_gain_ft || 0) - Number(a.elevation_gain_ft || 0))
+              .slice(0, 3)
+              .map((point) => `${point.race_name}__${point.race_date}__${point.temperature_f}__${point.pace_seconds_per_mile}`)
+          );
           const minTemp = Math.min(...clean.map((point) => point.temperature_f));
           const maxTemp = Math.max(...clean.map((point) => point.temperature_f));
           const minPace = Math.min(...clean.map((point) => point.pace_seconds_per_mile));
@@ -902,10 +914,13 @@
           const circles = clean.map((point) => {
             const rainy = (point.rain_in || 0) > 0.02;
             const isNight = point.day_period === 'night';
-            const fill = isNight ? '#765b9d' : rainy ? '#1f1a17' : '#b69b7a';
+            const highlightKey = `${point.race_name}__${point.race_date}__${point.temperature_f}__${point.pace_seconds_per_mile}`;
+            const isElevationHighlight = highlighted.has(highlightKey);
+            const fill = isElevationHighlight ? '#a64643' : isNight ? '#765b9d' : rainy ? '#1f1a17' : '#b69b7a';
             const raceLabel = point.day_period_label ? ` · ${point.day_period_label}` : '';
-            const title = `${point.race_name} (${point.race_date})${raceLabel} · ${Math.round(point.temperature_f)}°F · ${paceFromSeconds(point.pace_seconds_per_mile)}${point.pace_vs_pattern_baseline_pct != null ? ` · ${formatSignedPercent(point.pace_vs_pattern_baseline_pct)}` : ''}`;
-            return `<circle cx="${x(point.temperature_f).toFixed(1)}" cy="${y(point.pace_seconds_per_mile).toFixed(1)}" r="5" fill="${fill}" fill-opacity="0.78"><title>${title}</title></circle>`;
+            const elevationLabel = point.elevation_gain_ft != null ? ` · ${formatElevationGain(point.elevation_gain_ft)}` : '';
+            const title = `${point.race_name} (${point.race_date})${raceLabel} · ${Math.round(point.temperature_f)}°F · ${paceFromSeconds(point.pace_seconds_per_mile)}${elevationLabel}${point.pace_vs_pattern_baseline_pct != null ? ` · ${formatSignedPercent(point.pace_vs_pattern_baseline_pct)}` : ''}`;
+            return `<circle cx="${x(point.temperature_f).toFixed(1)}" cy="${y(point.pace_seconds_per_mile).toFixed(1)}" r="${isElevationHighlight ? 6.5 : 5}" fill="${fill}" fill-opacity="${isElevationHighlight ? 0.92 : 0.78}" stroke="${isElevationHighlight ? '#fff6f3' : 'none'}" stroke-width="${isElevationHighlight ? 1.5 : 0}"><title>${title}</title></circle>`;
           }).join('');
           return `
             <div class="scatter-wrap">
@@ -926,6 +941,7 @@
               <span><i style="background:#b69b7a"></i> Dry race</span>
               <span><i style="background:#1f1a17"></i> Rainy race</span>
               <span><i style="background:#967bbd"></i> Night race</span>
+              <span><i style="background:#a64643"></i> Elevation gain</span>
             </div>
           `;
         }
@@ -1307,6 +1323,7 @@
                 <span class="subtle">${result.city || '—'}${result.state ? ', ' + result.state : ''} · ${result.race_category || '—'}</span>
               </td>
               <td>${formatDistance(result)}<span class="subtle">${result.course_pattern || result.course_name || '—'}</span></td>
+              <td>${formatElevationGain(result.elevation_gain_ft)}<span class="subtle">${result.elevation_gain_ft != null ? 'official/manual trail override' : 'not captured yet'}</span></td>
               <td>${result.finish_time || '—'}</td>
               <td>${result.pace_per_mile ? result.pace_per_mile + '/mi' : '—'}<span class="subtle">${result.pace_per_km ? result.pace_per_km + '/km' : ''}</span></td>
               <td>#${result.rank_overall || '—'}<span class="subtle">gender #${result.rank_gender || '—'} · age #${result.rank_age_group || '—'}</span></td>

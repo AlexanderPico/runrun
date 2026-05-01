@@ -1,6 +1,6 @@
 globalThis.RUNRUN_DIARY_DATA = {
   "meta": {
-    "generated_at": "2026-05-01T19:46:25.105850Z",
+    "generated_at": "2026-05-01T19:59:39.472403Z",
     "repo": "/Users/aimee/.openclaw/git/AlexanderPico/runrun",
     "source_site": "Athlinks",
     "athlete_page": "https://www.athlinks.com/athletes/92157185",
@@ -1383,6 +1383,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.6,
           "humidity_pct": 84.2,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 574.67,
           "pace_vs_pattern_baseline_pct": -11.7
         },
@@ -1396,6 +1397,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.0,
           "humidity_pct": 98.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 699.91,
           "pace_vs_pattern_baseline_pct": 10.7
         },
@@ -1409,6 +1411,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 2.4,
           "humidity_pct": 99.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 571.83,
           "pace_vs_pattern_baseline_pct": -12.1
         },
@@ -1422,6 +1425,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.7,
           "humidity_pct": 88.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 652.67,
           "pace_vs_pattern_baseline_pct": -9.9
         },
@@ -1435,6 +1439,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.1,
           "humidity_pct": 84.5,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 582.68,
           "pace_vs_pattern_baseline_pct": -10.5
         },
@@ -1448,6 +1453,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 9.5,
           "humidity_pct": 46.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 567.54,
           "pace_vs_pattern_baseline_pct": -10.2
         },
@@ -1461,6 +1467,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 1.8,
           "humidity_pct": 86.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 619.28,
           "pace_vs_pattern_baseline_pct": -2.0
         },
@@ -1474,6 +1481,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.5,
           "humidity_pct": 84.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 644.92,
           "pace_vs_pattern_baseline_pct": 2.0
         },
@@ -1487,6 +1495,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 9.0,
           "humidity_pct": 77.5,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 686.41,
           "pace_vs_pattern_baseline_pct": 5.5
         },
@@ -1500,6 +1509,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.004,
           "wind_mph": 8.6,
           "humidity_pct": 89.4,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 758.44,
           "pace_vs_pattern_baseline_pct": 4.6
         },
@@ -1513,6 +1523,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.5,
           "humidity_pct": 76.0,
+          "elevation_gain_ft": 2190,
           "pace_seconds_per_mile": 970.61,
           "pace_vs_pattern_baseline_pct": 0.0
         },
@@ -1526,6 +1537,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.2,
           "humidity_pct": 58.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 1141.3,
           "pace_vs_pattern_baseline_pct": 17.6
         },
@@ -1539,6 +1551,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.7,
           "humidity_pct": 81.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 719.85,
           "pace_vs_pattern_baseline_pct": 10.6
         },
@@ -1552,6 +1565,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.0,
           "humidity_pct": 79.2,
+          "elevation_gain_ft": 2175,
           "pace_seconds_per_mile": 940.03,
           "pace_vs_pattern_baseline_pct": -3.1
         },
@@ -1565,6 +1579,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.0,
           "humidity_pct": 55.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 622.67,
           "pace_vs_pattern_baseline_pct": -4.3
         },
@@ -1578,6 +1593,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 9.3,
           "humidity_pct": 64.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 699.85,
           "pace_vs_pattern_baseline_pct": -3.4
         },
@@ -1591,6 +1607,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.6,
           "humidity_pct": 72.4,
+          "elevation_gain_ft": 2425,
           "pace_seconds_per_mile": 972.06,
           "pace_vs_pattern_baseline_pct": 0.2
         },
@@ -1604,6 +1621,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 7.6,
           "humidity_pct": 68.4,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 729.16,
           "pace_vs_pattern_baseline_pct": 0.6
         },
@@ -1617,6 +1635,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.039,
           "wind_mph": 9.6,
           "humidity_pct": 84.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 602.6,
           "pace_vs_pattern_baseline_pct": -7.4
         },
@@ -1630,6 +1649,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.016,
           "wind_mph": 17.4,
           "humidity_pct": 81.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 610.59,
           "pace_vs_pattern_baseline_pct": -3.4
         },
@@ -1643,6 +1663,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.1,
           "humidity_pct": 67.5,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 640.52,
           "pace_vs_pattern_baseline_pct": -5.0
         },
@@ -1656,6 +1677,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 10.7,
           "humidity_pct": 34.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 682.48,
           "pace_vs_pattern_baseline_pct": 8.0
         },
@@ -1669,6 +1691,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 1.8,
           "humidity_pct": 80.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 657.26,
           "pace_vs_pattern_baseline_pct": -2.5
         },
@@ -1682,6 +1705,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.004,
           "wind_mph": 3.6,
           "humidity_pct": 91.8,
+          "elevation_gain_ft": 2425,
           "pace_seconds_per_mile": 1095.11,
           "pace_vs_pattern_baseline_pct": 12.9
         },
@@ -1695,6 +1719,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 8.0,
           "humidity_pct": 74.2,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 987.48,
           "pace_vs_pattern_baseline_pct": 51.7
         },
@@ -1708,6 +1733,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.4,
           "humidity_pct": 72.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 727.56,
           "pace_vs_pattern_baseline_pct": 11.8
         },
@@ -1721,6 +1747,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.6,
           "humidity_pct": 78.3,
+          "elevation_gain_ft": 4180,
           "pace_seconds_per_mile": 1321.53,
           "pace_vs_pattern_baseline_pct": 36.2
         },
@@ -1734,6 +1761,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 1.7,
           "humidity_pct": 75.4,
+          "elevation_gain_ft": 2190,
           "pace_seconds_per_mile": 893.21,
           "pace_vs_pattern_baseline_pct": -7.9
         },
@@ -1747,6 +1775,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 2.4,
           "humidity_pct": 87.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 918.45,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -1760,6 +1789,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 2.4,
           "humidity_pct": 63.6,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 1064.35,
           "pace_vs_pattern_baseline_pct": 9.7
         },
@@ -1773,6 +1803,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 8.4,
           "humidity_pct": 67.6,
+          "elevation_gain_ft": 2385,
           "pace_seconds_per_mile": 963.97,
           "pace_vs_pattern_baseline_pct": -0.6
         },
@@ -1786,6 +1817,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.3,
           "humidity_pct": 40.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 969.69,
           "pace_vs_pattern_baseline_pct": -0.1
         },
@@ -1799,6 +1831,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.02,
           "wind_mph": 5.7,
           "humidity_pct": 76.4,
+          "elevation_gain_ft": 2190,
           "pace_seconds_per_mile": 836.18,
           "pace_vs_pattern_baseline_pct": -13.8
         },
@@ -1812,6 +1845,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.342,
           "wind_mph": 13.7,
           "humidity_pct": 100.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 798.96,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -1825,6 +1859,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.032,
           "wind_mph": 10.1,
           "humidity_pct": 78.2,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 1033.51,
           "pace_vs_pattern_baseline_pct": 6.5
         },
@@ -1838,6 +1873,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.6,
           "humidity_pct": 70.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 747.9,
           "pace_vs_pattern_baseline_pct": 3.2
         },
@@ -1851,6 +1887,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 1.7,
           "humidity_pct": 72.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 774.16,
           "pace_vs_pattern_baseline_pct": 6.8
         },
@@ -1864,6 +1901,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 8.5,
           "humidity_pct": 62.5,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 591.25,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -1877,6 +1915,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 5.9,
           "humidity_pct": 68.2,
+          "elevation_gain_ft": 3420,
           "pace_seconds_per_mile": 999.77,
           "pace_vs_pattern_baseline_pct": 3.0
         },
@@ -1890,6 +1929,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.1,
           "humidity_pct": 70.6,
+          "elevation_gain_ft": 2190,
           "pace_seconds_per_mile": 870.0,
           "pace_vs_pattern_baseline_pct": -10.3
         },
@@ -1903,6 +1943,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.4,
           "humidity_pct": 35.2,
+          "elevation_gain_ft": 1179,
           "pace_seconds_per_mile": 884.82,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -1916,6 +1957,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 12.6,
           "humidity_pct": 61.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 874.62,
           "pace_vs_pattern_baseline_pct": 20.7
         },
@@ -1929,6 +1971,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.7,
           "humidity_pct": 48.6,
+          "elevation_gain_ft": 4799,
           "pace_seconds_per_mile": 973.94,
           "pace_vs_pattern_baseline_pct": 12.9
         },
@@ -1942,6 +1985,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 1.8,
           "humidity_pct": 42.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 615.04,
           "pace_vs_pattern_baseline_pct": -5.5
         },
@@ -1955,6 +1999,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 8.9,
           "humidity_pct": 73.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 650.57,
           "pace_vs_pattern_baseline_pct": -10.2
         },
@@ -1968,6 +2013,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.8,
           "humidity_pct": 73.3,
+          "elevation_gain_ft": 6332,
           "pace_seconds_per_mile": 889.08,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -1981,6 +2027,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.7,
           "humidity_pct": 53.3,
+          "elevation_gain_ft": 4799,
           "pace_seconds_per_mile": 795.11,
           "pace_vs_pattern_baseline_pct": -7.8
         },
@@ -1994,6 +2041,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.0,
           "humidity_pct": 71.4,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 929.59,
           "pace_vs_pattern_baseline_pct": 7.7
         },
@@ -2007,6 +2055,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 7.6,
           "humidity_pct": 58.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 680.99,
           "pace_vs_pattern_baseline_pct": -6.0
         },
@@ -2020,6 +2069,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 2.5,
           "humidity_pct": 89.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 683.51,
           "pace_vs_pattern_baseline_pct": -5.7
         },
@@ -2033,6 +2083,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.268,
           "wind_mph": 10.0,
           "humidity_pct": 86.1,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 935.0,
           "pace_vs_pattern_baseline_pct": 8.4
         },
@@ -2046,6 +2097,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.0,
           "humidity_pct": 74.6,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 767.98,
           "pace_vs_pattern_baseline_pct": -11.0
         },
@@ -2059,6 +2111,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 5.4,
           "humidity_pct": 54.6,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 830.23,
           "pace_vs_pattern_baseline_pct": -3.8
         },
@@ -2072,6 +2125,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 2.1,
           "humidity_pct": 55.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 937.12,
           "pace_vs_pattern_baseline_pct": 8.6
         },
@@ -2085,6 +2139,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.5,
           "humidity_pct": 84.2,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 802.52,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2098,6 +2153,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.8,
           "humidity_pct": 65.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 797.88,
           "pace_vs_pattern_baseline_pct": -7.5
         },
@@ -2111,6 +2167,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.8,
           "humidity_pct": 65.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 797.88,
           "pace_vs_pattern_baseline_pct": -7.5
         },
@@ -2124,6 +2181,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.5,
           "humidity_pct": 95.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 551.22,
           "pace_vs_pattern_baseline_pct": -15.3
         },
@@ -2137,6 +2195,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.076,
           "wind_mph": 10.8,
           "humidity_pct": 95.9,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 904.85,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2150,6 +2209,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.3,
           "humidity_pct": 78.6,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 984.27,
           "pace_vs_pattern_baseline_pct": 1.4
         },
@@ -2163,6 +2223,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.3,
           "humidity_pct": 62.4,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 797.93,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2176,6 +2237,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.4,
           "humidity_pct": 22.7,
+          "elevation_gain_ft": 475,
           "pace_seconds_per_mile": 803.06,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2189,6 +2251,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 7.0,
           "humidity_pct": 88.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 680.46,
           "pace_vs_pattern_baseline_pct": -6.1
         },
@@ -2202,6 +2265,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 5.2,
           "humidity_pct": 83.2,
+          "elevation_gain_ft": 2550,
           "pace_seconds_per_mile": 740.08,
           "pace_vs_pattern_baseline_pct": -23.7
         },
@@ -2215,6 +2279,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 9.6,
           "humidity_pct": 66.8,
+          "elevation_gain_ft": 2175,
           "pace_seconds_per_mile": 810.23,
           "pace_vs_pattern_baseline_pct": -16.5
         },
@@ -2228,6 +2293,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 2.6,
           "humidity_pct": 89.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 679.47,
           "pace_vs_pattern_baseline_pct": -6.2
         },
@@ -2241,6 +2307,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.1,
           "humidity_pct": 90.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 589.0,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2254,6 +2321,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 10.3,
           "humidity_pct": 75.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 600.77,
           "pace_vs_pattern_baseline_pct": -5.0
         },
@@ -2267,6 +2335,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.264,
           "wind_mph": 17.2,
           "humidity_pct": 92.8,
+          "elevation_gain_ft": 1380,
           "pace_seconds_per_mile": 844.9,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2280,6 +2349,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.2,
           "humidity_pct": 82.0,
+          "elevation_gain_ft": 2900,
           "pace_seconds_per_mile": 857.94,
           "pace_vs_pattern_baseline_pct": -11.6
         },
@@ -2293,6 +2363,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.8,
           "humidity_pct": 81.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 609.77,
           "pace_vs_pattern_baseline_pct": -6.3
         },
@@ -2306,6 +2377,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 2.3,
           "humidity_pct": 61.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 976.56,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2319,6 +2391,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.6,
           "humidity_pct": 78.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 680.8,
           "pace_vs_pattern_baseline_pct": -6.1
         },
@@ -2332,6 +2405,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.6,
           "humidity_pct": 79.5,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 743.0,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2345,6 +2419,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.9,
           "humidity_pct": 86.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 748.63,
           "pace_vs_pattern_baseline_pct": 3.3
         },
@@ -2358,6 +2433,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.3,
           "humidity_pct": 63.4,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 727.75,
           "pace_vs_pattern_baseline_pct": 0.4
         },
@@ -2371,6 +2447,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 1.6,
           "humidity_pct": 67.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 677.94,
           "pace_vs_pattern_baseline_pct": -6.5
         },
@@ -2384,6 +2461,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 5.0,
           "humidity_pct": 63.5,
+          "elevation_gain_ft": 1380,
           "pace_seconds_per_mile": 734.3,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2397,6 +2475,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 7.5,
           "humidity_pct": 79.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 684.08,
           "pace_vs_pattern_baseline_pct": -5.6
         },
@@ -2410,6 +2489,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.1,
           "humidity_pct": 62.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 620.84,
           "pace_vs_pattern_baseline_pct": -4.6
         },
@@ -2423,6 +2503,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 3.3,
           "humidity_pct": 70.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 605.8,
           "pace_vs_pattern_baseline_pct": -6.9
         },
@@ -2436,6 +2517,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.4,
           "humidity_pct": 64.6,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 770.5,
           "pace_vs_pattern_baseline_pct": 6.3
         },
@@ -2449,6 +2531,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.9,
           "humidity_pct": 87.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 630.19,
           "pace_vs_pattern_baseline_pct": -6.8
         },
@@ -2462,6 +2545,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 7.2,
           "humidity_pct": 94.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 661.14,
           "pace_vs_pattern_baseline_pct": 1.6
         },
@@ -2475,6 +2559,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.125,
           "wind_mph": 5.3,
           "humidity_pct": 92.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 1099.18,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2488,6 +2573,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.2,
           "humidity_pct": 86.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 680.43,
           "pace_vs_pattern_baseline_pct": 0.9
         },
@@ -2501,6 +2587,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.7,
           "humidity_pct": 99.0,
+          "elevation_gain_ft": 1055,
           "pace_seconds_per_mile": 692.42,
           "pace_vs_pattern_baseline_pct": null
         },
@@ -2514,6 +2601,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.8,
           "humidity_pct": 81.5,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 621.85,
           "pace_vs_pattern_baseline_pct": -7.8
         },
@@ -2527,6 +2615,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.6,
           "humidity_pct": 50.2,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 670.65,
           "pace_vs_pattern_baseline_pct": -7.5
         },
@@ -2540,6 +2629,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.8,
           "humidity_pct": 75.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 603.24,
           "pace_vs_pattern_baseline_pct": -10.8
         },
@@ -2553,6 +2643,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 0.9,
           "humidity_pct": 68.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 672.14,
           "pace_vs_pattern_baseline_pct": 3.3
         },
@@ -2566,6 +2657,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 4.0,
           "humidity_pct": 98.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 772.16,
           "pace_vs_pattern_baseline_pct": 14.5
         },
@@ -2579,6 +2671,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 6.5,
           "humidity_pct": 65.1,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 876.6,
           "pace_vs_pattern_baseline_pct": 21.0
         },
@@ -2592,6 +2685,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 1.3,
           "humidity_pct": 87.8,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 617.94,
           "pace_vs_pattern_baseline_pct": -5.1
         },
@@ -2605,6 +2699,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 2.2,
           "humidity_pct": 83.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 676.7,
           "pace_vs_pattern_baseline_pct": 0.1
         },
@@ -2618,6 +2713,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 7.6,
           "humidity_pct": 92.0,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 685.73,
           "pace_vs_pattern_baseline_pct": 5.4
         },
@@ -2631,6 +2727,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.0,
           "wind_mph": 8.1,
           "humidity_pct": 65.3,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 794.21,
           "pace_vs_pattern_baseline_pct": 17.5
         },
@@ -2644,6 +2741,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "rain_in": 0.008,
           "wind_mph": 16.9,
           "humidity_pct": 79.7,
+          "elevation_gain_ft": null,
           "pace_seconds_per_mile": 770.88,
           "pace_vs_pattern_baseline_pct": 6.4
         }

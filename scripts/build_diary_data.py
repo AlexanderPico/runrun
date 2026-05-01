@@ -666,6 +666,7 @@ def build() -> dict[str, Any]:
             'rain_in': rain,
             'wind_mph': wind,
             'humidity_pct': humidity,
+            'elevation_gain_ft': r.get('elevation_gain_ft'),
             'pace_seconds_per_mile': pace,
             'pace_vs_pattern_baseline_pct': delta,
         })
