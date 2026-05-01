@@ -411,55 +411,69 @@
 
       .cat-zone {
         position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 82px;
+        inset: 0;
         pointer-events: none;
-        overflow: hidden;
         z-index: 60;
-      }
-      .cat {
-        position: absolute;
-        left: -90px;
-        bottom: 8px;
-        font-size: 46px;
-        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.18));
-        transform: translate3d(var(--cat-x, 0px), 0, 0) scaleX(var(--cat-dir, 1));
-        transition: transform 180ms ease;
-      }
-      .cat.swat::after {
-        content: "✦";
-        position: absolute;
-        right: -8px;
-        top: -12px;
-        font-size: 18px;
-        color: var(--taupe);
-        animation: paw 380ms ease-out;
       }
       .cat-note {
         position: absolute;
-        left: 18px;
-        bottom: 66px;
+        left: 20px;
+        top: 24px;
         padding: 8px 12px;
         border-radius: 999px;
-        background: rgba(255,255,255,0.88);
+        background: rgba(255,255,255,0.86);
         border: 1px solid var(--line);
         color: var(--muted);
         font-size: 12px;
         opacity: 0;
         transform: translateY(6px);
-        transition: 220ms ease;
+        transition: opacity 260ms ease, transform 260ms ease;
       }
       .cat-note.show {
         opacity: 1;
         transform: translateY(0);
       }
-
-      @keyframes paw {
-        from { opacity: 0; transform: translate(2px, 8px) scale(0.5) rotate(-22deg); }
-        45% { opacity: 1; }
-        to { opacity: 0; transform: translate(18px, -10px) scale(1.2) rotate(16deg); }
+      .cat-ghost,
+      .cat-peek {
+        position: absolute;
+        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.12));
+        opacity: 0;
+      }
+      .cat-ghost {
+        font-size: 40px;
+        transition: opacity 900ms ease, transform 900ms ease;
+        transform: translateY(10px) scale(0.96);
+      }
+      .cat-ghost.visible {
+        opacity: 0.88;
+        transform: translateY(0) scale(1);
+      }
+      .cat-peek {
+        width: 72px;
+        height: 84px;
+        transition: opacity 700ms ease, transform 700ms ease;
+      }
+      .cat-peek .peek-emoji {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 52px;
+      }
+      .cat-peek-left {
+        transform: translateX(-58px);
+      }
+      .cat-peek-right {
+        transform: translateX(58px) scaleX(-1);
+      }
+      .cat-peek.visible.cat-peek-left {
+        opacity: 0.92;
+        transform: translateX(-18px);
+      }
+      .cat-peek.visible.cat-peek-right {
+        opacity: 0.92;
+        transform: translateX(18px) scaleX(-1);
       }
 
       @media (max-width: 1040px) {
@@ -511,7 +525,7 @@
           <div class="section-head">
             <div>
               <h2>Snapshot</h2>
-              <p>A Quince-inspired white, sand, and ink palette around a structured local JSON mirror of Athlinks profile, result, and stat data.</p>
+              <p>A clean sand, and ink palette around a structured local mirror of Athlinks profile, result, and stat data.</p>
             </div>
             <div id="categoryChips" class="controls"></div>
           </div>
@@ -589,7 +603,7 @@
           <div class="section-head">
             <div>
               <h2>Sources</h2>
-              <p>The diary is local-first: data is stored in ignored JSON/JS files under the repo’s data folder, and can be rebuilt from public Athlinks and Open-Meteo endpoints.</p>
+              <p>The diary is local-first: data is stored in JSON/JS files under the repo’s data folder, and can be rebuilt from public Athlinks and Open-Meteo endpoints.</p>
             </div>
           </div>
           <div class="source-grid" id="sourceGrid"></div>
@@ -598,8 +612,9 @@
     </div>
 
     <div class="cat-zone" aria-hidden="true">
-      <div id="catNote" class="cat-note">black cat patrol</div>
-      <div id="cat" class="cat">🐈‍⬛</div>
+      <div id="catNote" class="cat-note">margin cats on patrol</div>
+      <div id="catGhost" class="cat-ghost">🐈‍⬛</div>
+      <div id="catPeek" class="cat-peek cat-peek-left"><div class="peek-emoji">🐈‍⬛</div></div>
     </div>
 
     <script>
@@ -948,7 +963,7 @@
           const hottest = weather.notable_races?.hottest;
           const rainy = weather.rain_comparison?.find?.((item) => item.label === 'Rainy');
           document.getElementById('heroName').textContent = `${athlete.first_name || athlete.display_name || 'Runner'}’s run diary`;
-          document.getElementById('heroSummary').textContent = `${athlete.display_name || 'Athlete'} has ${formatInteger(overview.total_races || 0)} results across ${overview.years_active || '—'} years, with ${formatNumber(overview.miles_raced || 0, 1)} lifetime miles in the scraped Athlinks history.`;
+          document.getElementById('heroSummary').textContent = `${athlete.display_name || 'Athlete'} has ${formatInteger(overview.total_races || 0)} results across ${overview.years_active || '—'} years, with ${formatNumber(overview.miles_raced || 0, 1)} lifetime miles in the Athlinks history.`;
           document.getElementById('heroWeatherBlurb').textContent = hottest
             ? `Warmest logged race: ${hottest.race_name} at ${Math.round(hottest.weather?.temperature_f_avg || 0)}°F avg. Rainy races were ${rainy?.race_count || 0} of ${weather.coverage_count || 0} weather-resolved results.`
             : 'Weather highlights unavailable.';
@@ -993,39 +1008,76 @@
         }
 
         function startCat() {
-          const cat = document.getElementById('cat');
+          const ghost = document.getElementById('catGhost');
+          const peek = document.getElementById('catPeek');
           const note = document.getElementById('catNote');
-          let lastSwat = 0;
-          let start = performance.now();
-          let showingNote = false;
+          const shell = document.querySelector('.shell');
+          let noteShown = false;
 
-          function tick(now) {
-            const width = window.innerWidth + 180;
-            const progress = ((now - start) / 22000) % 1;
-            const x = progress * width;
-            const dir = progress > 0.5 ? -1 : 1;
-            cat.style.setProperty('--cat-x', `${x}px`);
-            cat.style.setProperty('--cat-dir', String(dir));
-            requestAnimationFrame(tick);
+          function showNote(text) {
+            note.textContent = text;
+            note.classList.add('show');
+            setTimeout(() => note.classList.remove('show'), 1800);
           }
-          requestAnimationFrame(tick);
+
+          function shellMetrics() {
+            const rect = shell.getBoundingClientRect();
+            return {
+              left: rect.left,
+              right: rect.right,
+              top: rect.top,
+              height: rect.height,
+            };
+          }
+
+          function placeGhost() {
+            const shellRect = shellMetrics();
+            const leftSide = Math.random() > 0.5;
+            const x = leftSide
+              ? Math.max(12, shellRect.left - (56 + Math.random() * 56))
+              : Math.min(window.innerWidth - 56, shellRect.right + 16 + Math.random() * 50);
+            const y = Math.min(window.innerHeight - 90, Math.max(80, shellRect.top + 40 + Math.random() * Math.min(shellRect.height - 80, 560)));
+            ghost.style.left = `${x}px`;
+            ghost.style.top = `${y}px`;
+            ghost.classList.add('visible');
+            setTimeout(() => ghost.classList.remove('visible'), 2200);
+          }
+
+          function placePeek() {
+            const shellRect = shellMetrics();
+            const leftSide = Math.random() > 0.5;
+            const y = Math.min(window.innerHeight - 120, Math.max(110, shellRect.top + 70 + Math.random() * Math.min(shellRect.height - 120, 520)));
+            peek.classList.remove('cat-peek-left', 'cat-peek-right', 'visible');
+            peek.classList.add(leftSide ? 'cat-peek-left' : 'cat-peek-right');
+            peek.style.top = `${y}px`;
+            peek.style.left = `${leftSide ? shellRect.left : shellRect.right - 72}px`;
+            requestAnimationFrame(() => peek.classList.add('visible'));
+            setTimeout(() => peek.classList.remove('visible'), 2500);
+          }
+
+          function cycle() {
+            if (!noteShown) {
+              noteShown = true;
+              showNote('quiet cat cameos');
+            }
+            placeGhost();
+            setTimeout(placePeek, 1400 + Math.random() * 800);
+            setTimeout(cycle, 5200 + Math.random() * 2600);
+          }
 
           window.addEventListener('mousemove', (event) => {
-            if (!showingNote) {
-              showingNote = true;
-              note.classList.add('show');
-              setTimeout(() => note.classList.remove('show'), 1800);
+            if (!noteShown) {
+              noteShown = true;
+              showNote('quiet cat cameos');
             }
-            const nearBottom = window.innerHeight - event.clientY < 140;
-            const catRect = cat.getBoundingClientRect();
-            const closeX = Math.abs((catRect.left + catRect.width / 2) - event.clientX) < 180;
-            if (nearBottom && closeX && performance.now() - lastSwat > 900) {
-              lastSwat = performance.now();
-              cat.classList.remove('swat');
-              void cat.offsetWidth;
-              cat.classList.add('swat');
+            const shellRect = shellMetrics();
+            const nearShellEdge = Math.abs(event.clientX - shellRect.left) < 70 || Math.abs(event.clientX - shellRect.right) < 70;
+            if (nearShellEdge && Math.random() > 0.65) {
+              placePeek();
             }
           }, { passive: true });
+
+          cycle();
         }
 
         function renderAll() {
