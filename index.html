@@ -445,25 +445,14 @@
         opacity: 1;
         transform: translateY(0);
       }
-      .cat-ghost,
       .cat-peek {
         position: absolute;
-        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.12));
-        opacity: 0;
-      }
-      .cat-ghost {
-        font-size: 40px;
-        transition: opacity 900ms ease, transform 900ms ease;
-        transform: translateY(10px) scale(0.96);
-      }
-      .cat-ghost.visible {
-        opacity: 0.88;
-        transform: translateY(0) scale(1);
-      }
-      .cat-peek {
         width: 72px;
         height: 84px;
-        transition: opacity 700ms ease, transform 700ms ease;
+        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.12));
+        opacity: 0;
+        transition: opacity 220ms ease, transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform, opacity;
       }
       .cat-peek .peek-emoji {
         position: absolute;
@@ -474,18 +463,26 @@
         font-size: 52px;
       }
       .cat-peek-left {
-        transform: translateX(-58px);
+        transform: translateX(-62px);
       }
       .cat-peek-right {
-        transform: translateX(58px) scaleX(-1);
+        transform: translateX(62px) scaleX(-1);
       }
       .cat-peek.visible.cat-peek-left {
-        opacity: 0.92;
-        transform: translateX(-18px);
+        opacity: 0.94;
+        transform: translateX(-6px);
       }
       .cat-peek.visible.cat-peek-right {
+        opacity: 0.94;
+        transform: translateX(6px) scaleX(-1);
+      }
+      .cat-peek.hiding.cat-peek-left {
         opacity: 0.92;
-        transform: translateX(18px) scaleX(-1);
+        transform: translateX(-40px);
+      }
+      .cat-peek.hiding.cat-peek-right {
+        opacity: 0.92;
+        transform: translateX(40px) scaleX(-1);
       }
 
       @media (max-width: 1040px) {
@@ -637,8 +634,7 @@
     </div>
 
     <div class="cat-zone" aria-hidden="true">
-      <div id="catNote" class="cat-note">margin cats on patrol</div>
-      <div id="catGhost" class="cat-ghost">🐈‍⬛</div>
+      <div id="catNote" class="cat-note">edge cat on standby</div>
       <div id="catPeek" class="cat-peek cat-peek-left"><div class="peek-emoji">🐈‍⬛</div></div>
     </div>
 
@@ -1144,11 +1140,15 @@
         }
 
         function startCat() {
-          const ghost = document.getElementById('catGhost');
           const peek = document.getElementById('catPeek');
           const note = document.getElementById('catNote');
           const shell = document.querySelector('.shell');
+          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           let noteShown = false;
+          let scrollTimer = 0;
+          let hideTimer = 0;
+
+          if (!peek || !note || !shell || reduceMotion) return;
 
           function showNote(text) {
             note.textContent = text;
@@ -1166,54 +1166,45 @@
             };
           }
 
-          function placeGhost() {
-            const shellRect = shellMetrics();
-            const leftSide = Math.random() > 0.5;
-            const x = leftSide
-              ? Math.max(12, shellRect.left - (56 + Math.random() * 56))
-              : Math.min(window.innerWidth - 56, shellRect.right + 16 + Math.random() * 50);
-            const y = Math.min(window.innerHeight - 90, Math.max(80, shellRect.top + 40 + Math.random() * Math.min(shellRect.height - 80, 560)));
-            ghost.style.left = `${x}px`;
-            ghost.style.top = `${y}px`;
-            ghost.classList.add('visible');
-            setTimeout(() => ghost.classList.remove('visible'), 2200);
+          function resetPeek() {
+            window.clearTimeout(hideTimer);
+            peek.classList.remove('visible', 'hiding');
           }
 
           function placePeek() {
             const shellRect = shellMetrics();
+            if (shellRect.right <= 0 || shellRect.left >= window.innerWidth) {
+              resetPeek();
+              return;
+            }
             const leftSide = Math.random() > 0.5;
-            const y = Math.min(window.innerHeight - 120, Math.max(110, shellRect.top + 70 + Math.random() * Math.min(shellRect.height - 120, 520)));
-            peek.classList.remove('cat-peek-left', 'cat-peek-right', 'visible');
+            const travel = Math.max(140, Math.min(shellRect.height - 140, 560));
+            const y = Math.min(window.innerHeight - 120, Math.max(110, shellRect.top + 70 + Math.random() * travel));
+            peek.classList.remove('cat-peek-left', 'cat-peek-right', 'visible', 'hiding');
             peek.classList.add(leftSide ? 'cat-peek-left' : 'cat-peek-right');
-            peek.style.top = `${y}px`;
-            peek.style.left = `${leftSide ? shellRect.left : shellRect.right - 72}px`;
-            requestAnimationFrame(() => peek.classList.add('visible'));
-            setTimeout(() => peek.classList.remove('visible'), 2500);
+            peek.style.top = `${Math.round(y)}px`;
+            peek.style.left = `${Math.round(leftSide ? shellRect.left - 18 : shellRect.right - 54)}px`;
+            requestAnimationFrame(() => {
+              peek.classList.add('visible');
+              hideTimer = window.setTimeout(() => peek.classList.add('hiding'), 900);
+            });
           }
 
-          function cycle() {
+          function revealAfterScrollStop() {
             if (!noteShown) {
               noteShown = true;
-              showNote('quiet cat cameos');
+              showNote('cat peeks when scrolling stops');
             }
-            placeGhost();
-            setTimeout(placePeek, 1400 + Math.random() * 800);
-            setTimeout(cycle, 5200 + Math.random() * 2600);
+            placePeek();
           }
 
-          window.addEventListener('mousemove', (event) => {
-            if (!noteShown) {
-              noteShown = true;
-              showNote('quiet cat cameos');
-            }
-            const shellRect = shellMetrics();
-            const nearShellEdge = Math.abs(event.clientX - shellRect.left) < 70 || Math.abs(event.clientX - shellRect.right) < 70;
-            if (nearShellEdge && Math.random() > 0.65) {
-              placePeek();
-            }
+          window.addEventListener('scroll', () => {
+            resetPeek();
+            window.clearTimeout(scrollTimer);
+            scrollTimer = window.setTimeout(revealAfterScrollStop, 220);
           }, { passive: true });
 
-          cycle();
+          window.addEventListener('resize', resetPeek, { passive: true });
         }
 
         function renderAll() {
