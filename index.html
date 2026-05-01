@@ -62,7 +62,6 @@
 
       .hero::after {
         content: "";
-        position: absolute;
         inset: auto -120px -110px auto;
         width: 320px;
         height: 320px;
@@ -254,8 +253,9 @@
       .season-top .mini-card:nth-child(3),
       .season-top .mini-card:nth-child(4) { grid-column: span 3; }
 
-      .season-grid .viz-card:nth-child(1) { grid-column: span 7; }
+      .season-grid .viz-card:nth-child(1) { grid-column: span 7; grid-row: span 2; }
       .season-grid .viz-card:nth-child(2) { grid-column: span 5; }
+      .season-grid .viz-card:nth-child(3) { grid-column: 8 / span 5; }
 
       .cards-grid .viz-card:nth-child(1) { grid-column: span 5; }
       .cards-grid .viz-card:nth-child(2) { grid-column: span 3; }
@@ -332,6 +332,42 @@
         border-radius: 20px;
         border: 1px solid var(--line);
         background: linear-gradient(180deg, #fff, #fbf8f3);
+      }
+      .grit-ridge {
+        margin: 4px 0 14px;
+        padding: 10px 12px 6px;
+        border-radius: 22px;
+        background: linear-gradient(180deg, rgba(247,242,234,0.9), rgba(255,255,255,0.9));
+        border: 1px solid var(--line);
+      }
+      .grit-ridge svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .grit-kpis {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 0 0 14px;
+      }
+      .grit-kpi {
+        padding: 12px 14px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.8);
+      }
+      .grit-kpi strong {
+        display: block;
+        font-size: 22px;
+        letter-spacing: -0.04em;
+      }
+      .grit-kpi span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
       }
       svg { display: block; width: 100%; height: auto; }
 
@@ -495,8 +531,10 @@
         .summary-grid .mini-card,
         .weather-top .mini-card,
         .cards-grid .viz-card,
+        .season-grid .viz-card,
         .notable-grid .mini-card,
         .source-grid .source-card { grid-column: span 6; }
+        .season-grid .viz-card:nth-child(3) { grid-column: span 6; }
       }
 
       @media (max-width: 720px) {
@@ -508,8 +546,10 @@
         .summary-grid .mini-card,
         .weather-top .mini-card,
         .cards-grid .viz-card,
+        .season-grid .viz-card,
         .notable-grid .mini-card,
         .source-grid .source-card { grid-column: span 12; }
+        .season-grid .viz-card:nth-child(3) { grid-column: span 12; }
         .controls { width: 100%; }
         .input { min-width: 100%; }
       }
@@ -816,6 +856,107 @@
           `;
         }
 
+        function createGritMap(results) {
+          const completed = (results || []).filter((result) => result.status === 'completed');
+          if (!completed.length) return null;
+          const maxMiles = Math.max(...completed.map((result) => Number(result.distance_miles || 0)), 1);
+          const ranked = completed.map((result) => {
+            const miles = Number(result.distance_miles || 0);
+            const category = String(result.race_category || '').toLowerCase();
+            const weather = result.weather || {};
+            const flags = weather.condition_flags || {};
+            const delta = Number(result.pace_vs_pattern_baseline_pct || 0);
+            const hours = Number(result.finish_time_ms || 0) / 3600000;
+            const weatherLoad = [
+              flags.rainy ? 10 : 0,
+              flags.windy ? 6 : 0,
+              flags.hot ? 6 : 0,
+              flags.cold ? 4 : 0,
+              flags.humid ? 4 : 0,
+            ].reduce((sum, value) => sum + value, 0);
+            const score = round(
+              ((miles / maxMiles) * 46)
+              + (category.includes('trail') ? 18 : 0)
+              + (miles >= 26.2 ? 10 : 0)
+              + Math.min(14, Math.max(0, hours) * 2.2)
+              + Math.min(16, Math.max(0, delta) * 1.4)
+              + weatherLoad,
+              1,
+            );
+            return {
+              label: result.race_name || result.course_name || 'Unknown race',
+              race_date: result.race_date_local || result.race_date || '—',
+              miles,
+              score,
+              trail: category.includes('trail'),
+              pace: result.pace_seconds_per_mile,
+              delta: result.pace_vs_pattern_baseline_pct,
+              weatherText: [flags.rainy ? 'rain' : '', flags.windy ? 'wind' : '', flags.hot ? 'heat' : '', flags.cold ? 'cold' : ''].filter(Boolean).join(' · '),
+            };
+          }).sort((a, b) => b.score - a.score || b.miles - a.miles).slice(0, 5);
+          if (!ranked.length) return null;
+          const width = 420;
+          const height = 150;
+          const padX = 20;
+          const baseline = height - 18;
+          const peakMax = Math.max(...ranked.map((item) => item.score), 1);
+          const step = (width - padX * 2) / Math.max(ranked.length - 1, 1);
+          const linePoints = ranked.map((item, index) => {
+            const x = padX + step * index;
+            const y = baseline - ((item.score / peakMax) * 88 + (item.trail ? 10 : 0));
+            return { ...item, x, y };
+          });
+          const area = [
+            `${linePoints[0].x},${baseline}`,
+            ...linePoints.map((point) => `${point.x},${point.y.toFixed(1)}`),
+            `${linePoints[linePoints.length - 1].x},${baseline}`,
+          ].join(' ');
+          const dots = linePoints.map((point) => `
+            <circle cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="4.5" fill="${point.trail ? '#1f1a17' : '#8e7056'}">
+              <title>${point.label} · ${point.race_date} · grit ${formatNumber(point.score, 1)} · ${formatDistance({ distance_miles: point.miles, distance_km: point.miles * 1.609344 })}${point.delta != null ? ` · ${formatSignedPercent(point.delta)}` : ''}</title>
+            </circle>
+            <text x="${point.x.toFixed(1)}" y="${(baseline + 14).toFixed(1)}" text-anchor="middle" fill="#7a6f64" font-size="11">${String(point.race_date).slice(2, 4)}</text>
+          `).join('');
+          const leader = ranked[0];
+          const avgScore = round(ranked.reduce((sum, item) => sum + item.score, 0) / ranked.length, 1);
+          return {
+            leader,
+            avgScore,
+            markup: `
+              <div class="grit-ridge">
+                <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Ridge chart of the five most grueling races">
+                  <defs>
+                    <linearGradient id="gritFill" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#b69b7a" stop-opacity="0.9"></stop>
+                      <stop offset="100%" stop-color="#f7f2ea" stop-opacity="0.5"></stop>
+                    </linearGradient>
+                  </defs>
+                  <rect x="0" y="0" width="${width}" height="${height}" fill="transparent"></rect>
+                  <line x1="${padX}" x2="${width - padX}" y1="${baseline}" y2="${baseline}" stroke="#d8ccbd"></line>
+                  <polygon points="${area}" fill="url(#gritFill)"></polygon>
+                  <polyline points="${linePoints.map((point) => `${point.x},${point.y.toFixed(1)}`).join(' ')}" fill="none" stroke="#8e7056" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  ${dots}
+                </svg>
+              </div>
+              <div class="grit-kpis">
+                <div class="grit-kpi"><strong>${formatNumber(leader.score, 1)}</strong><span>Top grit score · ${leader.label}</span></div>
+                <div class="grit-kpi"><strong>${formatNumber(avgScore, 1)}</strong><span>Average across the 5 toughest efforts</span></div>
+              </div>
+              <div class="chart-list">
+                ${ranked.map((item, index) => `
+                  <div class="chart-row">
+                    <div class="chart-meta">
+                      <div><strong>${index + 1}. ${item.label}</strong><span class="subtle">${item.race_date} · ${formatDistance({ distance_miles: item.miles, distance_km: item.miles * 1.609344 })}${item.weatherText ? ` · ${item.weatherText}` : ''}</span></div>
+                      <div>${formatNumber(item.score, 1)}</div>
+                    </div>
+                    <div class="track"><div class="fill ${item.trail ? 'ink' : 'alt'}" style="width:${Math.max(10, (item.score / peakMax) * 100)}%"></div></div>
+                  </div>
+                `).join('')}
+              </div>
+            `,
+          };
+        }
+
         function deriveSeasonStats(results) {
           const byYear = new Map();
           for (const result of results || []) {
@@ -939,6 +1080,7 @@
             </div>
           `;
 
+          const gritMap = createGritMap(data.results || []);
           document.getElementById('seasonGrid').innerHTML = `
             <article class="viz-card">
               <div class="viz-title"><div><div class="mini-label">Mileage trend</div><h3>Annual mileage history</h3></div></div>
@@ -949,6 +1091,11 @@
               <div class="viz-title"><div><div class="mini-label">Consistency</div><h3>Season density</h3></div></div>
               <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">Annual load plus trail concentration, average outing size, and low-volume seasons.</div>
               ${consistencyCard}
+            </article>
+            <article class="viz-card">
+              <div class="viz-title"><div><div class="mini-label">Most grueling efforts</div><h3>Grit map</h3></div></div>
+              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">A proxy ridge from distance, trail bias, finish duration, weather strain, and slower-than-baseline pace. Not true elevation.</div>
+              ${gritMap ? gritMap.markup : '<p class="mini-copy">No completed efforts available for a grit map.</p>'}
             </article>
           `;
         }
@@ -1105,7 +1252,7 @@
             },
             {
               title: 'Local-first files',
-              copy: 'Primary files live in data/athlete-diary.json and data/athlete-diary.js, both ignored from git. The tracked script can rebuild them at any time.',
+              copy: 'Primary files live in data/athlete-diary.json and data/athlete-diary.js. The tracked script can rebuild them at any time.',
               detail: `<div class="subtle">Generated: ${meta.generated_at || '—'}</div>`,
             },
           ];
