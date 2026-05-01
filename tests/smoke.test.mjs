@@ -94,8 +94,37 @@ test('scatter plot and grit map labels stay semantically clear', async () => {
   assert.match(html, /<text x="\$\{point\.x\.toFixed\(1\)\}" y="\$\{\(baseline \+ 14\)\.toFixed\(1\)\}" text-anchor="middle" fill="#7a6f64" font-size="11">\$\{index \+ 1\}<\/text>/);
   assert.match(html, /A proxy based on distance, trail bias, finish duration, weather strain, and slower-than-baseline pace\. Trail efforts are black dots; road efforts are brown\./);
   assert.match(html, /const isNight = point\.day_period === 'night';/);
-  assert.match(html, /const fill = isNight \? '#967bbd' : rainy \? '#1f1a17' : '#b69b7a';/);
+  assert.match(html, /function getTopElevationHighlights\(points, limit = 3\) \{/);
+  assert.match(html, /\.filter\(\(point\) => point\.elevation_gain_ft != null && Number\(point\.distance_miles \|\| 0\) > 0\)/);
+  assert.match(html, /gainPerMile: Number\(point\.elevation_gain_ft \|\| 0\) \/ Number\(point\.distance_miles\)/);
+  assert.match(html, /\.sort\(\(a, b\) => b\.gainPerMile - a\.gainPerMile\)/);
+  assert.match(html, /new Set\(getTopElevationHighlights\(clean, 3\)\.map\(\(point\) => `\$\{point\.race_name\}\|\$\{point\.race_date\}`\)\)/);
+  assert.match(html, /const isElevationHighlight = elevationHighlights\.has\(`\$\{point\.race_name\}\|\$\{point\.race_date\}`\);/);
+  assert.match(html, /const fill = isElevationHighlight \? '#a64643' : isNight \? '#765b9d' : rainy \? '#1f1a17' : '#b69b7a';/);
   assert.match(html, /<span><i style="background:#967bbd"><\/i> Night race<\/span>/);
+  assert.match(html, /<span><i style="background:#a64643"><\/i> Top elevation\/mile<\/span>/);
+});
+
+test('top elevation-per-mile trio stays stable in current diary data', async () => {
+  const diary = await loadDiaryData();
+  const topThree = diary.results
+    .filter((entry) => entry.elevation_gain_ft != null && Number(entry.distance_miles || 0) > 0)
+    .map((entry) => ({
+      race_name: entry.race_name,
+      race_date_local: entry.race_date_local,
+      gain_per_mile: Number(entry.elevation_gain_ft || 0) / Number(entry.distance_miles),
+    }))
+    .sort((a, b) => b.gain_per_mile - a.gain_per_mile)
+    .slice(0, 3);
+
+  assert.equal(
+    JSON.stringify(topThree.map((entry) => [entry.race_name, entry.race_date_local])),
+    JSON.stringify([
+      ['Mount Diablo Trail Run - "When Hell Freezes Over"', '2022-01-29'],
+      ['Mount Diablo trail run', '2016-08-28'],
+      ['Montara Mountain Trail Run 2012', '2012-03-03'],
+    ]),
+  );
 });
 
 test('bucket charts render in canonical order with signed bars for relative pace deltas', async () => {

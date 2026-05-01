@@ -660,6 +660,7 @@ def build() -> dict[str, Any]:
             'race_name': r['race_name'],
             'race_date': r['race_date_local'],
             'course_pattern': r['course_pattern'],
+            'distance_miles': r.get('distance_miles'),
             'day_period': weather.get('day_period'),
             'day_period_label': weather.get('day_period_label'),
             'temperature_f': temp,

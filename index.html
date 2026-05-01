@@ -892,9 +892,21 @@
           `;
         }
 
+        function getTopElevationHighlights(points, limit = 3) {
+          return [...(points || [])]
+            .filter((point) => point.elevation_gain_ft != null && Number(point.distance_miles || 0) > 0)
+            .map((point) => ({
+              ...point,
+              gainPerMile: Number(point.elevation_gain_ft || 0) / Number(point.distance_miles),
+            }))
+            .sort((a, b) => b.gainPerMile - a.gainPerMile)
+            .slice(0, limit);
+        }
+
         function createScatter(points) {
           const clean = (points || []).filter((point) => point.temperature_f != null && point.pace_seconds_per_mile != null).slice(0, 160);
           if (!clean.length) return '<p class="mini-copy">No scatter points available.</p>';
+          const elevationHighlights = new Set(getTopElevationHighlights(clean, 3).map((point) => `${point.race_name}|${point.race_date}`));
           const minTemp = Math.min(...clean.map((point) => point.temperature_f));
           const maxTemp = Math.max(...clean.map((point) => point.temperature_f));
           const minPace = Math.min(...clean.map((point) => point.pace_seconds_per_mile));
@@ -907,7 +919,7 @@
           const circles = clean.map((point) => {
             const rainy = (point.rain_in || 0) > 0.02;
             const isNight = point.day_period === 'night';
-            const isElevationHighlight = Number(point.elevation_gain_ft || 0) > 4000;
+            const isElevationHighlight = elevationHighlights.has(`${point.race_name}|${point.race_date}`);
             const fill = isElevationHighlight ? '#a64643' : isNight ? '#765b9d' : rainy ? '#1f1a17' : '#b69b7a';
             const raceLabel = point.day_period_label ? ` · ${point.day_period_label}` : '';
             const elevationLabel = point.elevation_gain_ft != null ? ` · ${formatElevationGain(point.elevation_gain_ft)}` : '';
@@ -933,7 +945,7 @@
               <span><i style="background:#b69b7a"></i> Dry race</span>
               <span><i style="background:#1f1a17"></i> Rainy race</span>
               <span><i style="background:#967bbd"></i> Night race</span>
-              <span><i style="background:#a64643"></i> Elevation gain</span>
+              <span><i style="background:#a64643"></i> Top elevation/mile</span>
             </div>
           `;
         }
