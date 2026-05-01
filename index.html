@@ -36,6 +36,8 @@
       button, input, select { font: inherit; }
 
       .shell {
+        position: relative;
+        z-index: 2;
         width: min(calc(100% - 32px), var(--max));
         margin: 0 auto;
         padding: 24px 0 96px;
@@ -43,6 +45,8 @@
 
       .hero,
       .card {
+        position: relative;
+        z-index: 2;
         background: rgba(255, 255, 255, 0.92);
         border: 1px solid rgba(232, 221, 208, 0.9);
         border-radius: var(--radius);
@@ -425,7 +429,7 @@
         position: fixed;
         inset: 0;
         pointer-events: none;
-        z-index: 60;
+        z-index: 1;
       }
       .cat-note {
         position: absolute;
@@ -1159,12 +1163,14 @@
           const peek = document.getElementById('catPeek');
           const note = document.getElementById('catNote');
           const shell = document.querySelector('.shell');
+          const sectionAnchors = [...document.querySelectorAll('.hero, .card')];
           const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           let noteShown = false;
           let scrollTimer = 0;
           let hideTimer = 0;
+          const seenSections = new WeakSet();
 
-          if (!peek || !note || !shell || reduceMotion) return;
+          if (!peek || !note || !shell || !sectionAnchors.length || reduceMotion) return;
 
           function showNote(text) {
             note.textContent = text;
@@ -1187,19 +1193,41 @@
             peek.classList.remove('visible', 'hiding');
           }
 
-          function placePeek() {
+          function pickSection() {
+            const viewportMid = window.innerHeight * 0.42;
+            let best = null;
+            let bestScore = Number.POSITIVE_INFINITY;
+            for (const section of sectionAnchors) {
+              const rect = section.getBoundingClientRect();
+              const visibleTop = Math.max(rect.top, 0);
+              const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+              const visibleHeight = visibleBottom - visibleTop;
+              if (visibleHeight < Math.min(120, rect.height * 0.22)) continue;
+              const center = rect.top + rect.height / 2;
+              const score = Math.abs(center - viewportMid);
+              if (score < bestScore) {
+                best = { section, rect };
+                bestScore = score;
+              }
+            }
+            return best;
+          }
+
+          function placePeek(targetRect) {
             const shellRect = shellMetrics();
             if (shellRect.right <= 0 || shellRect.left >= window.innerWidth) {
               resetPeek();
               return;
             }
+            const anchorRect = targetRect || shellRect;
             const leftSide = Math.random() > 0.5;
-            const travel = Math.max(140, Math.min(shellRect.height - 140, 560));
-            const y = Math.min(window.innerHeight - 120, Math.max(110, shellRect.top + 70 + Math.random() * travel));
+            const travel = Math.max(84, Math.min(anchorRect.height - 84, 240));
+            const yBase = Math.max(anchorRect.top + 42, 92);
+            const y = Math.min(window.innerHeight - 116, yBase + Math.random() * travel);
             peek.classList.remove('cat-peek-left', 'cat-peek-right', 'visible', 'hiding');
             peek.classList.add(leftSide ? 'cat-peek-left' : 'cat-peek-right');
             peek.style.top = `${Math.round(y)}px`;
-            peek.style.left = `${Math.round(leftSide ? shellRect.left - 18 : shellRect.right - 54)}px`;
+            peek.style.left = `${Math.round(leftSide ? anchorRect.left - 18 : anchorRect.right - 54)}px`;
             requestAnimationFrame(() => {
               peek.classList.add('visible');
               hideTimer = window.setTimeout(() => peek.classList.add('hiding'), 900);
@@ -1207,17 +1235,20 @@
           }
 
           function revealAfterScrollStop() {
+            const picked = pickSection();
+            if (!picked || seenSections.has(picked.section)) return;
+            seenSections.add(picked.section);
             if (!noteShown) {
               noteShown = true;
-              showNote('cat peeks when scrolling stops');
+              showNote('one cat peek per section');
             }
-            placePeek();
+            placePeek(picked.rect);
           }
 
           window.addEventListener('scroll', () => {
             resetPeek();
             window.clearTimeout(scrollTimer);
-            scrollTimer = window.setTimeout(revealAfterScrollStop, 220);
+            scrollTimer = window.setTimeout(revealAfterScrollStop, 260);
           }, { passive: true });
 
           window.addEventListener('resize', resetPeek, { passive: true });
