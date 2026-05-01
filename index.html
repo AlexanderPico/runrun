@@ -902,7 +902,7 @@
           const circles = clean.map((point) => {
             const rainy = (point.rain_in || 0) > 0.02;
             const isNight = point.day_period === 'night';
-            const fill = isNight ? '#967bbd' : rainy ? '#1f1a17' : '#b69b7a';
+            const fill = isNight ? '#765b9d' : rainy ? '#1f1a17' : '#b69b7a';
             const raceLabel = point.day_period_label ? ` · ${point.day_period_label}` : '';
             const title = `${point.race_name} (${point.race_date})${raceLabel} · ${Math.round(point.temperature_f)}°F · ${paceFromSeconds(point.pace_seconds_per_mile)}${point.pace_vs_pattern_baseline_pct != null ? ` · ${formatSignedPercent(point.pace_vs_pattern_baseline_pct)}` : ''}`;
             return `<circle cx="${x(point.temperature_f).toFixed(1)}" cy="${y(point.pace_seconds_per_mile).toFixed(1)}" r="5" fill="${fill}" fill-opacity="0.78"><title>${title}</title></circle>`;
