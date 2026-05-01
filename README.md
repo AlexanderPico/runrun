@@ -14,9 +14,14 @@ RunRun is a local-first static race diary for Athlinks athlete 92157185 (Elisa P
 ## Local validation
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 npm test
-python3 -m py_compile scripts/build_diary_data.py
+python -m py_compile scripts/build_diary_data.py
 ```
+
+Use the repo-local virtualenv interpreter consistently for installs and rebuilds, e.g. `python scripts/build_diary_data.py` after activating `.venv`.
 
 The Node smoke suite checks that the checked-in diary mirror exposes the expected athlete summary, keeps results newest-first, wires `index.html` to the local data files, and documents the validation path.
 
@@ -25,6 +30,6 @@ The Node smoke suite checks that the checked-in diary mirror exposes the expecte
 `.github/workflows/ci.yml` runs the same local validation commands on pushes and pull requests to `main`:
 
 - `npm test`
-- `python3 -m py_compile scripts/build_diary_data.py`
+- `.venv/bin/python -m py_compile scripts/build_diary_data.py`
 
 This keeps the static diary and rebuild script from drifting silently.

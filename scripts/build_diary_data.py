@@ -42,6 +42,13 @@ def save_json(path: Path, payload: Any) -> None:
 GEOCODE_CACHE: dict[str, Any] = load_json(GEOCODE_CACHE_PATH, {})
 WEATHER_CACHE: dict[str, Any] = load_json(WEATHER_CACHE_PATH, {})
 
+WEATHER_START_OVERRIDES = {
+    ('Bank of America Chicago Marathon 2010', '2010-10-10'): '2010-10-10T07:30:00',
+    ('Davis Turkey Trot', '2022-11-19'): '2022-11-19T08:00:00',
+    ('Davis Moonlight Run', '2025-07-12'): '2025-07-12T20:00:00',
+    ('J.P. Morgan Chase Corporate Challenge', '2016-09-08'): '2016-09-08T18:45:00',
+}
+
 
 def get_json(url: str, *, params: dict[str, Any] | None = None, timeout: int = 60) -> Any:
     for attempt in range(3):
@@ -267,22 +274,41 @@ def geocode_place(place: Place) -> dict[str, Any] | None:
     return result
 
 
-def weather_key(lat: float, lon: float, race_date: str, start_hour: int, hours: int) -> str:
-    return f'{lat:.4f}|{lon:.4f}|{race_date}|{start_hour}|{hours}'
+def weather_key(lat: float, lon: float, start_dt: datetime, hours: int) -> str:
+    return f'{lat:.4f}|{lon:.4f}|{start_dt.isoformat()}|{hours}'
 
 
-def summarize_weather(payload: dict[str, Any], race_date: str, start_hour: int, hours: int) -> dict[str, Any] | None:
+def apply_weather_start_override(race_name: str | None, race_dt: datetime | None) -> datetime | None:
+    if not race_name or not race_dt:
+        return race_dt
+    override = WEATHER_START_OVERRIDES.get((race_name, race_dt.strftime('%Y-%m-%d')))
+    return parse_dt(override) if override else race_dt
+
+
+def touched_hour_prefixes(start_dt: datetime, hours: int) -> list[str]:
+    end_dt = start_dt + timedelta(hours=hours)
+    cursor = start_dt.replace(minute=0, second=0, microsecond=0)
+    prefixes: list[str] = []
+    while cursor <= end_dt:
+        prefixes.append(cursor.strftime('%Y-%m-%dT%H:00'))
+        cursor += timedelta(hours=1)
+    return prefixes
+
+
+def day_period_for_start(start_dt: datetime) -> tuple[str, str]:
+    return ('night', 'Night race') if start_dt.time() > datetime.strptime('17:00', '%H:%M').time() else ('day', 'Day race')
+
+
+def summarize_weather(payload: dict[str, Any], start_dt: datetime, hours: int) -> dict[str, Any] | None:
     hourly = payload.get('hourly') or {}
     times = hourly.get('time') or []
     if not times:
         return None
-    target_prefixes = []
-    for offset in range(hours):
-        moment = datetime.fromisoformat(race_date) + timedelta(hours=start_hour + offset)
-        target_prefixes.append(moment.strftime('%Y-%m-%dT%H:00'))
+    race_date = start_dt.strftime('%Y-%m-%d')
+    target_prefixes = touched_hour_prefixes(start_dt, hours)
     indices = [i for i, t in enumerate(times) if t in target_prefixes]
     if not indices:
-        indices = [i for i, t in enumerate(times) if t.startswith(f'{race_date}T')][: max(hours, 1)]
+        indices = [i for i, t in enumerate(times) if t.startswith(f'{race_date}T')][: max(len(target_prefixes), 1)]
     if not indices:
         return None
 
@@ -298,14 +324,17 @@ def summarize_weather(payload: dict[str, Any], race_date: str, start_hour: int, 
     snowfall = values('snowfall')
     wind = values('wind_speed_10m')
     cloud = values('cloud_cover')
+    day_period, day_period_label = day_period_for_start(start_dt)
 
     return {
         'source': 'open-meteo',
         'timezone': payload.get('timezone'),
         'race_window_hours': hours,
-        'window_start_local': target_prefixes[0],
-        'window_end_local': target_prefixes[-1],
+        'window_start_local': start_dt.isoformat(timespec='minutes'),
+        'window_end_local': (start_dt + timedelta(hours=hours)).isoformat(timespec='minutes'),
         'hour_count': len(indices),
+        'day_period': day_period,
+        'day_period_label': day_period_label,
         'temperature_f_start': temp[0] if temp else None,
         'temperature_f_avg': round(statistics.fmean(temp), 1) if temp else None,
         'temperature_f_max': round(max(temp), 1) if temp else None,
@@ -352,13 +381,13 @@ def summarize_weather(payload: dict[str, Any], race_date: str, start_hour: int, 
     }
 
 
-def fetch_weather(geo: dict[str, Any] | None, race_dt: datetime | None, finish_time_ms: int | None) -> dict[str, Any] | None:
+def fetch_weather(geo: dict[str, Any] | None, race_dt: datetime | None, finish_time_ms: int | None, race_name: str | None = None) -> dict[str, Any] | None:
     if not geo or not race_dt:
         return None
+    race_dt = apply_weather_start_override(race_name, race_dt)
     race_date = race_dt.strftime('%Y-%m-%d')
-    start_hour = race_dt.hour
     hours = max(1, min(6, int(math.ceil((finish_time_ms or 7200000) / 3600000))))
-    key = weather_key(geo['latitude'], geo['longitude'], race_date, start_hour, hours)
+    key = weather_key(geo['latitude'], geo['longitude'], race_dt, hours)
     if key in WEATHER_CACHE:
         return WEATHER_CACHE[key]
     params = {
@@ -375,7 +404,7 @@ def fetch_weather(geo: dict[str, Any] | None, race_dt: datetime | None, finish_t
     payload = get_json('https://archive-api.open-meteo.com/v1/archive', params=params)
     payload['latitude'] = geo['latitude']
     payload['longitude'] = geo['longitude']
-    summary = summarize_weather(payload, race_date, start_hour, hours)
+    summary = summarize_weather(payload, race_dt, hours)
     WEATHER_CACHE[key] = summary
     time.sleep(0.08)
     return summary
@@ -411,7 +440,7 @@ def build() -> dict[str, Any]:
         race_dt = parse_dt(race.get('RaceDate'))
         place = normalize_place(race.get('City') or entry.get('City'), race.get('StateProvAbbrev') or entry.get('StateProv'), race.get('CountryID3') or entry.get('CountryID3'))
         geo = geocode_place(place)
-        weather = fetch_weather(geo, race_dt, entry.get('Ticks'))
+        weather = fetch_weather(geo, race_dt, entry.get('Ticks'), race.get('RaceName') or race.get('EventName'))
         normalized_results.append({
             'entry_id': entry.get('EntryID'),
             'entry_unique_id': entry.get('EntryUniqueID'),
@@ -591,6 +620,8 @@ def build() -> dict[str, Any]:
             'race_name': r['race_name'],
             'race_date': r['race_date_local'],
             'course_pattern': r['course_pattern'],
+            'day_period': weather.get('day_period'),
+            'day_period_label': weather.get('day_period_label'),
             'temperature_f': temp,
             'rain_in': rain,
             'wind_mph': wind,

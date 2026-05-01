@@ -23,8 +23,14 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Create repo virtualenv
+        run: python -m venv .venv
+
+      - name: Install Python dependencies into repo virtualenv
+        run: .venv/bin/python -m pip install -r requirements.txt
+
       - name: Run smoke tests
         run: npm test
 
       - name: Check diary build script syntax
-        run: python3 -m py_compile scripts/build_diary_data.py
+        run: .venv/bin/python -m py_compile scripts/build_diary_data.py
