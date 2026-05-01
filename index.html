@@ -148,9 +148,11 @@
 
       .stats-grid,
       .summary-grid,
+      .season-top,
       .weather-top,
       .notable-grid,
       .cards-grid,
+      .season-grid,
       .source-grid {
         display: grid;
         gap: 16px;
@@ -162,9 +164,11 @@
       }
 
       .summary-grid,
+      .season-top,
       .weather-top,
       .notable-grid,
       .cards-grid,
+      .season-grid,
       .source-grid {
         grid-template-columns: repeat(12, minmax(0, 1fr));
       }
@@ -240,6 +244,14 @@
       .weather-top .mini-card:nth-child(2),
       .weather-top .mini-card:nth-child(3),
       .weather-top .mini-card:nth-child(4) { grid-column: span 3; }
+
+      .season-top .mini-card:nth-child(1),
+      .season-top .mini-card:nth-child(2),
+      .season-top .mini-card:nth-child(3),
+      .season-top .mini-card:nth-child(4) { grid-column: span 3; }
+
+      .season-grid .viz-card:nth-child(1) { grid-column: span 7; }
+      .season-grid .viz-card:nth-child(2) { grid-column: span 5; }
 
       .cards-grid .viz-card:nth-child(1) { grid-column: span 5; }
       .cards-grid .viz-card:nth-child(2) { grid-column: span 3; }
@@ -552,6 +564,19 @@
         <div class="card">
           <div class="section-head">
             <div>
+              <h2>Year by year</h2>
+              <p>Derived rollups from the local result history: annual mileage, race count, consistency, and distance mix across active seasons.</p>
+            </div>
+          </div>
+          <div id="seasonTop" class="season-top"></div>
+          <div id="seasonGrid" class="season-grid" style="margin-top:16px;"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card">
+          <div class="section-head">
+            <div>
               <h2>Results</h2>
               <p>Search, filter, and sort all normalized races. Weather tags are shown whenever the archive lookup resolved successfully.</p>
             </div>
@@ -787,6 +812,117 @@
               <span><i style="background:#b69b7a"></i> Dry race</span>
               <span><i style="background:#1f1a17"></i> Rainy race</span>
             </div>
+          `;
+        }
+
+        function deriveSeasonStats(results) {
+          const byYear = new Map();
+          for (const result of results || []) {
+            const year = String(result.race_date_local || result.race_date || '').slice(0, 4);
+            if (!year || year === 'None') continue;
+            if (!byYear.has(year)) byYear.set(year, { year, miles: 0, races: 0, road: 0, trail: 0, marathonPlus: 0 });
+            const row = byYear.get(year);
+            row.miles += Number(result.distance_miles || 0);
+            row.races += 1;
+            const category = String(result.race_category || '').toLowerCase();
+            if (category.includes('trail')) row.trail += 1;
+            else if (category.includes('running')) row.road += 1;
+            if (Number(result.distance_miles || 0) >= 26.2) row.marathonPlus += 1;
+          }
+          const years = [...byYear.values()].sort((a, b) => Number(a.year) - Number(b.year)).map((row) => ({
+            ...row,
+            miles: round(row.miles, 1),
+            avgMilesPerRace: row.races ? round(row.miles / row.races, 1) : null,
+          }));
+          const activeYears = years.length;
+          const totalMiles = years.reduce((sum, row) => sum + row.miles, 0);
+          const totalRaces = years.reduce((sum, row) => sum + row.races, 0);
+          const bestMiles = [...years].sort((a, b) => b.miles - a.miles)[0] || null;
+          const bestRaces = [...years].sort((a, b) => b.races - a.races)[0] || null;
+          let streak = 0;
+          let bestStreak = 0;
+          let lastYear = null;
+          for (const row of years) {
+            const yearNum = Number(row.year);
+            streak = lastYear != null && yearNum === lastYear + 1 ? streak + 1 : 1;
+            bestStreak = Math.max(bestStreak, streak);
+            lastYear = yearNum;
+          }
+          return {
+            years,
+            recentYears: years.slice(-8).reverse(),
+            activeYears,
+            totalMiles: round(totalMiles, 1),
+            totalRaces,
+            avgMilesPerYear: activeYears ? round(totalMiles / activeYears, 1) : null,
+            avgRacesPerYear: activeYears ? round(totalRaces / activeYears, 1) : null,
+            bestMiles,
+            bestRaces,
+            bestStreak,
+          };
+        }
+
+        function renderSeasonStats(data) {
+          const season = deriveSeasonStats(data.results || []);
+          const topCards = [
+            { label: 'Avg miles / active year', title: `${formatNumber(season.avgMilesPerYear || 0, 1)} mi`, copy: `${formatInteger(season.activeYears)} active years in the record.` },
+            { label: 'Avg races / active year', title: `${formatNumber(season.avgRacesPerYear || 0, 1)} races`, copy: `${formatInteger(season.totalRaces)} total results normalized.` },
+            { label: 'Peak mileage season', title: season.bestMiles ? `${season.bestMiles.year} · ${formatNumber(season.bestMiles.miles, 1)} mi` : '—', copy: season.bestMiles ? `${season.bestMiles.races} races, ${season.bestMiles.trail} trail, ${season.bestMiles.road} road.` : '—' },
+            { label: 'Longest active streak', title: `${formatInteger(season.bestStreak)} years`, copy: 'Consecutive years with at least one race result.' },
+          ];
+          document.getElementById('seasonTop').innerHTML = topCards.map((card) => `
+            <article class="mini-card">
+              <div class="mini-label">${card.label}</div>
+              <div class="mini-title">${card.title}</div>
+              <div class="mini-copy">${card.copy}</div>
+            </article>
+          `).join('');
+
+          const yearBars = season.recentYears;
+          const maxMiles = Math.max(...yearBars.map((row) => row.miles), 1);
+          const mileageChart = `
+            <div class="chart-list">
+              ${yearBars.map((row) => `
+                <div class="chart-row">
+                  <div class="chart-meta">
+                    <div><strong>${row.year}</strong><span class="subtle">${row.races} races · ${row.trail} trail · ${row.road} road</span></div>
+                    <div>${formatNumber(row.miles, 1)} mi</div>
+                  </div>
+                  <div class="track"><div class="fill" style="width:${Math.max(8, (row.miles / maxMiles) * 100)}%"></div></div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+
+          const bestRaceDensity = [...season.years].sort((a, b) => b.races - a.races)[0] || null;
+          const consistencyCard = `
+            <div class="chart-list">
+              <div class="chart-row">
+                <div class="chart-meta"><div><strong>Total miles</strong><span class="subtle">All active seasons</span></div><div>${formatNumber(season.totalMiles, 1)} mi</div></div>
+                <div class="track"><div class="fill ink" style="width:100%"></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-meta"><div><strong>Busiest calendar</strong><span class="subtle">Most races in a single year</span></div><div>${bestRaceDensity ? `${bestRaceDensity.year} · ${bestRaceDensity.races} races` : '—'}</div></div>
+                <div class="track"><div class="fill alt" style="width:${bestRaceDensity ? Math.max(12, (bestRaceDensity.races / Math.max(...season.years.map((row) => row.races), 1)) * 100) : 12}%"></div></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-meta"><div><strong>Marathon+ finishes</strong><span class="subtle">26.2 miles or longer</span></div><div>${formatInteger(season.years.reduce((sum, row) => sum + row.marathonPlus, 0))}</div></div>
+                <div class="track"><div class="fill" style="width:${Math.max(10, ((season.years.reduce((sum, row) => sum + row.marathonPlus, 0) || 0) / Math.max(season.totalRaces, 1)) * 100)}%"></div></div>
+              </div>
+            </div>
+          `;
+
+          document.getElementById('seasonGrid').innerHTML = `
+            <article class="viz-card">
+              <div class="viz-title"><div><div class="mini-label">Mileage trend</div><h3>Recent annual mileage</h3></div></div>
+              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">Last ${yearBars.length} active seasons by year, with race count and trail/road mix.</div>
+              ${mileageChart}
+            </article>
+            <article class="viz-card">
+              <div class="viz-title"><div><div class="mini-label">Consistency</div><h3>Season density</h3></div></div>
+              <div class="mini-copy" style="margin-top:-8px;margin-bottom:14px;">A compact read on annual load, busiest race year, and marathon-plus frequency.</div>
+              ${consistencyCard}
+            </article>
           `;
         }
 
@@ -1084,6 +1220,7 @@
           renderHero(state.data);
           renderSummary(state.data);
           renderWeather(state.data);
+          renderSeasonStats(state.data);
           renderResults();
           renderSources(state.data);
           document.getElementById('sourceMeta').textContent = `Updated ${state.data.meta?.generated_at?.slice(0, 10) || '—'}`;
