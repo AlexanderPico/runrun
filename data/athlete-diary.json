@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-05-09T13:15:38.621402Z",
+    "generated_at": "2026-05-10T13:15:25.576636Z",
     "repo": "/Users/aimee/.openclaw/git/AlexanderPico/runrun",
     "source_site": "Athlinks",
     "athlete_page": "https://www.athlinks.com/athletes/92157185",
@@ -37936,6 +37936,55 @@
           "RacerTicks": 0
         },
         {
+          "EventDate": "2012-12-01T05:00:00",
+          "EventName": "North Face Endurance Challenge - Championships",
+          "CoursePattern": {
+            "Id": 640,
+            "OuterId": 640,
+            "CourseCategory": "2:42164.81",
+            "CourseCategoryFull": "2:26.20:1",
+            "Description": "Trail Marathon",
+            "LegCount": 1,
+            "CourseCount": 6049,
+            "TicksMin": 7333800,
+            "RaceCatId": 15,
+            "Distance": 42164.81,
+            "OuterName": "Trail Marathon"
+          },
+          "Rating": {
+            "RacerId": 92157185,
+            "CoursePatternId": 640,
+            "ResultCount": 2,
+            "RatingO": 87.6,
+            "RatingA": 61.1,
+            "RatingG": 84.3,
+            "RatingM": 0.0,
+            "AverageTicks": 24646500,
+            "BestTicks": 23707000,
+            "BestECID": 339254,
+            "EstTicks": 0,
+            "CreateDate": "2017-06-09T06:22:53.367",
+            "TotalDistance": 84329.62,
+            "BestEventID": 241135,
+            "BestCourseID": 339354,
+            "BestEntryID": 132511855,
+            "CoursePattern": {
+              "Id": 640,
+              "OuterId": 640,
+              "CourseCategory": "2:42164.81",
+              "CourseCategoryFull": "2:26.20:1",
+              "Description": "Trail Marathon",
+              "LegCount": 1,
+              "CourseCount": 6049,
+              "TicksMin": 7333800,
+              "RaceCatId": 15,
+              "Distance": 42164.81,
+              "OuterName": "Trail Marathon"
+            }
+          },
+          "RacerTicks": 0
+        },
+        {
           "EventDate": "2016-12-10T08:45:00",
           "EventName": "Rodeo Beach",
           "CoursePattern": {
@@ -38029,55 +38078,6 @@
               "RaceCatId": 15,
               "Distance": 4.0,
               "OuterName": "0Mi Trail Run"
-            }
-          },
-          "RacerTicks": 0
-        },
-        {
-          "EventDate": "2012-12-01T05:00:00",
-          "EventName": "North Face Endurance Challenge - Championships",
-          "CoursePattern": {
-            "Id": 640,
-            "OuterId": 640,
-            "CourseCategory": "2:42164.81",
-            "CourseCategoryFull": "2:26.20:1",
-            "Description": "Trail Marathon",
-            "LegCount": 1,
-            "CourseCount": 6049,
-            "TicksMin": 7333800,
-            "RaceCatId": 15,
-            "Distance": 42164.81,
-            "OuterName": "Trail Marathon"
-          },
-          "Rating": {
-            "RacerId": 92157185,
-            "CoursePatternId": 640,
-            "ResultCount": 2,
-            "RatingO": 87.6,
-            "RatingA": 61.1,
-            "RatingG": 84.3,
-            "RatingM": 0.0,
-            "AverageTicks": 24646500,
-            "BestTicks": 23707000,
-            "BestECID": 339254,
-            "EstTicks": 0,
-            "CreateDate": "2017-06-09T06:22:53.367",
-            "TotalDistance": 84329.62,
-            "BestEventID": 241135,
-            "BestCourseID": 339354,
-            "BestEntryID": 132511855,
-            "CoursePattern": {
-              "Id": 640,
-              "OuterId": 640,
-              "CourseCategory": "2:42164.81",
-              "CourseCategoryFull": "2:26.20:1",
-              "Description": "Trail Marathon",
-              "LegCount": 1,
-              "CourseCount": 6049,
-              "TicksMin": 7333800,
-              "RaceCatId": 15,
-              "Distance": 42164.81,
-              "OuterName": "Trail Marathon"
             }
           },
           "RacerTicks": 0
