@@ -1,6 +1,6 @@
 globalThis.RUNRUN_DIARY_DATA = {
   "meta": {
-    "generated_at": "2026-05-14T13:16:06.521709Z",
+    "generated_at": "2026-05-15T13:15:48.666255Z",
     "repo": "/Users/aimee/.openclaw/git/AlexanderPico/runrun",
     "source_site": "Athlinks",
     "athlete_page": "https://www.athlinks.com/athletes/92157185",
@@ -291,78 +291,6 @@ globalThis.RUNRUN_DIARY_DATA = {
         }
       },
       {
-        "event_name": "Golden Gate Trail Run 2012",
-        "event_date": "2012-07-14",
-        "distance_label": "13.1Mi Trail Run",
-        "distance_description": "13.1Mi Trail Run",
-        "distance_meters": 21082.41,
-        "distance_km": 21.082,
-        "distance_miles": 13.1,
-        "course_pattern_id": 682,
-        "course_category": "2:13.10:1",
-        "result_count": 18,
-        "best_time_ms": 9695000,
-        "best_time": "2:41:35",
-        "average_time_ms": 12709801,
-        "average_time": "3:31:50",
-        "rating_overall_top_percent": 99.0,
-        "rating_age_top_percent": 99.0,
-        "rating_gender_top_percent": 99.0,
-        "best_event_id": 210369,
-        "best_course_id": 290018,
-        "best_entry_id": 122659023,
-        "best_event_course_id": 290508,
-        "raw": {
-          "EventDate": "2012-07-14T08:15:00",
-          "EventName": "Golden Gate Trail Run 2012",
-          "CoursePattern": {
-            "Id": 682,
-            "OuterId": 682,
-            "CourseCategory": "2:21082.41",
-            "CourseCategoryFull": "2:13.10:1",
-            "Description": "13.1Mi Trail Run",
-            "LegCount": 1,
-            "CourseCount": 8439,
-            "TicksMin": 0,
-            "RaceCatId": 15,
-            "Distance": 21082.41,
-            "OuterName": "13.1Mi Trail Run"
-          },
-          "Rating": {
-            "RacerId": 92157185,
-            "CoursePatternId": 682,
-            "ResultCount": 18,
-            "RatingO": 99.0,
-            "RatingA": 99.0,
-            "RatingG": 99.0,
-            "RatingM": 0.0,
-            "AverageTicks": 12709801,
-            "BestTicks": 9695000,
-            "BestECID": 290508,
-            "EstTicks": 0,
-            "CreateDate": "2026-03-03T15:27:23.907",
-            "TotalDistance": 379483.38,
-            "BestEventID": 210369,
-            "BestCourseID": 290018,
-            "BestEntryID": 122659023,
-            "CoursePattern": {
-              "Id": 682,
-              "OuterId": 682,
-              "CourseCategory": "2:21082.41",
-              "CourseCategoryFull": "2:13.10:1",
-              "Description": "13.1Mi Trail Run",
-              "LegCount": 1,
-              "CourseCount": 8439,
-              "TicksMin": 0,
-              "RaceCatId": 15,
-              "Distance": 21082.41,
-              "OuterName": "13.1Mi Trail Run"
-            }
-          },
-          "RacerTicks": 0
-        }
-      },
-      {
         "event_name": "Kaiser Permanente San Francisco Half Marathon & 5K",
         "event_date": "2013-02-03",
         "distance_label": "1/2 Mara",
@@ -429,6 +357,78 @@ globalThis.RUNRUN_DIARY_DATA = {
               "RaceCatId": 2,
               "Distance": 21082.41,
               "OuterName": "1/2 Mara"
+            }
+          },
+          "RacerTicks": 0
+        }
+      },
+      {
+        "event_name": "Golden Gate Trail Run 2012",
+        "event_date": "2012-07-14",
+        "distance_label": "13.1Mi Trail Run",
+        "distance_description": "13.1Mi Trail Run",
+        "distance_meters": 21082.41,
+        "distance_km": 21.082,
+        "distance_miles": 13.1,
+        "course_pattern_id": 682,
+        "course_category": "2:13.10:1",
+        "result_count": 18,
+        "best_time_ms": 9695000,
+        "best_time": "2:41:35",
+        "average_time_ms": 12709801,
+        "average_time": "3:31:50",
+        "rating_overall_top_percent": 99.0,
+        "rating_age_top_percent": 99.0,
+        "rating_gender_top_percent": 99.0,
+        "best_event_id": 210369,
+        "best_course_id": 290018,
+        "best_entry_id": 122659023,
+        "best_event_course_id": 290508,
+        "raw": {
+          "EventDate": "2012-07-14T08:15:00",
+          "EventName": "Golden Gate Trail Run 2012",
+          "CoursePattern": {
+            "Id": 682,
+            "OuterId": 682,
+            "CourseCategory": "2:21082.41",
+            "CourseCategoryFull": "2:13.10:1",
+            "Description": "13.1Mi Trail Run",
+            "LegCount": 1,
+            "CourseCount": 8439,
+            "TicksMin": 0,
+            "RaceCatId": 15,
+            "Distance": 21082.41,
+            "OuterName": "13.1Mi Trail Run"
+          },
+          "Rating": {
+            "RacerId": 92157185,
+            "CoursePatternId": 682,
+            "ResultCount": 18,
+            "RatingO": 99.0,
+            "RatingA": 99.0,
+            "RatingG": 99.0,
+            "RatingM": 0.0,
+            "AverageTicks": 12709801,
+            "BestTicks": 9695000,
+            "BestECID": 290508,
+            "EstTicks": 0,
+            "CreateDate": "2026-03-03T15:27:23.907",
+            "TotalDistance": 379483.38,
+            "BestEventID": 210369,
+            "BestCourseID": 290018,
+            "BestEntryID": 122659023,
+            "CoursePattern": {
+              "Id": 682,
+              "OuterId": 682,
+              "CourseCategory": "2:21082.41",
+              "CourseCategoryFull": "2:13.10:1",
+              "Description": "13.1Mi Trail Run",
+              "LegCount": 1,
+              "CourseCount": 8439,
+              "TicksMin": 0,
+              "RaceCatId": 15,
+              "Distance": 21082.41,
+              "OuterName": "13.1Mi Trail Run"
             }
           },
           "RacerTicks": 0
@@ -37691,55 +37691,6 @@ globalThis.RUNRUN_DIARY_DATA = {
           "RacerTicks": 0
         },
         {
-          "EventDate": "2012-07-14T08:15:00",
-          "EventName": "Golden Gate Trail Run 2012",
-          "CoursePattern": {
-            "Id": 682,
-            "OuterId": 682,
-            "CourseCategory": "2:21082.41",
-            "CourseCategoryFull": "2:13.10:1",
-            "Description": "13.1Mi Trail Run",
-            "LegCount": 1,
-            "CourseCount": 8439,
-            "TicksMin": 0,
-            "RaceCatId": 15,
-            "Distance": 21082.41,
-            "OuterName": "13.1Mi Trail Run"
-          },
-          "Rating": {
-            "RacerId": 92157185,
-            "CoursePatternId": 682,
-            "ResultCount": 18,
-            "RatingO": 99.0,
-            "RatingA": 99.0,
-            "RatingG": 99.0,
-            "RatingM": 0.0,
-            "AverageTicks": 12709801,
-            "BestTicks": 9695000,
-            "BestECID": 290508,
-            "EstTicks": 0,
-            "CreateDate": "2026-03-03T15:27:23.907",
-            "TotalDistance": 379483.38,
-            "BestEventID": 210369,
-            "BestCourseID": 290018,
-            "BestEntryID": 122659023,
-            "CoursePattern": {
-              "Id": 682,
-              "OuterId": 682,
-              "CourseCategory": "2:21082.41",
-              "CourseCategoryFull": "2:13.10:1",
-              "Description": "13.1Mi Trail Run",
-              "LegCount": 1,
-              "CourseCount": 8439,
-              "TicksMin": 0,
-              "RaceCatId": 15,
-              "Distance": 21082.41,
-              "OuterName": "13.1Mi Trail Run"
-            }
-          },
-          "RacerTicks": 0
-        },
-        {
           "EventDate": "2013-02-03T08:00:00",
           "EventName": "Kaiser Permanente San Francisco Half Marathon & 5K",
           "CoursePattern": {
@@ -37784,6 +37735,55 @@ globalThis.RUNRUN_DIARY_DATA = {
               "RaceCatId": 2,
               "Distance": 21082.41,
               "OuterName": "1/2 Mara"
+            }
+          },
+          "RacerTicks": 0
+        },
+        {
+          "EventDate": "2012-07-14T08:15:00",
+          "EventName": "Golden Gate Trail Run 2012",
+          "CoursePattern": {
+            "Id": 682,
+            "OuterId": 682,
+            "CourseCategory": "2:21082.41",
+            "CourseCategoryFull": "2:13.10:1",
+            "Description": "13.1Mi Trail Run",
+            "LegCount": 1,
+            "CourseCount": 8439,
+            "TicksMin": 0,
+            "RaceCatId": 15,
+            "Distance": 21082.41,
+            "OuterName": "13.1Mi Trail Run"
+          },
+          "Rating": {
+            "RacerId": 92157185,
+            "CoursePatternId": 682,
+            "ResultCount": 18,
+            "RatingO": 99.0,
+            "RatingA": 99.0,
+            "RatingG": 99.0,
+            "RatingM": 0.0,
+            "AverageTicks": 12709801,
+            "BestTicks": 9695000,
+            "BestECID": 290508,
+            "EstTicks": 0,
+            "CreateDate": "2026-03-03T15:27:23.907",
+            "TotalDistance": 379483.38,
+            "BestEventID": 210369,
+            "BestCourseID": 290018,
+            "BestEntryID": 122659023,
+            "CoursePattern": {
+              "Id": 682,
+              "OuterId": 682,
+              "CourseCategory": "2:21082.41",
+              "CourseCategoryFull": "2:13.10:1",
+              "Description": "13.1Mi Trail Run",
+              "LegCount": 1,
+              "CourseCount": 8439,
+              "TicksMin": 0,
+              "RaceCatId": 15,
+              "Distance": 21082.41,
+              "OuterName": "13.1Mi Trail Run"
             }
           },
           "RacerTicks": 0
@@ -37936,55 +37936,6 @@ globalThis.RUNRUN_DIARY_DATA = {
           "RacerTicks": 0
         },
         {
-          "EventDate": "2012-12-01T05:00:00",
-          "EventName": "North Face Endurance Challenge - Championships",
-          "CoursePattern": {
-            "Id": 640,
-            "OuterId": 640,
-            "CourseCategory": "2:42164.81",
-            "CourseCategoryFull": "2:26.20:1",
-            "Description": "Trail Marathon",
-            "LegCount": 1,
-            "CourseCount": 6054,
-            "TicksMin": 7333800,
-            "RaceCatId": 15,
-            "Distance": 42164.81,
-            "OuterName": "Trail Marathon"
-          },
-          "Rating": {
-            "RacerId": 92157185,
-            "CoursePatternId": 640,
-            "ResultCount": 2,
-            "RatingO": 87.6,
-            "RatingA": 61.1,
-            "RatingG": 84.3,
-            "RatingM": 0.0,
-            "AverageTicks": 24646500,
-            "BestTicks": 23707000,
-            "BestECID": 339254,
-            "EstTicks": 0,
-            "CreateDate": "2017-06-09T06:22:53.367",
-            "TotalDistance": 84329.62,
-            "BestEventID": 241135,
-            "BestCourseID": 339354,
-            "BestEntryID": 132511855,
-            "CoursePattern": {
-              "Id": 640,
-              "OuterId": 640,
-              "CourseCategory": "2:42164.81",
-              "CourseCategoryFull": "2:26.20:1",
-              "Description": "Trail Marathon",
-              "LegCount": 1,
-              "CourseCount": 6054,
-              "TicksMin": 7333800,
-              "RaceCatId": 15,
-              "Distance": 42164.81,
-              "OuterName": "Trail Marathon"
-            }
-          },
-          "RacerTicks": 0
-        },
-        {
           "EventDate": "2016-12-10T08:45:00",
           "EventName": "Rodeo Beach",
           "CoursePattern": {
@@ -38078,6 +38029,55 @@ globalThis.RUNRUN_DIARY_DATA = {
               "RaceCatId": 15,
               "Distance": 4.0,
               "OuterName": "0Mi Trail Run"
+            }
+          },
+          "RacerTicks": 0
+        },
+        {
+          "EventDate": "2012-12-01T05:00:00",
+          "EventName": "North Face Endurance Challenge - Championships",
+          "CoursePattern": {
+            "Id": 640,
+            "OuterId": 640,
+            "CourseCategory": "2:42164.81",
+            "CourseCategoryFull": "2:26.20:1",
+            "Description": "Trail Marathon",
+            "LegCount": 1,
+            "CourseCount": 6054,
+            "TicksMin": 7333800,
+            "RaceCatId": 15,
+            "Distance": 42164.81,
+            "OuterName": "Trail Marathon"
+          },
+          "Rating": {
+            "RacerId": 92157185,
+            "CoursePatternId": 640,
+            "ResultCount": 2,
+            "RatingO": 87.6,
+            "RatingA": 61.1,
+            "RatingG": 84.3,
+            "RatingM": 0.0,
+            "AverageTicks": 24646500,
+            "BestTicks": 23707000,
+            "BestECID": 339254,
+            "EstTicks": 0,
+            "CreateDate": "2017-06-09T06:22:53.367",
+            "TotalDistance": 84329.62,
+            "BestEventID": 241135,
+            "BestCourseID": 339354,
+            "BestEntryID": 132511855,
+            "CoursePattern": {
+              "Id": 640,
+              "OuterId": 640,
+              "CourseCategory": "2:42164.81",
+              "CourseCategoryFull": "2:26.20:1",
+              "Description": "Trail Marathon",
+              "LegCount": 1,
+              "CourseCount": 6054,
+              "TicksMin": 7333800,
+              "RaceCatId": 15,
+              "Distance": 42164.81,
+              "OuterName": "Trail Marathon"
             }
           },
           "RacerTicks": 0
