@@ -1,6 +1,6 @@
 globalThis.RUNRUN_DIARY_DATA = {
   "meta": {
-    "generated_at": "2026-05-18T13:15:51.239365Z",
+    "generated_at": "2026-06-11T21:35:46.561457Z",
     "repo": "/Users/aimee/.openclaw/git/AlexanderPico/runrun",
     "source_site": "Athlinks",
     "athlete_page": "https://www.athlinks.com/athletes/92157185",
@@ -41,19 +41,19 @@ globalThis.RUNRUN_DIARY_DATA = {
     "country_name": "United States",
     "join_date": "2011-04-24T13:34:52.717",
     "is_member": true,
-    "result_count": 107,
+    "result_count": 108,
     "aesthetic": "clean white background with Quince-inspired warm neutrals and black cat detail"
   },
   "overview": {
-    "total_races": 107,
-    "miles_raced": 1729.4,
-    "kilometers_raced": 2783.3,
+    "total_races": 108,
+    "miles_raced": 1760.5,
+    "kilometers_raced": 2833.3,
     "years_active": 21,
     "first_race_date": "2006-10-22",
-    "latest_race_date": "2026-02-22",
+    "latest_race_date": "2026-03-07",
     "upcoming_race_count": 0,
     "road_races": 63,
-    "trail_races": 43,
+    "trail_races": 44,
     "adventure_races": 1,
     "race_categories": [
       {
@@ -62,15 +62,15 @@ globalThis.RUNRUN_DIARY_DATA = {
       },
       {
         "label": "Trail Running",
-        "count": 43
+        "count": 44
       },
       {
         "label": "Adventure Racing",
         "count": 1
       }
     ],
-    "weather_coverage_count": 98,
-    "weather_coverage_pct": 91.6
+    "weather_coverage_count": 99,
+    "weather_coverage_pct": 91.7
   },
   "stats": {
     "personal_records": [
@@ -84,11 +84,11 @@ globalThis.RUNRUN_DIARY_DATA = {
         "distance_miles": 31.069,
         "course_pattern_id": 622,
         "course_category": "2:50.00:7",
-        "result_count": 9,
+        "result_count": 10,
         "best_time_ms": 23860000,
         "best_time": "6:37:40",
-        "average_time_ms": 26804322,
-        "average_time": "7:26:44",
+        "average_time_ms": 26843290,
+        "average_time": "7:27:23",
         "rating_overall_top_percent": 67.4,
         "rating_age_top_percent": 47.4,
         "rating_gender_top_percent": 54.7,
@@ -106,7 +106,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "2:50.00:7",
             "Description": "50K Trail Run",
             "LegCount": 1,
-            "CourseCount": 10810,
+            "CourseCount": 10861,
             "TicksMin": 7408810,
             "RaceCatId": 15,
             "Distance": 50000.0,
@@ -115,17 +115,17 @@ globalThis.RUNRUN_DIARY_DATA = {
           "Rating": {
             "RacerId": 92157185,
             "CoursePatternId": 622,
-            "ResultCount": 9,
+            "ResultCount": 10,
             "RatingO": 67.4,
             "RatingA": 47.4,
             "RatingG": 54.7,
             "RatingM": 0.0,
-            "AverageTicks": 26804322,
+            "AverageTicks": 26843290,
             "BestTicks": 23860000,
             "BestECID": 405341,
             "EstTicks": 0,
-            "CreateDate": "2023-02-02T08:35:06.607",
-            "TotalDistance": 450000.0,
+            "CreateDate": "2026-05-26T04:42:29.803",
+            "TotalDistance": 500000.0,
             "BestEventID": 284305,
             "BestCourseID": 405890,
             "BestEntryID": 154144538,
@@ -136,7 +136,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "2:50.00:7",
               "Description": "50K Trail Run",
               "LegCount": 1,
-              "CourseCount": 10810,
+              "CourseCount": 10861,
               "TicksMin": 7408810,
               "RaceCatId": 15,
               "Distance": 50000.0,
@@ -178,7 +178,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "1:26.20:1",
             "Description": "Marathon",
             "LegCount": 1,
-            "CourseCount": 32948,
+            "CourseCount": 33053,
             "TicksMin": 7418000,
             "RaceCatId": 2,
             "Distance": 42164.81,
@@ -208,7 +208,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "1:26.20:1",
               "Description": "Marathon",
               "LegCount": 1,
-              "CourseCount": 32948,
+              "CourseCount": 33053,
               "TicksMin": 7418000,
               "RaceCatId": 2,
               "Distance": 42164.81,
@@ -250,7 +250,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "2:26.20:1",
             "Description": "Trail Marathon",
             "LegCount": 1,
-            "CourseCount": 6054,
+            "CourseCount": 6055,
             "TicksMin": 7333800,
             "RaceCatId": 15,
             "Distance": 42164.81,
@@ -280,7 +280,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "2:26.20:1",
               "Description": "Trail Marathon",
               "LegCount": 1,
-              "CourseCount": 6054,
+              "CourseCount": 6055,
               "TicksMin": 7333800,
               "RaceCatId": 15,
               "Distance": 42164.81,
@@ -322,7 +322,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "1:13.10:1",
             "Description": "1/2 Mara",
             "LegCount": 1,
-            "CourseCount": 70619,
+            "CourseCount": 70866,
             "TicksMin": 3503000,
             "RaceCatId": 2,
             "Distance": 21082.41,
@@ -352,7 +352,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "1:13.10:1",
               "Description": "1/2 Mara",
               "LegCount": 1,
-              "CourseCount": 70619,
+              "CourseCount": 70866,
               "TicksMin": 3503000,
               "RaceCatId": 2,
               "Distance": 21082.41,
@@ -394,7 +394,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "2:13.10:1",
             "Description": "13.1Mi Trail Run",
             "LegCount": 1,
-            "CourseCount": 8439,
+            "CourseCount": 8452,
             "TicksMin": 0,
             "RaceCatId": 15,
             "Distance": 21082.41,
@@ -424,7 +424,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "2:13.10:1",
               "Description": "13.1Mi Trail Run",
               "LegCount": 1,
-              "CourseCount": 8439,
+              "CourseCount": 8452,
               "TicksMin": 0,
               "RaceCatId": 15,
               "Distance": 21082.41,
@@ -466,7 +466,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "2:20.00:7",
             "Description": "20K Trail Run",
             "LegCount": 1,
-            "CourseCount": 1335,
+            "CourseCount": 1342,
             "TicksMin": 0,
             "RaceCatId": 15,
             "Distance": 20000.0,
@@ -496,7 +496,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "2:20.00:7",
               "Description": "20K Trail Run",
               "LegCount": 1,
-              "CourseCount": 1335,
+              "CourseCount": 1342,
               "TicksMin": 0,
               "RaceCatId": 15,
               "Distance": 20000.0,
@@ -538,7 +538,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "1:10.00:7",
             "Description": "10K",
             "LegCount": 1,
-            "CourseCount": 138987,
+            "CourseCount": 139278,
             "TicksMin": 1604000,
             "RaceCatId": 2,
             "Distance": 10000.0,
@@ -568,7 +568,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "1:10.00:7",
               "Description": "10K",
               "LegCount": 1,
-              "CourseCount": 138987,
+              "CourseCount": 139278,
               "TicksMin": 1604000,
               "RaceCatId": 2,
               "Distance": 10000.0,
@@ -610,7 +610,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "1:5.00:7",
             "Description": "5K",
             "LegCount": 1,
-            "CourseCount": 477450,
+            "CourseCount": 478471,
             "TicksMin": 757035,
             "RaceCatId": 2,
             "Distance": 5000.0,
@@ -640,7 +640,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "1:5.00:7",
               "Description": "5K",
               "LegCount": 1,
-              "CourseCount": 477450,
+              "CourseCount": 478471,
               "TicksMin": 757035,
               "RaceCatId": 2,
               "Distance": 5000.0,
@@ -731,7 +731,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "distance_km": 0,
         "distance_miles": 0,
         "course_pattern_id": 26459,
-        "course_category": "1:0.00:0",
+        "course_category": "1:0.00:7",
         "result_count": 1,
         "best_time_ms": 0,
         "best_time": "0:00:00",
@@ -751,10 +751,10 @@ globalThis.RUNRUN_DIARY_DATA = {
             "Id": 26459,
             "OuterId": 26459,
             "CourseCategory": "1:0.00",
-            "CourseCategoryFull": "1:0.00:0",
+            "CourseCategoryFull": "1:0.00:7",
             "Description": "0K Run",
             "LegCount": 1,
-            "CourseCount": 4002,
+            "CourseCount": 4006,
             "TicksMin": 0,
             "RaceCatId": 2,
             "Distance": 0.0,
@@ -781,10 +781,10 @@ globalThis.RUNRUN_DIARY_DATA = {
               "Id": 26459,
               "OuterId": 26459,
               "CourseCategory": "1:0.00",
-              "CourseCategoryFull": "1:0.00:0",
+              "CourseCategoryFull": "1:0.00:7",
               "Description": "0K Run",
               "LegCount": 1,
-              "CourseCount": 4002,
+              "CourseCount": 4006,
               "TicksMin": 0,
               "RaceCatId": 2,
               "Distance": 0.0,
@@ -960,12 +960,12 @@ globalThis.RUNRUN_DIARY_DATA = {
       },
       {
         "year": 2026,
-        "race_count": 1,
-        "miles": 13.1,
+        "race_count": 2,
+        "miles": 44.2,
         "best_time_ms": 7528130,
         "best_time": "2:05:28",
         "road_count": 1,
-        "trail_count": 0
+        "trail_count": 1
       }
     ],
     "best_by_pattern": [
@@ -1205,7 +1205,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       },
       {
         "label": "50K Trail Run",
-        "count": 9
+        "count": 10
       },
       {
         "label": "10K",
@@ -1243,7 +1243,7 @@ globalThis.RUNRUN_DIARY_DATA = {
     "top_states": [
       {
         "label": "California",
-        "count": 90
+        "count": 91
       },
       {
         "label": "Illinois",
@@ -1267,9 +1267,15 @@ globalThis.RUNRUN_DIARY_DATA = {
       }
     ],
     "weather_analysis": {
-      "coverage_count": 98,
+      "coverage_count": 99,
       "coverage_note": "Only completed races with resolvable geocodes and archive weather are included.",
       "temperature_bins": [
+        {
+          "label": "55\u201364\u00b0F",
+          "race_count": 37,
+          "avg_pace_seconds_per_mile": 764.6,
+          "avg_pace_vs_pattern_baseline_pct": -2.3
+        },
         {
           "label": "45\u201354\u00b0F",
           "race_count": 39,
@@ -1281,12 +1287,6 @@ globalThis.RUNRUN_DIARY_DATA = {
           "race_count": 5,
           "avg_pace_seconds_per_mile": 703.2,
           "avg_pace_vs_pattern_baseline_pct": 3.3
-        },
-        {
-          "label": "55\u201364\u00b0F",
-          "race_count": 36,
-          "avg_pace_seconds_per_mile": 761.5,
-          "avg_pace_vs_pattern_baseline_pct": -2.4
         },
         {
           "label": "75\u00b0F+",
@@ -1304,29 +1304,29 @@ globalThis.RUNRUN_DIARY_DATA = {
       "rain_comparison": [
         {
           "label": "Dry",
-          "race_count": 91,
-          "avg_pace_seconds_per_mile": 763.9,
+          "race_count": 92,
+          "avg_pace_seconds_per_mile": 765.1,
           "avg_pace_vs_pattern_baseline_pct": -0.1
         },
         {
           "label": "Rainy",
           "race_count": 7,
           "avg_pace_seconds_per_mile": 888.4,
-          "avg_pace_vs_pattern_baseline_pct": 2.5
+          "avg_pace_vs_pattern_baseline_pct": 2.4
         }
       ],
       "wind_bins": [
+        {
+          "label": "6\u20139 mph",
+          "race_count": 29,
+          "avg_pace_seconds_per_mile": 748.8,
+          "avg_pace_vs_pattern_baseline_pct": 0.4
+        },
         {
           "label": "<6 mph",
           "race_count": 60,
           "avg_pace_seconds_per_mile": 780.7,
           "avg_pace_vs_pattern_baseline_pct": -1.0
-        },
-        {
-          "label": "6\u20139 mph",
-          "race_count": 28,
-          "avg_pace_seconds_per_mile": 744.3,
-          "avg_pace_vs_pattern_baseline_pct": 0.4
         },
         {
           "label": "14+ mph",
@@ -1343,16 +1343,16 @@ globalThis.RUNRUN_DIARY_DATA = {
       ],
       "humidity_bins": [
         {
+          "label": "<50%",
+          "race_count": 8,
+          "avg_pace_seconds_per_mile": 796.5,
+          "avg_pace_vs_pattern_baseline_pct": 1.0
+        },
+        {
           "label": "75%+",
           "race_count": 52,
           "avg_pace_seconds_per_mile": 750.4,
           "avg_pace_vs_pattern_baseline_pct": -1.8
-        },
-        {
-          "label": "<50%",
-          "race_count": 7,
-          "avg_pace_seconds_per_mile": 785.2,
-          "avg_pace_vs_pattern_baseline_pct": 1.0
         },
         {
           "label": "50\u201364%",
@@ -1368,11 +1368,26 @@ globalThis.RUNRUN_DIARY_DATA = {
         }
       ],
       "correlations": {
-        "temperature_vs_pace_seconds_per_mile": 0.322,
-        "wind_vs_pace_seconds_per_mile": -0.011,
-        "humidity_vs_pace_seconds_per_mile": -0.139
+        "temperature_vs_pace_seconds_per_mile": 0.325,
+        "wind_vs_pace_seconds_per_mile": -0.006,
+        "humidity_vs_pace_seconds_per_mile": -0.151
       },
       "scatter_points": [
+        {
+          "race_name": "Way Too Cool 50K",
+          "race_date": "2026-03-07",
+          "course_pattern": "50K Trail Run",
+          "distance_miles": 31.069,
+          "day_period": "day",
+          "day_period_label": "Day race",
+          "temperature_f": 63.3,
+          "rain_in": 0.0,
+          "wind_mph": 8.1,
+          "humidity_pct": 35.4,
+          "elevation_gain_ft": 4799,
+          "pace_seconds_per_mile": 875.29,
+          "pace_vs_pattern_baseline_pct": 1.3
+        },
         {
           "race_name": "Davis Stampede",
           "race_date": "2026-02-22",
@@ -2016,7 +2031,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 48.6,
           "elevation_gain_ft": 4799,
           "pace_seconds_per_mile": 973.94,
-          "pace_vs_pattern_baseline_pct": 12.9
+          "pace_vs_pattern_baseline_pct": 12.7
         },
         {
           "race_name": "Zoom Turkey Trot",
@@ -2076,7 +2091,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 53.3,
           "elevation_gain_ft": 4799,
           "pace_seconds_per_mile": 795.11,
-          "pace_vs_pattern_baseline_pct": -7.8
+          "pace_vs_pattern_baseline_pct": -8.0
         },
         {
           "race_name": "Woodside Ramble - Winter",
@@ -2091,7 +2106,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 71.4,
           "elevation_gain_ft": null,
           "pace_seconds_per_mile": 929.59,
-          "pace_vs_pattern_baseline_pct": 7.7
+          "pace_vs_pattern_baseline_pct": 7.6
         },
         {
           "race_name": "Bank of America Chicago Marathon",
@@ -2136,7 +2151,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 86.1,
           "elevation_gain_ft": null,
           "pace_seconds_per_mile": 935.0,
-          "pace_vs_pattern_baseline_pct": 8.4
+          "pace_vs_pattern_baseline_pct": 8.2
         },
         {
           "race_name": "Skyline 50k",
@@ -2151,7 +2166,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 74.6,
           "elevation_gain_ft": null,
           "pace_seconds_per_mile": 767.98,
-          "pace_vs_pattern_baseline_pct": -11.0
+          "pace_vs_pattern_baseline_pct": -11.1
         },
         {
           "race_name": "Big Basin 50 Km & Marathon",
@@ -2166,7 +2181,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 54.6,
           "elevation_gain_ft": null,
           "pace_seconds_per_mile": 830.23,
-          "pace_vs_pattern_baseline_pct": -3.8
+          "pace_vs_pattern_baseline_pct": -3.9
         },
         {
           "race_name": "Quicksilver 25K/50K/50M",
@@ -2181,7 +2196,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 55.7,
           "elevation_gain_ft": null,
           "pace_seconds_per_mile": 937.12,
-          "pace_vs_pattern_baseline_pct": 8.6
+          "pace_vs_pattern_baseline_pct": 8.5
         },
         {
           "race_name": "Big Sur International Marathon",
@@ -2211,7 +2226,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 65.3,
           "elevation_gain_ft": null,
           "pace_seconds_per_mile": 797.88,
-          "pace_vs_pattern_baseline_pct": -7.5
+          "pace_vs_pattern_baseline_pct": -7.7
         },
         {
           "race_name": "Redwood Trail Run (Spring)",
@@ -2226,7 +2241,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           "humidity_pct": 65.3,
           "elevation_gain_ft": null,
           "pace_seconds_per_mile": 797.88,
-          "pace_vs_pattern_baseline_pct": -7.5
+          "pace_vs_pattern_baseline_pct": -7.7
         },
         {
           "race_name": "Kaiser Permanente San Francisco Half Marathon & 5K",
@@ -4083,6 +4098,342 @@ globalThis.RUNRUN_DIARY_DATA = {
     }
   },
   "results": [
+    {
+      "entry_id": 580908904,
+      "entry_unique_id": null,
+      "athlete_id": 92157185,
+      "event_id": 1138857,
+      "event_course_id": "2685717",
+      "course_id": "2699202",
+      "master_event_id": 40553,
+      "race_id": 1138857,
+      "race_name": "Way Too Cool 50K",
+      "master_name": "Way Too Cool 50K",
+      "course_name": "50K Trail Run",
+      "course_pattern": "50K Trail Run",
+      "course_pattern_id": 622,
+      "race_category_id": 15,
+      "race_category": "Trail Running",
+      "distance_meters": 50000.0,
+      "distance_km": 50.0,
+      "distance_miles": 31.069,
+      "elevation_gain_ft": 4799,
+      "race_date": "2026-03-07T08:00:00",
+      "race_date_local": "2026-03-07",
+      "status": "completed",
+      "finish_time_ms": 27194000,
+      "finish_time": "7:33:14",
+      "pace_per_mile": "14:35",
+      "pace_per_km": "9:04",
+      "pace_seconds_per_mile": 875.29,
+      "pace_seconds_per_km": 543.88,
+      "rank_overall": 201,
+      "rank_gender": 74,
+      "rank_age_group": 28,
+      "field_size_overall": 249,
+      "field_size_gender": 101,
+      "field_size_age_group": 38,
+      "overall_percentile": 80.7,
+      "gender_percentile": 73.3,
+      "age_group_percentile": 73.7,
+      "bib": "225",
+      "age_on_race_day": 45,
+      "gender": "F",
+      "city": "Cool",
+      "state": "CA",
+      "state_name": "California",
+      "country": "USA",
+      "country_name": "United States",
+      "is_virtual": false,
+      "is_member_result": true,
+      "points": 0,
+      "geo": {
+        "admin1": "California",
+        "country_code": "US",
+        "latitude": 38.88722,
+        "longitude": -121.01472,
+        "name": "Cool",
+        "timezone": "America/Los_Angeles"
+      },
+      "weather": {
+        "source": "open-meteo",
+        "timezone": "America/Los_Angeles",
+        "race_window_hours": 6,
+        "window_start_local": "2026-03-07T08:00",
+        "window_end_local": "2026-03-07T14:00",
+        "hour_count": 7,
+        "day_period": "day",
+        "day_period_label": "Day race",
+        "temperature_f_start": 47.8,
+        "temperature_f_avg": 63.3,
+        "temperature_f_max": 72.9,
+        "apparent_temperature_f_avg": 57.2,
+        "humidity_pct_avg": 35.4,
+        "precipitation_in_total": 0.0,
+        "rain_in_total": 0.0,
+        "snowfall_in_total": 0.0,
+        "wind_mph_avg": 8.1,
+        "wind_mph_max": 10.4,
+        "cloud_cover_pct_avg": 57.7,
+        "condition_flags": {
+          "rainy": false,
+          "snowy": false,
+          "hot": false,
+          "cold": false,
+          "windy": false,
+          "humid": false
+        },
+        "hourly_sample": [
+          {
+            "time": "2026-03-07T08:00",
+            "temperature_f": 47.8,
+            "apparent_temperature_f": 39.2,
+            "humidity_pct": 48,
+            "rain_in": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 10.3,
+            "cloud_cover_pct": 34
+          },
+          {
+            "time": "2026-03-07T09:00",
+            "temperature_f": 53.9,
+            "apparent_temperature_f": 45.8,
+            "humidity_pct": 45,
+            "rain_in": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 10.4,
+            "cloud_cover_pct": 76
+          },
+          {
+            "time": "2026-03-07T10:00",
+            "temperature_f": 60.8,
+            "apparent_temperature_f": 54.9,
+            "humidity_pct": 44,
+            "rain_in": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 7.8,
+            "cloud_cover_pct": 58
+          },
+          {
+            "time": "2026-03-07T11:00",
+            "temperature_f": 66.5,
+            "apparent_temperature_f": 59.1,
+            "humidity_pct": 30,
+            "rain_in": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 9.3,
+            "cloud_cover_pct": 66
+          },
+          {
+            "time": "2026-03-07T12:00",
+            "temperature_f": 69.4,
+            "apparent_temperature_f": 62.8,
+            "humidity_pct": 26,
+            "rain_in": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 9.3,
+            "cloud_cover_pct": 46
+          },
+          {
+            "time": "2026-03-07T13:00",
+            "temperature_f": 71.8,
+            "apparent_temperature_f": 68.4,
+            "humidity_pct": 27,
+            "rain_in": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.8,
+            "cloud_cover_pct": 57
+          },
+          {
+            "time": "2026-03-07T14:00",
+            "temperature_f": 72.9,
+            "apparent_temperature_f": 70.1,
+            "humidity_pct": 28,
+            "rain_in": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.9,
+            "cloud_cover_pct": 67
+          }
+        ],
+        "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=38.88722&longitude=-121.01472&start_date=2026-03-07&end_date=2026-03-07&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles"
+      },
+      "source_urls": {
+        "athlete": "https://www.athlinks.com/athletes/92157185",
+        "profile_api": "https://alaska.athlinks.com/Athletes/Api/92157185",
+        "summary_api": "https://alaska.athlinks.com/Athletes/Api/92157185/Summary",
+        "races_api": "https://alaska.athlinks.com/athletes/api/92157185/Races"
+      },
+      "raw_entry": {
+        "Brackets": [],
+        "LogoUrls": {
+          "EntryId": 92157185,
+          "EntryType": 1,
+          "HasImage": false,
+          "Thumb": null,
+          "Small": null,
+          "Medium": null,
+          "Large": null,
+          "Xl": null
+        },
+        "Race": {
+          "AffiliateLinks": [],
+          "City": "Cool",
+          "CountryID": "US",
+          "CountryID3": "USA",
+          "CountryName": "United States",
+          "RaceDate": "2026-03-07T08:00:00",
+          "RaceDateOffset": null,
+          "RaceEndDate": "2026-03-07T08:00:00",
+          "RaceDateString": null,
+          "RaceID": 1138857,
+          "ResultCount": 0,
+          "RaceName": "Way Too Cool 50K",
+          "StateProvAbbrev": "CA",
+          "StateProvID": "US_CA ",
+          "StateProvName": "California",
+          "Company": null,
+          "Status": -1,
+          "IsTest": false,
+          "WebSite": null,
+          "Badge": null,
+          "MasterEventID": 40553,
+          "MasterName": "Way Too Cool 50K",
+          "Elevation": null,
+          "Latitude": 0.0,
+          "Longitude": 0.0,
+          "EventWeather": null,
+          "affiliateRaceID": 0,
+          "IsCurrentRace": false,
+          "LogoUrls": {
+            "EntryId": 1138857,
+            "EntryType": 2,
+            "HasImage": false,
+            "Thumb": null,
+            "Small": null,
+            "Medium": null,
+            "Large": null,
+            "Xl": null
+          },
+          "Courses": [
+            {
+              "AffiliateLinks": [],
+              "CourseID": 2699202,
+              "CourseName": "50K Trail Run",
+              "CoursePattern": "50K Trail Run",
+              "CoursePatternID": 622,
+              "CoursePatternCategory": null,
+              "EventCourseID": 2685717,
+              "GenderCounts": [],
+              "AgeClassCounts": [],
+              "LegCount": 0,
+              "CountO": 0,
+              "RaceID": 0,
+              "RaceCatID": 15,
+              "RaceCatDesc": "Trail Running",
+              "Legs": [],
+              "ResultCount": 0,
+              "ResultsDate": "1753-01-01T00:00:00",
+              "Settings": 0,
+              "DistUnit": 50000.0,
+              "DistTypeID": 6,
+              "GalleryID": 0,
+              "ResultsUser": 0,
+              "AffiliateCourseID": 0,
+              "IsVirtual": false,
+              "MinAllowedTicks": 0,
+              "MaxAllowedTicks": 0,
+              "RaceBrackets": null
+            }
+          ],
+          "Series": null
+        },
+        "EventWeather": null,
+        "ClaimStatus": "Claimed",
+        "Dob": "0001-01-01T00:00:00",
+        "Age": 45,
+        "BibNum": "225",
+        "ClassID": 10,
+        "ClassName": "45 to 49",
+        "Tag_Class": null,
+        "GenderClass": null,
+        "City": null,
+        "CountO": 249,
+        "CountG": 101,
+        "CountA": 38,
+        "FirstName": "Elisa",
+        "LastName": "Park",
+        "DisplayName": "Elisa Park",
+        "EntryID": 580908904,
+        "EntryUniqueID": null,
+        "EventCourseID": "2685717",
+        "EventID": 1138857,
+        "CourseID": "2699202",
+        "CourseName": null,
+        "EventDate": "0001-01-01T00:00:00",
+        "Gender": "F",
+        "IsMember": true,
+        "PhotoPath": "",
+        "Rank": 0,
+        "RacerID": 92157185,
+        "RankO": 201,
+        "RankG": 74,
+        "RankA": 28,
+        "Place": null,
+        "Ticks": 27194000,
+        "TicksString": "7:33:14",
+        "Sponsor": null,
+        "IsPublic": false,
+        "ShowPersonalData": true,
+        "RacerResultCount": 0,
+        "ResultID": 0,
+        "Points": 0,
+        "StateProv": null,
+        "StateProvID": null,
+        "CountryID": null,
+        "CountryID3": null,
+        "CoursePatternID": 0,
+        "IsVirtual": false,
+        "ViewerRacerID": 0,
+        "TargetRacerID": 0,
+        "CheerCount": 0,
+        "CommentCount": 0,
+        "RacerCheers": [],
+        "comments": [],
+        "ViewerHasComment": false,
+        "ViewerHasCheer": false,
+        "LegEntries": null
+      },
+      "raw_course": {
+        "AffiliateLinks": [],
+        "CourseID": 2699202,
+        "CourseName": "50K Trail Run",
+        "CoursePattern": "50K Trail Run",
+        "CoursePatternID": 622,
+        "CoursePatternCategory": null,
+        "EventCourseID": 2685717,
+        "GenderCounts": [],
+        "AgeClassCounts": [],
+        "LegCount": 0,
+        "CountO": 0,
+        "RaceID": 0,
+        "RaceCatID": 15,
+        "RaceCatDesc": "Trail Running",
+        "Legs": [],
+        "ResultCount": 0,
+        "ResultsDate": "1753-01-01T00:00:00",
+        "Settings": 0,
+        "DistUnit": 50000.0,
+        "DistTypeID": 6,
+        "GalleryID": 0,
+        "ResultsUser": 0,
+        "AffiliateCourseID": 0,
+        "IsVirtual": false,
+        "MinAllowedTicks": 0,
+        "MaxAllowedTicks": 0,
+        "RaceBrackets": null
+      },
+      "pace_vs_pattern_baseline_pct": 1.3
+    },
     {
       "entry_id": 577594081,
       "entry_unique_id": null,
@@ -17811,7 +18162,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": 12.9
+      "pace_vs_pattern_baseline_pct": 12.7
     },
     {
       "entry_id": 203932542,
@@ -19707,7 +20058,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": -7.8
+      "pace_vs_pattern_baseline_pct": -8.0
     },
     {
       "entry_id": 179488972,
@@ -20339,7 +20690,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": 7.7
+      "pace_vs_pattern_baseline_pct": 7.6
     },
     {
       "entry_id": 160023762,
@@ -21327,7 +21678,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": 8.4
+      "pace_vs_pattern_baseline_pct": 8.2
     },
     {
       "entry_id": 154144538,
@@ -21663,7 +22014,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": -11.0
+      "pace_vs_pattern_baseline_pct": -11.1
     },
     {
       "entry_id": 147928557,
@@ -21999,7 +22350,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": -3.8
+      "pace_vs_pattern_baseline_pct": -3.9
     },
     {
       "entry_id": 155027615,
@@ -22631,7 +22982,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": 8.6
+      "pace_vs_pattern_baseline_pct": 8.5
     },
     {
       "entry_id": 145228211,
@@ -23293,7 +23644,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": -7.5
+      "pace_vs_pattern_baseline_pct": -7.7
     },
     {
       "entry_id": 464470420,
@@ -23629,7 +23980,7 @@ globalThis.RUNRUN_DIARY_DATA = {
         "MaxAllowedTicks": 0,
         "RaceBrackets": null
       },
-      "pace_vs_pattern_baseline_pct": -7.5
+      "pace_vs_pattern_baseline_pct": -7.7
     },
     {
       "entry_id": 137248558,
@@ -37597,7 +37948,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       "OwnerID": 0,
       "RacerID": 92157185,
       "UnclaimedMatchesCount": null,
-      "ResultCount": 107,
+      "ResultCount": 108,
       "StateProvAbbrev": "CA",
       "StateProvID": "US_CA ",
       "StateProvName": "California",
@@ -37623,8 +37974,8 @@ globalThis.RUNRUN_DIARY_DATA = {
     },
     "summary": {
       "resultsSummary": {
-        "MilesRaced": 1729.44666,
-        "TotalRaces": 107,
+        "MilesRaced": 1760.51526,
+        "TotalRaces": 108,
         "RaceCategories": [
           {
             "Key": 2,
@@ -37632,7 +37983,7 @@ globalThis.RUNRUN_DIARY_DATA = {
           },
           {
             "Key": 15,
-            "Value": 43
+            "Value": 44
           },
           {
             "Key": 12,
@@ -37651,7 +38002,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "1:26.20:1",
             "Description": "Marathon",
             "LegCount": 1,
-            "CourseCount": 32948,
+            "CourseCount": 33053,
             "TicksMin": 7418000,
             "RaceCatId": 2,
             "Distance": 42164.81,
@@ -37681,7 +38032,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "1:26.20:1",
               "Description": "Marathon",
               "LegCount": 1,
-              "CourseCount": 32948,
+              "CourseCount": 33053,
               "TicksMin": 7418000,
               "RaceCatId": 2,
               "Distance": 42164.81,
@@ -37700,7 +38051,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "1:13.10:1",
             "Description": "1/2 Mara",
             "LegCount": 1,
-            "CourseCount": 70619,
+            "CourseCount": 70866,
             "TicksMin": 3503000,
             "RaceCatId": 2,
             "Distance": 21082.41,
@@ -37730,7 +38081,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "1:13.10:1",
               "Description": "1/2 Mara",
               "LegCount": 1,
-              "CourseCount": 70619,
+              "CourseCount": 70866,
               "TicksMin": 3503000,
               "RaceCatId": 2,
               "Distance": 21082.41,
@@ -37749,7 +38100,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "2:13.10:1",
             "Description": "13.1Mi Trail Run",
             "LegCount": 1,
-            "CourseCount": 8439,
+            "CourseCount": 8452,
             "TicksMin": 0,
             "RaceCatId": 15,
             "Distance": 21082.41,
@@ -37779,7 +38130,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "2:13.10:1",
               "Description": "13.1Mi Trail Run",
               "LegCount": 1,
-              "CourseCount": 8439,
+              "CourseCount": 8452,
               "TicksMin": 0,
               "RaceCatId": 15,
               "Distance": 21082.41,
@@ -37798,7 +38149,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "2:50.00:7",
             "Description": "50K Trail Run",
             "LegCount": 1,
-            "CourseCount": 10810,
+            "CourseCount": 10861,
             "TicksMin": 7408810,
             "RaceCatId": 15,
             "Distance": 50000.0,
@@ -37807,17 +38158,17 @@ globalThis.RUNRUN_DIARY_DATA = {
           "Rating": {
             "RacerId": 92157185,
             "CoursePatternId": 622,
-            "ResultCount": 9,
+            "ResultCount": 10,
             "RatingO": 67.4,
             "RatingA": 47.4,
             "RatingG": 54.7,
             "RatingM": 0.0,
-            "AverageTicks": 26804322,
+            "AverageTicks": 26843290,
             "BestTicks": 23860000,
             "BestECID": 405341,
             "EstTicks": 0,
-            "CreateDate": "2023-02-02T08:35:06.607",
-            "TotalDistance": 450000.0,
+            "CreateDate": "2026-05-26T04:42:29.803",
+            "TotalDistance": 500000.0,
             "BestEventID": 284305,
             "BestCourseID": 405890,
             "BestEntryID": 154144538,
@@ -37828,7 +38179,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "2:50.00:7",
               "Description": "50K Trail Run",
               "LegCount": 1,
-              "CourseCount": 10810,
+              "CourseCount": 10861,
               "TicksMin": 7408810,
               "RaceCatId": 15,
               "Distance": 50000.0,
@@ -37847,7 +38198,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "1:10.00:7",
             "Description": "10K",
             "LegCount": 1,
-            "CourseCount": 138987,
+            "CourseCount": 139278,
             "TicksMin": 1604000,
             "RaceCatId": 2,
             "Distance": 10000.0,
@@ -37877,7 +38228,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "1:10.00:7",
               "Description": "10K",
               "LegCount": 1,
-              "CourseCount": 138987,
+              "CourseCount": 139278,
               "TicksMin": 1604000,
               "RaceCatId": 2,
               "Distance": 10000.0,
@@ -37896,7 +38247,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "1:5.00:7",
             "Description": "5K",
             "LegCount": 1,
-            "CourseCount": 477450,
+            "CourseCount": 478471,
             "TicksMin": 757035,
             "RaceCatId": 2,
             "Distance": 5000.0,
@@ -37926,7 +38277,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "1:5.00:7",
               "Description": "5K",
               "LegCount": 1,
-              "CourseCount": 477450,
+              "CourseCount": 478471,
               "TicksMin": 757035,
               "RaceCatId": 2,
               "Distance": 5000.0,
@@ -37945,7 +38296,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "2:26.20:1",
             "Description": "Trail Marathon",
             "LegCount": 1,
-            "CourseCount": 6054,
+            "CourseCount": 6055,
             "TicksMin": 7333800,
             "RaceCatId": 15,
             "Distance": 42164.81,
@@ -37975,7 +38326,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "2:26.20:1",
               "Description": "Trail Marathon",
               "LegCount": 1,
-              "CourseCount": 6054,
+              "CourseCount": 6055,
               "TicksMin": 7333800,
               "RaceCatId": 15,
               "Distance": 42164.81,
@@ -37994,7 +38345,7 @@ globalThis.RUNRUN_DIARY_DATA = {
             "CourseCategoryFull": "2:20.00:7",
             "Description": "20K Trail Run",
             "LegCount": 1,
-            "CourseCount": 1335,
+            "CourseCount": 1342,
             "TicksMin": 0,
             "RaceCatId": 15,
             "Distance": 20000.0,
@@ -38024,7 +38375,7 @@ globalThis.RUNRUN_DIARY_DATA = {
               "CourseCategoryFull": "2:20.00:7",
               "Description": "20K Trail Run",
               "LegCount": 1,
-              "CourseCount": 1335,
+              "CourseCount": 1342,
               "TicksMin": 0,
               "RaceCatId": 15,
               "Distance": 20000.0,
@@ -38089,10 +38440,10 @@ globalThis.RUNRUN_DIARY_DATA = {
             "Id": 26459,
             "OuterId": 26459,
             "CourseCategory": "1:0.00",
-            "CourseCategoryFull": "1:0.00:0",
+            "CourseCategoryFull": "1:0.00:7",
             "Description": "0K Run",
             "LegCount": 1,
-            "CourseCount": 4002,
+            "CourseCount": 4006,
             "TicksMin": 0,
             "RaceCatId": 2,
             "Distance": 0.0,
@@ -38119,10 +38470,10 @@ globalThis.RUNRUN_DIARY_DATA = {
               "Id": 26459,
               "OuterId": 26459,
               "CourseCategory": "1:0.00",
-              "CourseCategoryFull": "1:0.00:0",
+              "CourseCategoryFull": "1:0.00:7",
               "Description": "0K Run",
               "LegCount": 1,
-              "CourseCount": 4002,
+              "CourseCount": 4006,
               "TicksMin": 0,
               "RaceCatId": 2,
               "Distance": 0.0,
@@ -38134,7 +38485,7 @@ globalThis.RUNRUN_DIARY_DATA = {
       ]
     },
     "races_metadata": {
-      "raceEntries_MasterCount": 107,
+      "raceEntries_MasterCount": 108,
       "inReviewRaceEntries_count": 3,
       "unofficialEntries_count": 3
     }

@@ -12779,6 +12779,108 @@
     "window_end_local": "2015-03-07T12:00",
     "window_start_local": "2015-03-07T07:00"
   },
+  "38.8872|-121.0147|2026-03-07T08:00:00|6": {
+    "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=38.88722&longitude=-121.01472&start_date=2026-03-07&end_date=2026-03-07&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles",
+    "apparent_temperature_f_avg": 57.2,
+    "cloud_cover_pct_avg": 57.7,
+    "condition_flags": {
+      "cold": false,
+      "hot": false,
+      "humid": false,
+      "rainy": false,
+      "snowy": false,
+      "windy": false
+    },
+    "day_period": "day",
+    "day_period_label": "Day race",
+    "hour_count": 7,
+    "hourly_sample": [
+      {
+        "apparent_temperature_f": 39.2,
+        "cloud_cover_pct": 34,
+        "humidity_pct": 48,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 47.8,
+        "time": "2026-03-07T08:00",
+        "wind_mph": 10.3
+      },
+      {
+        "apparent_temperature_f": 45.8,
+        "cloud_cover_pct": 76,
+        "humidity_pct": 45,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 53.9,
+        "time": "2026-03-07T09:00",
+        "wind_mph": 10.4
+      },
+      {
+        "apparent_temperature_f": 54.9,
+        "cloud_cover_pct": 58,
+        "humidity_pct": 44,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 60.8,
+        "time": "2026-03-07T10:00",
+        "wind_mph": 7.8
+      },
+      {
+        "apparent_temperature_f": 59.1,
+        "cloud_cover_pct": 66,
+        "humidity_pct": 30,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 66.5,
+        "time": "2026-03-07T11:00",
+        "wind_mph": 9.3
+      },
+      {
+        "apparent_temperature_f": 62.8,
+        "cloud_cover_pct": 46,
+        "humidity_pct": 26,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 69.4,
+        "time": "2026-03-07T12:00",
+        "wind_mph": 9.3
+      },
+      {
+        "apparent_temperature_f": 68.4,
+        "cloud_cover_pct": 57,
+        "humidity_pct": 27,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 71.8,
+        "time": "2026-03-07T13:00",
+        "wind_mph": 4.8
+      },
+      {
+        "apparent_temperature_f": 70.1,
+        "cloud_cover_pct": 67,
+        "humidity_pct": 28,
+        "precipitation_in": 0.0,
+        "rain_in": 0.0,
+        "temperature_f": 72.9,
+        "time": "2026-03-07T14:00",
+        "wind_mph": 4.9
+      }
+    ],
+    "humidity_pct_avg": 35.4,
+    "precipitation_in_total": 0.0,
+    "race_window_hours": 6,
+    "rain_in_total": 0.0,
+    "snowfall_in_total": 0.0,
+    "source": "open-meteo",
+    "temperature_f_avg": 63.3,
+    "temperature_f_max": 72.9,
+    "temperature_f_start": 47.8,
+    "timezone": "America/Los_Angeles",
+    "wind_mph_avg": 8.1,
+    "wind_mph_max": 10.4,
+    "window_end_local": "2026-03-07T14:00",
+    "window_start_local": "2026-03-07T08:00"
+  },
   "39.2508|-106.2925|2012-08-12T12:00:00|2": {
     "api_url": "https://archive-api.open-meteo.com/v1/archive?latitude=39.25082&longitude=-106.29252&start_date=2012-08-12&end_date=2012-08-12&hourly=temperature_2m%2Capparent_temperature%2Crelative_humidity_2m%2Cprecipitation%2Crain%2Csnowfall%2Cwind_speed_10m%2Ccloud_cover&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FDenver",
     "apparent_temperature_f_avg": 65.0,
