@@ -661,7 +661,12 @@
                 <option value="distance-desc">Longest distance</option>
               </select>
               <label class="chip upload">Load JSON<input id="fileInput" type="file" accept="application/json" /></label>
+              <button id="editorLogin" class="chip" type="button">Editor mode</button>
             </div>
+          </div>
+          <div id="editorPanel" class="foot" hidden>
+            <strong>Editor mode</strong> — Editor mode is a local convenience gate, not secure account protection.
+            <button id="editorAddResult" class="chip" type="button">Add result</button>
           </div>
           <div class="results-meta">
             <div id="resultsMeta">Loading results…</div>
@@ -708,7 +713,37 @@
 
     <script>
       (() => {
-        const state = { data: null, visibleResults: [] };
+        const RESULT_OVERLAY_STORAGE_KEY = 'runrun-results-overlay-v1';
+        const EDITOR_CREDENTIAL_HASH = '0832faab0bbc12806226a7f49e184b7d44faf5831ff03e37476f40cbd9098328';
+        const state = { data: null, baseResults: [], visibleResults: [], overlay: null, editorEnabled: false };
+
+        function resultId(result) {
+          return result.manual_id || `${result.race_name || ''}|${result.race_date_local || result.race_date || ''}|${result.finish_time || ''}`;
+        }
+
+        function loadResultOverlay() {
+          try { return JSON.parse(localStorage.getItem(RESULT_OVERLAY_STORAGE_KEY)) || { deleted_ids: [], edited_results: {}, added_results: [] }; }
+          catch { return { deleted_ids: [], edited_results: {}, added_results: [] }; }
+        }
+
+        function applyResultOverlay(results, overlay) {
+          const deleted = new Set(overlay?.deleted_ids || []);
+          const edited = overlay?.edited_results || {};
+          return [...(results || []), ...(overlay?.added_results || [])]
+            .filter((result) => !deleted.has(resultId(result)))
+            .map((result) => ({ ...result, ...(edited[resultId(result)] || {}) }));
+        }
+
+        function saveResultOverlay() {
+          localStorage.setItem(RESULT_OVERLAY_STORAGE_KEY, JSON.stringify(state.overlay));
+          state.data.results = applyResultOverlay(state.baseResults, state.overlay);
+        }
+
+        async function credentialHash(username, password) {
+          const bytes = new TextEncoder().encode(`${username}:${password}`);
+          const digest = await crypto.subtle.digest('SHA-256', bytes);
+          return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+        }
 
         function round(value, digits = 1) {
           return value == null || Number.isNaN(value) ? null : Number(value.toFixed(digits));
@@ -793,12 +828,18 @@
         async function loadData() {
           if (state.data) return state.data;
           if (globalThis.RUNRUN_DIARY_DATA) {
-            state.data = globalThis.RUNRUN_DIARY_DATA;
+            state.data = structuredClone(globalThis.RUNRUN_DIARY_DATA);
+            state.baseResults = state.data.results || [];
+            state.overlay = loadResultOverlay();
+            state.data.results = applyResultOverlay(state.baseResults, state.overlay);
             return state.data;
           }
           const response = await fetch('./data/athlete-diary.json', { cache: 'no-store' });
           if (!response.ok) throw new Error(`Failed to load diary data: ${response.status}`);
           state.data = await response.json();
+          state.baseResults = state.data.results || [];
+          state.overlay = loadResultOverlay();
+          state.data.results = applyResultOverlay(state.baseResults, state.overlay);
           return state.data;
         }
 
@@ -1332,6 +1373,7 @@
               <td>${result.pace_per_mile ? result.pace_per_mile + '/mi' : '—'}<span class="subtle">${result.pace_per_km ? result.pace_per_km + '/km' : ''}</span></td>
               <td>#${result.rank_overall || '—'}<span class="subtle">gender #${result.rank_gender || '—'} · age #${result.rank_age_group || '—'}</span></td>
               <td><div class="weather-pill">${weatherTags(result)}</div></td>
+              ${state.editorEnabled ? `<td><button class="chip" data-edit-result-id="${resultId(result)}">Edit</button> <button class="chip" data-delete-result-id="${resultId(result)}">Delete</button></td>` : ''}
             </tr>
           `).join('');
           document.getElementById('tableFoot').textContent = 'Weather rows are generated from Open-Meteo archive data; locations come from Athlinks race metadata with cached geocodes in the local data folder.';
@@ -1412,7 +1454,42 @@
             if (!file) return;
             const text = await file.text();
             state.data = JSON.parse(text);
+            state.baseResults = state.data.results || [];
+            state.overlay = loadResultOverlay();
+            state.data.results = applyResultOverlay(state.baseResults, state.overlay);
             renderAll();
+          });
+
+          document.getElementById('editorLogin').addEventListener('click', async () => {
+            const username = window.prompt('Editor username');
+            const password = window.prompt('Editor password');
+            if (!username || !password || await credentialHash(username, password) !== EDITOR_CREDENTIAL_HASH) { window.alert('Editor login was not accepted.'); return; }
+            state.editorEnabled = true;
+            document.getElementById('editorPanel').hidden = false;
+            renderResults();
+          });
+          document.getElementById('editorAddResult').addEventListener('click', () => {
+            const race_name = window.prompt('Race name');
+            const race_date_local = window.prompt('Race date (YYYY-MM-DD)');
+            if (!race_name || !race_date_local) return;
+            const manual_id = `manual-${Date.now()}`;
+            state.overlay.added_results.push({ manual_id, race_name, race_date_local, race_date: race_date_local, city: window.prompt('City') || '', state: window.prompt('State') || '', distance_miles: Number(window.prompt('Distance in miles') || 0) || null, finish_time: window.prompt('Finish time') || null });
+            saveResultOverlay(); renderResults();
+          });
+          document.getElementById('resultsBody').addEventListener('click', (event) => {
+            const editId = event.target.dataset.editResultId;
+            if (editId) {
+              const current = state.data.results.find((result) => resultId(result) === editId);
+              if (!current) return;
+              const race_name = window.prompt('Race name', current.race_name || '');
+              if (!race_name) return;
+              state.overlay.edited_results[editId] = { ...(state.overlay.edited_results[editId] || {}), race_name, city: window.prompt('City', current.city || '') || '', state: window.prompt('State', current.state || '') || '' };
+              saveResultOverlay(); renderResults(); return;
+            }
+            const id = event.target.dataset.deleteResultId;
+            if (!id || !window.confirm('Remove this result from this browser’s local overlay?')) return;
+            state.overlay.deleted_ids = [...new Set([...state.overlay.deleted_ids, id])];
+            saveResultOverlay(); renderResults();
           });
         }
 
